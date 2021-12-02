@@ -1,0 +1,122 @@
+
+###################
+####### LingQ ######
+###################
+
+PROS:
+---------
+SRS via 'Review Settings' ->: 
+	Speech-only flashcards: Dictation -> 'Auto Text-to-Speech' ON.
+	Hanzi-only flashcards: Flashcard ->  'Auto Text-to-Speech' OFF & Front:Term & Back:Translation
+	Production flashcards: Reverse Flashcard -> Front:Translation & Back:Phrase.
+Lingq let's you export your lingq words to an ANKI file 
+	- BROKEN: cards missing front text, no sound.
+Can also export as a csv, where you get "term | phrase | meaning".
+Has a 'make known' similar to fluentU's 'Already know' which sets it to 'seen 5 or 8 times' and not shown again.
+Very sophisticated sort and filter functionality for managing lingqs
+Import your existing vocab as a csv file:
+	- BROKEN: Ran the upload, nothing seemed to update
+Import subtitles from netflix / youtube:
+	- BROKEN
+
+CONS:
+---------
+No frequency info or word-ranks used, so can't pick out the most useful words
+Because of the lack of frequency info, we can't find relevant content to learn from or revise
+	- not much info on how many new words, new hanzi etc are there
+	- Import any text, then go to vocab and filter by lesson title, you'll get list of EXISTING lingqs, but not any of the new (blue) words.
+ANKI export only does "term | phrase | meaning" and even that doesn't work
+Seems SRS is all-items or nothing, but can't revise individual decks, we lose the original article reference
+	https://www.lingq.com/en/community/forum/support-feedback-forum/srs-question
+	"My big problem is that there is apparently no way to make different decks. It seems like it is always drawing words from your total list on LingQs."
+
+###################
+###### Fluentu ######
+###################
+
+PROS:
+Best word_info cards I've seen. Almost perfect.
+
+There are 153 sets of flashcards available, based on content, like: 'Integrated Chinese Chapter 19', 'Dating', 'HSK', 'intermediate grammar'.
+
+I can see the word list and add items to 'Already Known' (meaning they wont be shown again), or I can add them to a new or existing flashcard set.
+
+The card info is really nice: 
+	- Several example phrases:
+		- Spoken
+		- With translations
+		- Popover for each word
+		- Link to word_info for each word
+	- (noun) dad; daddy
+	- Picture
+
+Flashcards include ones for grammar points like "帮 + someone + action".
+Word-Search: You can search for words & phrases to find cards and add these to a custom deck - nice.
+
+CONS:
+No frequency info, so you can't prioritize or fill-in gaps. Same issue as most sites - patchwork.
+You can't input your own content, so you're stuck with their curated examples - not much regular dialogue. Also - patchwork. Also - can't customize to your own interests like: Court-dramas, or Datascience lectures etc.
+No way to see "what do I know, what dont I know".
+No concordance with other content - so not so helpful for tracking lesson notes.
+No 'custom reports' like homophones or 'similar hanzi'.
+I can't edit the cards myself (no custom notes, custom phrases, custom pictures, concordance)
+Can't export your cards, so you're stuck in their walled-garden.
+The flashcards only quiz you with auto-generated, multichoice cloze cards - this isn't testing the long-term recall, and the multichoice cards are too easy to guess. Also, you're not testing listening skills.
+
+Unclear: word info sometimes refers to all relevant concordance, sometimes just to canned phrases. That's probably ok.
+
+###################
+###### Pimsleur #####
+###################
+
+PROS
+The best content for just LISTENING to, because it's given explanations in english in the audio. 
+It's comprehensible input without a screen.
+Its all focused on conversation/dialogues (not stories). Levels 4 and 5 are at a good level for you.
+
+CONS
+No ongoing SRS, so you can forget what you learned earlier.
+Not clearly identifying target vocab
+Very linear progression, hard to pick out relevant bits.
+Very focused on travel, business trips, hotels etc.
+
+###################
+#### DuChinese #####
+###################
+
+PROS
+All content is professionally spoken (same as maayot), and you can change the speed of the speech.
+Clicking on a word makes the recording jump to that point - nice!
+
+CONS
+It's very HSK focus, not real dialogues, doesn't translate well to movies. Can't be customized to particular interests.
+Can't upload my own content
+No frequency measures
+SRS: flashcard is reading only (no sounds, or phrases)
+SRS: example sentence isn't spoken
+
+
+###################
+###### Maayot ######
+###################
+
+PROS
+High quality, daily updated content is really nice.
+
+CONS
+Very reading-orientated text. Not useful for learning to listen. Very HSK, not natural speech.
+Includes A LOT of high-frequency words (and probably misses low frequency ones).
+No sense of SRS, revisiting relevant words, measured progression.
+ -> it would be good, if you could load it in to speakize!
+
+###################
+#### chinesepod #####
+###################
+
+CONS
+no transcript / subtitles so you if they say something you don't understand, there's no way to make it 'comprehensible input'.
+Like most sources, the topic/vocab/phrases don't fit into any clear framework for progression.
+
+
+
+
