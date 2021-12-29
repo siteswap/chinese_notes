@@ -18,4 +18,11 @@ It could be cheaper, what are the trade-offs?
 	F4 = $0.20/hour
 	F4_G1 = $0.30/hour
 
+How process gets to 200MB:
+	empty python process at startup ~4MB
+	pypinyin ~33MB
+	pandas ~30MB
+	numpy ~11MB
+	runtime processing ~25-50MB
+
 How nginx + gunicorn + django work together: https://www.youtube.com/watch?v=1zG7JbC9F7s
