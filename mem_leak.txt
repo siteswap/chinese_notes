@@ -1,0 +1,21 @@
+django is essentially single threaded, so can't handle many requests on it's own.
+gunicorn runs (and monitors) multiple 'workers', restarting them if they die.
+Each worker is a new python process (~200MB in memory each), there is no shared state.
+By default, gunicorn was starting 8 workers (8 * 200MB == 1600MB) which exceeds the 1024MB allowed on F4 instance.
+We could see 'gunicorn main:app --workers 8' in the application logs
+Google kills instances that exceed their memory allocation, so system was constantly being bounced - slowness.
+So, I reduced this to 4 workers by overriding the default by specifying entrypoint in app.yaml
+	entrypoint: gunicorn -b :$PORT main:app --workers 4
+Actually, 4 workers is the recommended setting for F4 instance class, so why was 8 the default?
+	https://cloud.google.com/appengine/docs/standard/python3/runtime#application_startup
+
+
+NB - google will still kill workers if no requests come in for a time, this saves us a lot of money
+
+Next question, why not use F4_1G with 8 workers, or F1 with 1 worker? 
+It could be cheaper, what are the trade-offs?
+	F1 = $0.05/hour  (default)
+	F4 = $0.20/hour
+	F4_G1 = $0.30/hour
+
+How nginx + gunicorn + django work together: https://www.youtube.com/watch?v=1zG7JbC9F7s
