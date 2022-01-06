@@ -1,0 +1,49 @@
+
+The site does:
+
+1) Target words by frequency from content relevant to you
+2) Intelligently identify phrases with high learning value for your current language level
+3) Combine in to AI-enhanced spoken word SRS
+
+Tries to combine efficiency of frequency based SRS deck, with interest of learning in-context of your own materials.
+
+#############################################
+
+MUST HAVES:
+	Bug - sound doesn't update when Update button is pressed
+	Bug - server error 500 when adding lots of words from word_report
+	Bug - handle translation failures better (1000 line limit, 100 article limit).
+	Bug - - - -	max limits and quotas on everything expensive to run
+	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
+	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
+	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
+
+
+I think these 2 things offer a USP:
+	AI:
+		Optimize choice of phrases ** do this, it's easy and it's a USP
+		Recognise cross training occured (need to log reviews)
+
+NICE
+	Use translations from CE.tsv
+	Move chosen phrase more prominently - needs database to persist segmented + translated version
+		-> then can export this to anki
+	Optimize choice of phrases ** do this, it's easy and it's a USP
+	Word search field
+	Turn off loop where no example phrase
+	'Already Know' button for use when importing existing cards
+	
+
+FEATURES:
+	Make existing reports all in views on some core word explorer, with some buttons to set 
+
+
+FUTURE ROADMAP:
+	AI:
+		Optimize choice of phrases ** do this, it's easy and it's a USP
+		Recognise cross training occured
+		Target ease:comprehension value
+	Rotating phrases (same word, different contexts)
+	SRS based content recommendation - cover SRS goals, but in more interesting way
+	Multimedia - pictures, short videos
+	Better stats tracking progress, word reviews etc.

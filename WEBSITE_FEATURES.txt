@@ -1,0 +1,530 @@
+
+	Spend more time with LingQ - try to use it instead of Speakize.
+		- include subtlex rank as a tag?
+		- for your HSK1-4 deck -> get phrases for each word, from Lingq.
+		- Review Mini-stories Chinese: https://www.lingq.com/en/learn-chinese-online/courses/289023/  (Meh, not great for high-frequency stuff)
+	Try memrise again:
+		- https://app.memrise.com/aprender/learn?course_id=96169&source_element=course_mode&source_screen=course_details
+		- Can I import my lingqs to memrise?
+		- Try the paid version - grammer bot, chatbot etc.
+		- Memrise does crowdsourced "mems" i.e. mnemonics (funny pictures etc.)
+		- Memrise makes courses, but speakize you create your own courses automatically based on your own content
+		- review: https://www.youtube.com/watch?v=SxpoDqSdQrs
+			- user generated courses are poor and patchy
+	 Fleex, a service for learning English via subtitled movies. Based on content from Netflix, Fleex has expanded to also include video content from YouTube, TED Talks, and custom video files.
+
+#############################################
+3 Principles:
+	- Comprehensible Input
+	- with Spaced Repetition
+	- that they Care About
+NB - learn from real world phrases, no individual words, not textbook/hsk/google-translate
+#############################################
+Started out as something for myself, particularly to improve my Chiness listening comprehension:
+	1) Target words in the order that they are used in typical daily speech.
+	2) Learn these words in the context of high-frequency, spoken Chinese phrases. Not as individual words, nor as overly formal textbook examples. Your ear needs to learn to "chunk" which it can't do by listening to individual words. This is especially important in mandarin because there are many homophones and less sound information than other languages.
+	3) Create as much sound and repetition as possible, to really train the ear with a high volume of exposure.
+	4) Optimise learning using SRS principles
+
+** Optimize learning with ML model:
+	- Recognise where word is re-used across phrases. Use this to predict 'ease'. Occasionally sample from 'easy' to judge correctness of model.
+	- Recommend phrases with high learning value (i.e. multiple useful words)
+** Keep flashcards interesting with changing phrases, pictures, short-clips, intelligently balancing ease and difficulty
+
+NB - you can create "phrase" within lingq, and you can listen to it
+It has elements of Memrise and Lingq, but the focus is to optimize learning journey.
+#############################################
+USP 1: Turn notes in to ANKI so you don't forget what you learned
+	-> Don't rely on other people's lessons, create your own from stuff that interests YOU.
+#############################################
+Ultimate USP: ML optimized learning model
+	- optimize for efficiency, AND, optimize for retention/boredom
+	- with this in mind, we should probably offer site for free, but charge for anki exports
+#############################################
+
+Priority:
+	Bug - sound doesn't update when Update button is pressed
+	Bug - server error 500 when adding lots of words from word_report
+	Bug - handle translation failures better (1000 line limit?)
+	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
+	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
+	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
+
+	word_info.html/?additional_info=off   # during SRS mode
+	Paginate target_words -> not now, just raise to 1000 (it's enough to show people)
+	Move chosen phrase more prominently, segment and highlight it
+
+	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
+	Configure ADMIN approval during BETA stage
+
+	When you've got liuxinghuayuan back up on site, improve / optimize choice of phrase:
+		- squeeze in some higher pts words in the example sentences, get some cross-training
+
+	Solve this "ease" issue - it's a problem for you, it will be a problem for users
+		- Copy the 'ease' thing from ANKI
+		- Set ease/interval/already-know in a table (like lingq does) -> v.v. useful for those HSK4 words
+		- For each word, expose number of reviews in other things
+
+###############################################
+Simplification - make the produce communicate it's use and purpose!
+	Swap 'Upcoming Reviews' for an 'All Words' in Decks (pinned to top) -> Just deco for now
+	Then replace 'Reports' with Words or 'Top Words' -> nice focus
+	Lose Hanzi report for now - mixed messages of hanzi vs words
+	3 Reports:
+		- lose unnecessary columns for better phone experience (pinyin can be a popover)
+		- just word | phrase | comp %
+	Get top 150 words phrases from Fiverr writer (Call it 'Intro/Welcome' and explain how to use the site)
+	Get Jared to review the copy
+###############################################
+How to upload your intervals on current cards, for other users?
+Ease: implement this so that we don't get ease-hell, or some ‘already know’ button.
+Create deck based on all target words with example phrases.
+#################################
+Smart SRS 
+	Optional "source" for the notes. We can (later) decide to try doing something smart with it, like embed the video/soundfile etc.
+	Add multimedia embed field (youtube, bilibili, douyin etc.):
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/tRa3fOlnN7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	Incredibly minimal, dynamic, recommendation page (it's just so central of an idea) -> just base it on your own personal content.
+	**TASTE** of the smart-SRS future, so that beta users know it's not just about making flashcards 
+		- something dynamic on the welcome page - it's too static, there's nothing to pull you in. 
+		- just enough to hint at the future for BETA users
+IDEA:
+	Split notes vs Content
+	Content reviewer can add their youtube picks & subtitles, we can add it to 'our' followed content.
+
+	Allow multiple phrases that rotate.
+	Work on understanding phrases like "我有话给你说", "我跟你讲"
+#################################
+
+Usability Testing:
+
+	Farm this out as a 'module' called 'words':
+	** THIS IS WHAT'S MISSING TO GIVE ME THAT OVERVIEW **
+	Single page listing all the Words & DeckWords (query_strings in url):
+		- filter by deck
+		- sort by rank
+		- sort by example phrase
+		- delete unhelpful ones
+		- 'Target Words': filter by no deck, sort by rank
+		- 'Upcoming Words': filter by deck, sort by due
+		- 'All words': sort by rank (useful to see cumulative)
+		- 'TV Show Difficulty': filter by tv-show (or series), sort by rank or occurances
+		- Paginate target_words
+	Deck organisation:
+		Delete deck option
+		Delete word from deck option (contents should be in a list on the deck_info page)
+		Some sort of 'merge' deck option -> see what lingq does here
+		Custom deck (i.e. not necessarily named after a catalogue item)
+
+	Add some blurb to the 2 reports:
+		Target words should include KnownWords not in a deck
+		Target words - "The most common 3000 words covers around 90% of spoken Chinese. You know X words, ..."
+				- paginate me, maintain me as a per-user table
+
+	Shows stats on - word review by card, by use in a phrase, use in a movie etc. So you can see weak spots.
+
+	Have a 'play' option for running. It will just play due_for_review_cards, x3 repeat each, then x1 give translation in english, then x1 in Mandarin.
+
+	Scale testing:
+		-> Set quotas to avoid runaway costs?
+		-> what are your bottlenecks? 
+		-> if query takes 250ms, then you can only have 4 concurrent users per worker!
+		-> limit phrase length
+
+	Implement the EASE bit of the model from ANKI
+		- Ease: implement this so that we don't get ease-hell, or some ‘already know’ button.
+	Upload your intervals on current cards
+
+	Target hanzi report
+
+	Include links to reverso-context (lots of good examples in here!):
+		这是我不希望你变成的样子  --  This is what I don't want you to become.
+		这就是我最终变成的样子  --  It's what I've become.
+		我不想做他们把我变成的样子  --  I don't want to be what they made me. 
+		https://context.reverso.net/translation/chinese-english/%E5%8F%98%E6%88%90%E7%9A%84%E6%A0%B7%E5%AD%90
+
+	We should be able to provide good translations ourselves, but if they aren't available, THEN populate from google translate.
+		- google translate can get stuff quite wrong, and users will want to correct this
+
+
+
+	Word lookup
+	"Play" button on the examples and inline with subtitle files
+	Add MI and these type of stats - will help you identify efficient phrases to learn from
+
+
+	Contact the ANKI expert on Fiverr, some ppl have BEAUTIFUL anki decks:
+		https://www.reddit.com/r/Anki/comments/gayewn/tip_how_to_add_tooltips_on_ankidroid/
+
+	Replace tooltip with popover. Popover contains link to the word page! Would be very similar to GoogleTranslate plugin, but work on mobile phone.
+		- tooltip doesn't work on touchscreen, also looks old fashioned.
+
+	Performance stats:
+		Show work done like github & anki do
+		Provide a "x hours left to reach 500 words"
+		Occasionally quiz to sample if knowledge is inline with card reviews
+
+	Organise site structure, see gcloud for example:
+		https://console.cloud.google.com/appengine/instances?serviceId=default&versionId=20211228t215916&project=createflashcardapp
+	> It's clear from the URL what you are looking at
+
+	Content *we* own:
+		Ask a writer to produce short sentences for first 1000 words - probably only 3 hours for 1000 sentences
+			- https://www.fiverr.com/shirleyici/chinese-english-french-translator-and-proofreader
+			- She's also a proper writer: https://www.fiverr.com/itsvickyhuang/translate-chinese-to-english-with-precision-and-grace
+		As a side project, commission tiktok style videos for 5 of them (ask x3 artists):
+			- https://lumen5.com/
+
+	Catalogue refs - too much space taken up, can't scan/read the examples like when it was a table.
+		- Catalogue refs - maybe just a list of "link-source: line" (i.e. move the 'add to deck' button elsewhere)
+			- see 2 reports with 'Generate Deck' ?
+
+	Adding notes to word page?
+		Could persist catalogue-ref filter on 'my word_info notes'
+
+	Rotating phrase option next to 'include hanzi':
+		If user ever hits 'easy', then choose another suitable phrase.
+
+	Anki export 3 card types (listening, reading, both):
+		Include translation on card back
+		Link or tooltip on each word
+
+	Need to a) move local sqlite3 to postgre b) migrate your existing decks
+		- https://medium.com/djangotube/django-sqlite-to-postgresql-database-migration-e3c1f76711e
+
+	Security:
+		2-factor alex@speakize login
+		IP verify login to speakize.com/admin 
+		Try Security scanner
+		https://cloud.google.com/beyondcorp - Identity-Aware proxy etc.	
+
+	Put signed urls on the sound files Public access becomes permanent after 90 days from 21/12/2021
+		- seems to be the generate_signed bit that fails. gcloud deploy the key in project root?
+			- Reset permissions to non-public
+			- https://cloud.google.com/cdn/docs/using-signed-urls
+			- with signed urls, you are using the public_key.json in the request url. 
+			- So, that's why you need a key file, the user is accessing the file *as that service account* -> create a different account for this?
+			- just deploy the json key with the app (though, maybe create a 'sound_file_bucket_access' user just for this)
+
+	Make look better:
+		- put the top word_info elements in a container, decks in a list lower down
+		- related words should be list of cards, not a table
+		- anki card info (more info on the back!) - ask a fiverr ANKI expert to design them
+
+
+#############################################
+Future USP: Smart-SRS
+#############################################
+
+Phase 2:
+
+- Explainer video: https://www.fiverr.com/ricky8001/a-modern-whiteboard-animation-video-in-hd
+
+-  'Already know' button at top -> creates card with 30-day interval
+- Whole line translations available on tooltip, or similar easily accessed
+- Words with deleted decks e.g. 臭 (create default 'no deck'?)
+- info page to open in side window
+- Use subtlex translations (better)
+  
+- Give me some useful stats to define my goal and track my progress
+- Word report should pull-out the episode specific names -> google entity-recognition
+
+- Personal notes and text? (should be in notes file?)
+
+Get legal consult on "database infringement" and ToS:
+https://www.pinsentmasons.com/out-law/guides/database-rights-the-basics
+Check on use of subtlex list too!
+
+
+----
+NICE:
+Word search field, Sortable tables
+Ease-to-value function
+Account/Profile/Settings page (when/if you add payments)
+
+----
+LATER:
+Reading/hanzi focused features
+Content recommender / syllabus gen - "For a word to stick, I need to recognize it in another completely different context"
+A way to "play" SRT files in a browser window at same speed of netflix
+
+Store segmentation results in POSTGRE:
+	- postgre has an ArrayField for storing lists and multi-dimensional arrays! -> could be very efficient for storing list-of-segmented-lines.
+	- postgre has HStoreField is just mapping string to string and does not support nested structure
+	- JSONField which come as built-in Posgres Field in Django 1.9+ and posgres 9.4+
+
+NB - don't take table-per-user strategy (just set a user-index):
+	https://stackoverflow.com/questions/7544544/database-efficiency-table-per-user-vs-table-of-users
+
+“People don’t want to learn languages for pragmatic reasons but to be socially credible" - Ed Cooke (Memrise)
+New user should start with 1 Content item which is a report / how-to explaining
+Chat bot
+Auto-create minimal diffs deck: Reading: 话，刮，活, Listening: 是 十
+Translation cards (i.e. you *produce*), esp for 为什么,  对,  会
+	- is there someway to analyse some high-frequency constructions that catch many use-cases?
+Get images for the top 500 nouns
+Research the idea of a "minimal" card set (i.e, a single, 5000 word story that gets you to advanced level)
+	-> Take a chinese-language GPT-3, shift the weights towards the unused words as you generate each sentence.
+	-> Can get a human reviewer to fix it up once GPT lays down the basic structure.
+Multiple, rotating phrases **would** be a nice option! -> fluentu.com has (non rotating) multiple phrases
+Consider same hanzi in different noun/verb positions - different meaning, different example.
+
+
+SRS app:
+	- Rather than present the word in isolation, choose a sentence (highlight all the words due for revision, avoid sentences with low-frequency unknown words)
+		- If you get the sentence, you pass on all of the words
+		- Dynamically, pull in an image based on the sentence (ideally would be taken from the show)
+		- subtlex_frequency should be the prior, updated based on info from out dataset. The learning value is then (frequency * ease).
+	- When presenting target_words, only pick the ones that have concordance, so we can 
+
+Develop a theory of compounds, learning-value and ease:
+	- hanzi：  屁， 桌
+	- word： 屁股， 桌子
+	- phrase： 擦屁股， 把[MASK]放在桌子上 -> [它/碗] (碗 has higher MI since 它 is high frequency) https://huggingface.co/bert-base-chinese
+every noun should be accompanied by 1) it's classifier, 2) it's relevant verb
+     - use ictclas to identify nouns, and do some lexical analysis to produce more relevant phrases
+What's a sort of optimum syllabus for covering top 5000 words? Can I get just 1000 sentences to learn?
+
+If a 15 minute scissor-7 episode contains 1500 hanzi (~700 words), then we could potentially cover the top 10k spoken words in 15 episodes (~4 hours of watching, or ~1 hour of actual talking). build a spoken word 'max efficiency' program
+
+
+#############################################
+Getting users:
+	SEO for 'chinese flashcard', 'chinese srs', 'chinese anki'
+	Add 2-3 free decks to ankiweb
+	Targetted ads on chinese learning places: yellowbridge, relevant forums (quora, reddit etc.)
+	Give some chinese tutors free access to upload their student notes?
+#############################################
+
+Next :
+	Pull out high coverage 'named entities' like character names 
+	Enable custom deck creation - create one for reading new chars (e.g. 愤怒)
+	Tidy up the code.
+	Ask fiverr html dev to produce something that will 'color' a sohu.com page with known/review_due/unknown words + cover over
+	For the higher-frequency words, start to introduce "production" questions, s.t. say, 50% of your passive vocab, is active.
+	Merge both english and Chinese SRT files for better translation than google translate
+	BUG - the site keep a handle on the old word_xx.mp3 file, so even when the new file overwrites it, the old one is still used.
+	The site should CENTRALLY communicate this: Actually, top 3000 words (plus the proper nouns of Characters and places) gives you 95% word coverage -> not bad! Another ~75 words (in range 4,000-10,000) and you've got 95% word coverage.
+	Create a single 20 minute long sound file from the due decks, so you can study like pimsleur.
+	Make deck export accept hanzi-only / sound-only / both. 
+	Sanitize 'title' of Catalogue additions - html in there breaks everything!
+	Reading - add load of stuff about datascience / use that to create a syllabus.
+	Get django contractor to look at it
+	Auto-include phrases.
+	Load word_info (back of card) much faster!
+	New user may need <user>/audio dir created
+	Factor out 'deck' as a package
+	Word_info field should be collapsable		
+	Episode level option to turn on/off line level translations
+	Add homophones as a 'Content' report, maybe later as a field
+	Have something to pull out "names of characters & places", these shouldn't count towards coverage. They should feature in summary of report.
+	From the episode page, be able to add the word.example.line to relevant deck.
+	inline translations on/off button
+	Include speaking/production cards ... somehow ... focus on the most frequent constructions?
+	Fix crappy translations e.g. 事业
+	READ: https://aws.amazon.com/blogs/machine-learning/powering-language-learning-on-duolingo-with-amazon-polly/
+	'Again' not always working - other day's cards will have an earlier start
+	Series level report -> make sense to have some groups / folders to 
+		- 370 words (order by series occurances) gets you to 95%.
+		- So, do ~40 cards per show and you're over 95% (probably higher because some of these 'words' are obvious)
+		- What if you gave 50/50 priority weighting to show vs subtlex?
+		- Load 10 more episodes
+		- you can get to 93% fairly quickly
+	Try an 'Already know' button to add words starting with interval of 30 days
+	Implement anki 'ease' model? (can estimate starting value for new words) 
+		- ease might reflect how much actual novelity there is, as well as how much coverage its getting from other sources
+	Highlight target words differently from low value words. Have a 'target set' of 30 top value words for the episode!
+	django/bootstrap needs to either 1) have all the data upfront (though, potentially hidden), or 2) refresh the whole page
+	( see the bootstrap example dashboards -> the sidebar refreshes, unlike an angular page. )
+	Options:
+		- Try making catalogue load faster
+		- Pre-load all ~1000 word_info pages 
+		- Paginate catalogue to make it load faster (also would help pre-loaded word_info pages)
+	Dynamically update a single field (ajax?)
+		- View word_info in https://getbootstrap.com/docs/5.1/components/offcanvas/
+		- Present word_info nicely - make it load faster!
+		- https://stackoverflow.com/questions/3711349/django-and-query-string-parameters
+	Have a 'words' page (searchable) with 'upcoming words' and 'target words' ?
+	https://zhdict.net/  ??
+	- 6 "styles" of deck study:
+		- word+sound
+		- sound only
+		- sentence/phrase
+		- headline / recommended reading
+		- speakize mini-dialogue optimally designed (daily updated?)
+		- chatbot
+	When you have enough data, you can build an ML model that predicts 'ease' (but start with heuristics b/c you don't have data):
+		https://developers.google.com/machine-learning/guides/rules-of-ml
+	All word-reports should come with some sort of cumulative_coverage stats / burn down / so you can see what you're aiming for. You can see that, say, you only need 2000 hanzi to read 99%, or 3000 words to hear 95% etc. Same goes for the content you are watching - provide stats on it's usefulness and relevance.
+	Get 60Mb of subtitles from movies/series from opensubtitles.com, train some basic tensor-flow language models, work your way up to a transformer model.
+	CONSIDER WRITTEN ENGLISH ALONGSIDE, IT MIGHT BE VERY EFFECTIVE:
+		- https://www.youtube.com/watch?v=c8LAwozrXPo
+	瞎子 blind (search based on 害 using zhongwen.com)
+	Fun - 'earn' different themes - darkula, dota, mountains, different-google-voices
+	Provide hanzi breakdown in to radicals
+	Freelancer - You should review portfolios and find a few teams/individuals which  you think are good prospects. Create project, state your budget, invite your picks, you can ask them extra questions before you accept
+	'仁' gets cut off of line 65 in Scissor_Seven/S1/E1.txt - FIXME
+	老板来份牛杂  - ictclas and google both split this same way, but lingq somehow gets 牛杂 as single word. But then, 牛杂 isn't even in to 100k subtlex words.
+	https://docs.python.org/3/tutorial/classes.html , using __init__, Modules vs Packages?
+	Word_info should include top 'sound alikes' e.g. 前，钱
+	Dont do 'Already know' button -> not necessary, as actually very few trivial words, cleaner just to add cards for them.
+	Class based view for wordlists?
+	Bring back the reference count 'in_srcs'
+	NB - subtlex is maybe the wrong measure to use for individual hanzi - maybe CHR frequency is more relevant?
+	Drive the revision from subtlex rankings, regardless of what cards have already been made
+	Analyse and drill common sentence constructions, so you can keep up with conversation on TV
+	For a given TV-series, provide the word needed for 90%, 95%,98%,99% comprehension.
+	Need much better dictionary than bulk_word_translations.tsv
+	Include notes you've already made on the anki card - maybe in the concordance?
+	Create links from one note to other related notes.
+	巧 - has very different meanings whether it is an adverb or adjective. These 2 cases should be treated differently.
+	Add italki notes (starting from 18_03_2021), all of meteor garden.
+	Create browsable word-lists (like spotify play-lists) that I can export decks from
+	Filter upcoming_words report on deck_name (so you can revise specific shows)
+	Catalogue summary_stats (word count, coverage, new words, new hanzi, review target, new target)
+	Custom user tracked words (SRS - just track 'last time seen'):
+		- progress report: known hanzi, known words, coverage%
+		- words-ranked-by-freq vs coverage over last x-days. Can change freq axis between subtlex, HSK, ngram, Jun_Da, custom.
+	SRS-optimized content recommendations
+	Upload webinterface for:
+		- anki.pkg 
+		- user content (e.g. lesson notes)
+	Export anki package feature.
+	Take the learning-value-optimisation idea and apply it to chunking and grammar patterns:
+		- e.g. learn 还有这么多,   但我们就只能,  放在桌子上， as if they were individual words (in fact, these constructions may be as frequent as individual words)
+	SRS-optimized chatbot (experiment with it in English first)
+	Review your POST code against this https://docs.djangoproject.com/en/3.2/intro/tutorial04/  
+	Put sherpa on a speakize github account and setup workflow: "Build and Deploy to GKE".
+	New HANZI cards should have a LOW ease factor - https://readbroca.com/anki/ease-hell/
+	Words composed of common HANZI should have a high ease factor
+	Words composed of infrequent HANZI should have a moderately low ease factor
+	# SECURITY WARNING: keep the secret key used in production secret !??
+	https://www.juliensobczak.com/write/2016/12/26/anki-scripting.html
+	- Mind-map / graph hanzi and words (like hskhsk++)
+	- Custom user db for their specific content
+	- There are some low-frequency compound words (e.g. 擦屁股) that are very valuable because they are a) 2 useful standalone words b) an informative colocation.
+		- So, you get a TRIPLE value from learning them directly.
+		- It would be better to learn 擦屁股 wipe-butt first, than learn 屁股, then 擦, the lastly learn to associate them.
+	- Improve translations for single hanzi (e.g. 系 is better translated as 'system', 放开 is 'let go' not 'open').
+	- Translation of sentence (fail elegantly if offline) - necessary, because sometimes only the whole phrase contains the meaning
+	- As a word occurs in additional sources / contexts, add additional example sentences
+	- Rotate the example sentences so your learning doesn't 'overfit', so you hear a nice distribution of 
+	- Combine the auto-generated bit with separately maintained personal notes, so you don't lose your custom notes when you update decks
+		- should allow jpeg/gifs too
+	- If a word features a new hanzi, create a hanzi-specific card (include hanzi etymology)
+	- Enlived existing-word flashcard with new example sentences grabbed from news-sites or short youtube videos
+	- Add user defined words to their ictclas dictionary? Maybe not necessary.
+	- Consider reading: 'English Collocations in Use' to understand more
+	- Add graphing capabilities: https://github.com/wq/django-rest-pandas  ??
+	- Bring back a 'readize' site that lets you revise your ngram prioritized hanzi deck based on news headlines / intro paragraphs.
+
+
+Using the method, hire people to learn (from scratch) first 1000 words - how does it take them?
+	- average 30 words / day, for 30 days?
+	- what if you pay them *more* for correctly passing the reviews?
+
+
+#############################################
+################ EASE-HELL ##################
+
+Options:
+	1 - 'Already know' button at top -> creates card with 30-day interval
+	2 - Set initial "ease" estimate high if hanzi well known, and frequency in corpus is high
+	3 - Count a view in your collection as 1/10th an actual review
+	4 - Count a successful review in a phrase as 1/10th direct review
+
+How to deal with words in an old deck, that appear in this new show?
+	-> Highlight behind words, let add them to another deck.
+
+Fix by manually increasing interval for all your HSK4 cards?
+	- Don't highlight the very low points cards, only highlight stuff which would make sense to learn
+	- Green text, when not clicked is assumed to be known, click 'Again' on word_info if you missed it
+	- Or, add 'ease'?
+	- Lots of trivial words like 那些 - would be ok, if ease was set high already
+	- Or, reduce based on frequency in the corpus?
+	- How to preview covered "hard" words before the show -> i.e. deprioritize the high frequency / common-hanzi ones.
+	- Ease model Version-1 -> of the ease model is the ANKI, per card, reinforcement-learning model.
+	- Ease model Version-2 -> if hanzi components are already known, predict 80% drop in ease.
+
+How to model high-frequency in one show 墨鱼, low-freq elsewhere? It's not worth remembering after you've watched the show!
+E.g. names: 道明, 静学姐, 墨鱼, 三亚, 学长, 邀请函
+Pull to the top likely proper names that you only need once - otherwise, these lower the *real* cumulative coverage stats.
+
+#############################################
+#############################################
+
+定 has multiple uses, we need more than 1 card / 1 phrase for this
+- Of words that I know, pull out all (tones excluded) homophones - tone practise should be focused here
+	-> Generalize to "reports".
+	-> A "report" is a Function that takes a Content-item or List-of-content-items, and produces 1) some blurb/stats & 2) a deck / word_list.
+
+#############################################
+#################### SRT #####################
+
+	- https://www.opensubtitles.org/en/search2/moviename-meteor+garden/sublanguageid-all
+	- https://subflicks.com/
+	- https://chrome.google.com/webstore/detail/subtitles-for-netflix/oddfihdjoneffhjjlpgdjaefeklefmdi
+	- https://github.com/isaacbernat/netflix-to-srt
+
+#############################################
+############### SIDE-PANEL ###################
+
+	- https://stackoverflow.com/questions/28268574/set-url-to-load-iframe-in-a-django-template
+	- READ THIS: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page
+	- LEARN THIS - https://docs.djangoproject.com/en/3.2/ref/templates/language/
+
+###############################################
+############ Thoughts on Learning #################
+
+		- Learn symbols alone (not as words) so that you can recognise them independently (include example words/sentences on the flip side is fine). In the rare case that a character is only ever used in a particular word, then you can probalby just learn that word.
+		- Learn words in the context of useful standalone phrases - this way you learn the context (e.g. the measure word) to use them in and get your ear trained for common chunks.
+			-- using the wrong measure word, not knowing the verb that acts on a noun (吵一个架), not knowing the difference between 经验 and 经历 - these all come from learning individual words, outside of any context.
+		- If you are learning words or phrases from movies, then you need some frequency info to judge if they are good ones to add to your vocab deck. You can't add everything.
+		- 90% of speech consists of just 3000 words (lingwave.com)
+		- For listening practise you *MUST NOT LOOK AT SUBTITLES* - BUT - you NEED 字幕 available to check you heard correctly (active learning).
+		- Training your ear takes a lot of time, as long as you can read the individual hanzi, you should focus on listening (not on reading).
+		- To listen effectively, you must be able to process common 3,4,5 character 'chunks' in one go. E.g. 从来没有, 今天晚上，dates, time (See examples in CHUNKS.txt)
+		- You need the colloquial expressions, fixed phrases, much of real language is not derived from grammar rules.
+		- Grammar is best learned starting from useful example sentences (not from an abstract rule).
+		- Develop accurate sentence formation (outside of a lesson) with production/translation deck - where to get these from?
+		- Since words should be learned within useful sentences, could we create ~3000 sentences that cover top 99% of vocab?
+		- Graph, the mutual-info matrix of 2000 hanzi by 2000 hanzi
+		- High-frequency chunks are really important because they are commonly SLURRED-TOGETHER in spoken speech, so you CANNOT recognise them as individual words, only as a chunk within a context!
+		- Idea： when you learn a word, you should learn some kind of frequency weighted context around it (e.g. 1 or 2 hanzi either side). So you should never just learn 画， you should learn 我画一幅画 or 一张画。FluentU flashcards do something close to this - every flashcard is linked to a set of spoken sentences using the word.
+		- You can see a divergence between HSK focused content on maayot & duchinese, and the more real stuff in the films. For example - duchinse is using low-frequency words like 'lemon' even in early, intro texts.
+		- Research: https://languagetool.org/  - any better grammar checkers available?
+		- MSC： 5% 1char, 75% 2char, 14% 3char, 6% 4+  - search for most common 3-chars?
+		- The only thing that works is COMPREHENSIBLE INPUT (Stephen Krashen): https://www.youtube.com/watch?v=TKg23ZFURX0 
+			-> https://www.youtube.com/watch?v=0AvgL1xPboI
+			-> it needs to be meaningful for you (so delay speaking til it's a meaningful conversation to you)
+			-> Block learning word lists is bad, because meaningless
+			-> Comprehending messages is the only way we learn language
+			-> We learn language like i+1, when we are familiar enough with i, then we can learn the next step
+			-> TPR - total physical response
+			-> Always give a noun with 1) it's classifier, 2) it's top verbs (and any other colocators) - e.g. 点外卖
+			-> Principle of Anticipation: Our brains are hard-wired to automatically process speech and “anticipate” a correct response: https://www.pimsleur.com/the-pimsleur-method
+		So, Steve.K says we shouldn't learn these words lists, we should enjoy content, and focus on 'comprehensible input'.
+		SO - as we find new words / chars through our study, we should be able to identify which ones are most relevant to really learn NOW (i.e. they are on our frequency horizon), and grab build 'mini-stories' from them, so that the mini-stories are a very dense reference to repeat learning from.
+		NB - for listening practise, context (i.e. what you expect to hear next) is really necessary, because native speakers don't enunciate and have a variety of accents, you can't identify words from sound alone, you need some prior-probabilities.
+		- Listening in Chinese problem analysis: https://www.hackingchinese.com/listening-strategies-problem-analysis/
+		- If you can understand a passage after hearing it many times or at slower speed, it means that you have the necessary phonological awareness and a broad enough vocabulary. In this case, it doesn’t need to be very advanced or hard, just listen as much as you can: https://www.hackingchinese.com/listening-strategies-improving-listening-speed/
+		- Chinese *especially* relies a lot on context: https://www.hackingchinese.com/why-is-listening-in-chinese-so-hard/
+		- Try taking the italki English language assessment test - how does it work? could we do one for chinese?
+		- Try scraping this for listening practise + with subtitles: https://www.cslpod.com/LearnMandarin/Lesson/Detail/Content.aspx?Id=1774
+		- Olly Richards says you do NEED a SYSTEM to know that you are increasing your vocabulary everyday (don't be unfocused and just trust)
+		- Buy the CSLPOD content? (site seems down, or they aren't managing it at all well)
+		- Get a wordpress scrolling front page like ： https://www.lingwave.com/
+		- Research how to get netflix subtitles without lingq
+		- 你要 vs 你药 - totally homophonic, so you absolutely must be learning words in context with useful colocations (like, 疼，医院，医生）
+		- Try hugging-face autonlp https://huggingface.co/autonlp
+		- Google "字幕数据库" - there are many subtitle websites, you can download from these!
+		- Lewis (1997: 211) himself made a similar point: ‘The Lexical Approach claims that, far from language being the product of the application of rules, most language is acquired lexically, then “broken down”... after which it becomes available for re-assembly in potentially new combinations’. 
+	- "For a word to stick, I need to recognize it in another completely different context":  https://github.com/cbd32/flash-card-builder
+
+
+
+https://www.gatesnotes.com/About-Bill-Gates/Year-in-Review-2021#ALChapter5
+
+If you’re a student, you’ll be able to get feedback from the software while you do your homework online. The content will be more interactive and personalized to you, helping you focus on areas where you need a bit more help while boosting your confidence by giving you problems you’re more comfortable solving. 
+
+If you’re a teacher, you’ll gain a deeper understanding of how your students are doing. A simple button click will show you that student X might need more help on a particular type of question while telling you that student Y is ready to take on a more advanced reading assignment.
