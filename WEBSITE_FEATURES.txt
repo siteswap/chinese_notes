@@ -43,8 +43,6 @@ Ultimate USP: ML optimized learning model
 #############################################
 
 Priority:
-	Bug - sound doesn't update when Update button is pressed
-	Bug - server error 500 when adding lots of words from word_report
 	Bug - handle translation failures better (1000 line limit?)
 	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
 	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
@@ -211,7 +209,10 @@ Usability Testing:
 		- related words should be list of cards, not a table
 		- anki card info (more info on the back!) - ask a fiverr ANKI expert to design them
 
-
+#############################################
+Future:
+	Use corpus to define most useful lexical chunks and collocations
+https://www.teachingenglish.org.uk/article/lexical-approach-1-what-does-lexical-approach-look
 #############################################
 Future USP: Smart-SRS
 #############################################

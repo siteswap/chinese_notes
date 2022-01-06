@@ -71,8 +71,8 @@ FUTURE ROADMAP:
 	Multimedia - pictures, short videos
 	Better stats tracking progress, word reviews etc.
 
-
 #############################################
+
 Start Here:
 
 It's hard to know where to start with learning Chinese. There are so many courses, apps, text books and word lists available.
@@ -83,7 +83,7 @@ But, if you want to quickly improve your comprehension of spoken Chinese, it's a
 
 It's also a good idea to base your learning on content that is relevant to your goals. So, if your goal is to follow casual conversation, then TV series dialogue could be a good learning resource.
 
-Add the content you like - subtitles<href=opensubtitles.org> for your TV shows, lesson notes etc. The tool will identify words most relevant to your learning, as well as the most helpful phrases to learn these words in-context. It will then create spoken word flashcards so you can train your ear, and use spaced repetition (Link: https://en.wikipedia.org/wiki/Spaced_repetition) so that you don't forget.
+Add the content you like - subtitles<href=opensubtitles.org> for your TV shows, lesson notes etc. The tool will identify words most relevant to your learning, as well as the most helpful phrases to learn these words in-context with relevant lexical chunks and collocations. It will then create spoken word flashcards so you can train your ear, and use spaced repetition (Link: https://en.wikipedia.org/wiki/Spaced_repetition) so that you don't forget.
 
 So: 
 	1) Add content relevant to you
