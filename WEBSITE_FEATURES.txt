@@ -64,16 +64,6 @@ Priority:
 		- For each word, expose number of reviews in other things
 
 ###############################################
-Simplification - make the produce communicate it's use and purpose!
-	Swap 'Upcoming Reviews' for an 'All Words' in Decks (pinned to top) -> Just deco for now
-	Then replace 'Reports' with Words or 'Top Words' -> nice focus
-	Lose Hanzi report for now - mixed messages of hanzi vs words
-	3 Reports:
-		- lose unnecessary columns for better phone experience (pinyin can be a popover)
-		- just word | phrase | comp %
-	Get top 150 words phrases from Fiverr writer (Call it 'Intro/Welcome' and explain how to use the site)
-	Get Jared to review the copy
-###############################################
 How to upload your intervals on current cards, for other users?
 Ease: implement this so that we don't get ease-hell, or some ‘already know’ button.
 Create deck based on all target words with example phrases.
@@ -96,6 +86,8 @@ IDEA:
 
 Usability Testing:
 
+	Get one of these scrolling front pages like https://getspace.app/ based on the 3-steps of the apps (except this one doesn't fit mobile format)
+
 	Farm this out as a 'module' called 'words':
 	** THIS IS WHAT'S MISSING TO GIVE ME THAT OVERVIEW **
 	Single page listing all the Words & DeckWords (query_strings in url):
@@ -114,20 +106,22 @@ Usability Testing:
 		Some sort of 'merge' deck option -> see what lingq does here
 		Custom deck (i.e. not necessarily named after a catalogue item)
 
-	Add some blurb to the 2 reports:
-		Target words should include KnownWords not in a deck
-		Target words - "The most common 3000 words covers around 90% of spoken Chinese. You know X words, ..."
-				- paginate me, maintain me as a per-user table
+	Have a 'play' option for running. It will just play due_for_review_cards, x3 repeat each, then x1 give translation in english, then x1 in Mandarin.
+		- This is the extension of the looping sounds -> take the active bit out of it, so that study is the default.
+		- Only if a 'good/easy' button is hit does the card leave the play loop
 
 	Shows stats on - word review by card, by use in a phrase, use in a movie etc. So you can see weak spots.
-
-	Have a 'play' option for running. It will just play due_for_review_cards, x3 repeat each, then x1 give translation in english, then x1 in Mandarin.
 
 	Scale testing:
 		-> Set quotas to avoid runaway costs?
 		-> what are your bottlenecks? 
 		-> if query takes 250ms, then you can only have 4 concurrent users per worker!
 		-> limit phrase length
+
+	Pricing:
+		- what is cost per update of content item (segmenting, translation)?
+		- what is cost per update of texttospeech?
+		- how many can user do before we lose money?
 
 	Implement the EASE bit of the model from ANKI
 		- Ease: implement this so that we don't get ease-hell, or some ‘already know’ button.

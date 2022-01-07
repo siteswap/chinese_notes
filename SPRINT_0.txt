@@ -10,14 +10,6 @@ Tries to combine efficiency of frequency based SRS deck, with interest of learni
 
 #############################################
 
-Simplification - make the produce communicate it's use and purpose!
-	What's the meaning of Cover in Most Frequent Word report?
-	Blurb for 
-	Get top 150 words phrases from Fiverr writer (Call it 'Intro/Welcome' and explain how to use the site)
-	Get Jared to review the copy
-
-#############################################
-
 MUST HAVES:
 	1) Fix Admin ProfileRegistration corrupt
 
@@ -38,6 +30,7 @@ MUST HAVES:
 	Bug - Max limits and quotas on everything expensive to run
 
 	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
+	Bug - Tables should probably link through User, not RegistrationProfile
 
 
 I think these 2 things offer a USP:
@@ -74,28 +67,66 @@ FUTURE ROADMAP:
 #############################################
 
 Start Here:
-
 It's hard to know where to start with learning Chinese. There are so many courses, apps, text books and word lists available.
 
-But, if you want to quickly improve your comprehension of spoken Chinese, it's a good idea to start with the most frequently used words first.
-
-(If you want to know the top written words, here is a list: <google_ngram>)
+But, if you want to quickly improve your comprehension of spoken Chinese, it's a good idea to start with the most frequently used words first. Did you that the 60 most frequent words cover half of all spoken Chinese?
 
 It's also a good idea to base your learning on content that is relevant to your goals. So, if your goal is to follow casual conversation, then TV series dialogue could be a good learning resource.
 
-Add the content you like - subtitles<href=opensubtitles.org> for your TV shows, lesson notes etc. The tool will identify words most relevant to your learning, as well as the most helpful phrases to learn these words in-context with relevant lexical chunks and collocations. It will then create spoken word flashcards so you can train your ear, and use spaced repetition (Link: https://en.wikipedia.org/wiki/Spaced_repetition) so that you don't forget.
+Add the content you like:
+Subtitles for your TV shows - opensubtitles.org 
+lesson notes from your teacher - italki.com
+
+The tool will identify words most relevant to your learning, as well as the most helpful phrases to learn these words in-context with relevant lexical chunks and collocations. It will then create spoken word flashcards so you can train your ear, and use spaced repetition ( https://en.wikipedia.org/wiki/Spaced_repetition) so that you don't forget.
 
 So: 
 	1) Add content relevant to you
-	2) Create spoken word flashcard decks from the high-value words and phrases
+	2) Create spoken word flashcard decks from the most useful words and phrases
 	3) Keep up with the flashcard reviews
 	4) Repeat
 
-To help you get started, here are some phrases using the most frequently spoken 150 Chinese words:
+To help you get started, here are some phrases using the 60 most frequently spoken Chinese words:
 
-
-
-
+你好吗？
+你呢
+你说什么
+你说得对
+什么都没有
+我没去过上海
+我不知道
+就到了
+是的
+我呢？
+看什么看
+是你的
+还有呢 ？
+我真的很想去
+没有人能看
+看着我吧！
+我这是怎么了呢 ？
+你不是一个人
+那个是他吗？
+这是我的
+在我的 iPhone 上
+我们也要去
+你在说什么
+我就会知道
+他们来说
+也和我
+我不知道你说什么
+我来了！
+我想她
+你给我说
+让我们看啊
+现在，你可以
+我就会给你们看
+把那个给我
+在这一点，我们可以
+你做什么？
+如果你想去
+你真想要我说这个？
+什么事
+我现在过得就好
 
 
 
