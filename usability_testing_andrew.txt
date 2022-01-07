@@ -1,0 +1,29 @@
+Goes straight to 'Start Here' link (great start)
+
+highlighting and buttons come before introduction - confusing and disjointed:
+	Don't understand the buttons
+	highlighted 'white' confusing - just say not highlighted
+	Translations on/off is nice
+This should be the first thing on the page: "just 60 words cover 50% of spoken Chinese" (it got an "oh, wow")
+
+Clicked on 'Word List':
+	Confused by 'you know 3% already'
+	Confused by 'from this article' - "what article"?
+
+Lots of confusion seeing 'Start Here' everywhere -> its an article name, deck name, and call to action.
+
+"I want to add words to deck without leaving the article" - do this as a popover
+
+Takes a long time browsing around the site, but never:
+	Gets to 'Study Now' 
+	Menu: Decks
+	Menu: Words
+
+Wants to play sample sentence without adding it to deck
+Clicking Speakize doesn't do anything
+Don't like sound of "Example" in the middle of the speech. Though, not so bad if example is long.
+
+He never clicks Again|Hard|Good|Easy.
+
+
+	
