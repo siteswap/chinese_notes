@@ -25,5 +25,10 @@ Don't like sound of "Example" in the middle of the speech. Though, not so bad if
 
 He never clicks Again|Hard|Good|Easy.
 
+TODO:
+	Make "60 words cover 50%" first thing on page. Move everything else to bottom.
+	Add to deck from article with button in popover.
+	Create a 'Study Now' link from article page? (with a 1 off how-to on SRS buttons?)
+	Less jarring texttospeech voice?
 
 	
