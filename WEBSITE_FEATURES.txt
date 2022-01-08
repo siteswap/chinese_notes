@@ -1,5 +1,6 @@
 
 	Spend more time with LingQ - try to use it instead of Speakize.
+		- Lingq blog: https://www.lingq.com/blog/chinese-short-stories/
 		- include subtlex rank as a tag?
 		- for your HSK1-4 deck -> get phrases for each word, from Lingq.
 		- Review Mini-stories Chinese: https://www.lingq.com/en/learn-chinese-online/courses/289023/  (Meh, not great for high-frequency stuff)
@@ -21,13 +22,12 @@
 #############################################
 USP 1:  Intelligently create soundcards from any material 
 #############################################
-Ultimate USP: ML optimized learning model
+Ultimate USP: ML optimized learning model (we consume your clicks, we produce your learning content)
 	- optimize for efficiency, AND, optimize for retention/boredom
-	- with this in mind, we should probably offer site for free, but charge for anki exports
+	- produce tiktok-like SRS feed
 #############################################
 
 MUST HAVES:
-
 	Bug - target_words says 3% and doesn' start from wordsknown
 	Input validation: https://docs.djangoproject.com/en/4.0/ref/forms/validation/
 	Bug - handle translation failures better (1000 line limit, 100 article limit).
@@ -37,30 +37,38 @@ MUST HAVES:
 	Bug - Max limits and quotas on everything expensive to run (e.g. anki exports! - quotas table)
 	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
 	Bug - Tables should probably link through User, not RegistrationProfile
+	Bug - RuntimeWarning: line buffering (buffering=1)	
 
 	word_info.html/?additional_info=off   # during SRS mode
-	Update common audio files with nicer voice
 
-	See Andrew's usability feedback.
+USABILITY:
+	Make "60 words cover 50%" first thing on page.
+	Move the 'highlight' stuff elsewhere
+	Translations ON by default
+	'Study Now' button on episode page
+	Move intro text above the article, in to the html (don't worry that it's permanent)
+	Clicking Speakize doesn't do anything
+	Fix the issues with seeing 'Start Here' everywhere
+	DIFFICULT - how to 'Add to Deck' without leaving the article page? 
+		offcanvas - log the request, then populate offcanvas from this request?
+		popovers?
+	Ask for better 60 phrases from teacher on Fiverr
+	Review notes made, anything missed?
 
 AI USP:
 	Optimize choice of phrases ** do this, it's easy and it's a USP
-	Recognise cross training occured (need to log reviews)
+	Recognise cross training occured (need to log reviews), also helps solve the ease issue
 
 NICE
-	Optimize choice of phrases ** do this, it's easy and it's a USP
 	Popover for words in word_list
-	Make the ANKI cards really nice quality
-	Add back to big report: sort by most occurances in article (have full reports in a hidden /stats)
+	Make the ANKI cards really nice quality **USP-1
+	Add the big reports back to hidden /stats
 	Use translations from CE.tsv
 	Word search field
+	Update 20,000 common audio files with nice voice
+	Implement ANKI's full 'ease' model
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
-
-	Solve this "ease" issue - it's a problem for you, it will be a problem for users
-		- Count use in well-practised phrases towards 'done'
-		- Finish implementing 'ease' thing from ANKI
-		- Set ease/interval/already-know in a table (like lingq does) -> v.v. useful for those HSK4 words
 
 FUTURE ROADMAP:
 	AI - Target ease:comprehension value
@@ -99,6 +107,7 @@ Usability Testing:
 	Farm this out as a 'module' called 'words':
 	** THIS IS WHAT'S MISSING TO GIVE ME THAT OVERVIEW **
 	Single page listing all the Words & DeckWords (query_strings in url):
+		- Set difficuly/interval/ Already-Know button
 		- filter by deck
 		- sort by rank
 		- sort by example phrase
