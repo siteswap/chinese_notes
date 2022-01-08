@@ -1,0 +1,85 @@
+
+WRITE UP:
+
+Once cloud is running, write it all up neatly and commit to git (so, Andy & others can follow it):
+		- All initial set up steps
+		- how /static is working & how it gets pushed to GS_BUCKET
+		- How local/CI env works, how local env works with remote DB connection
+		- How/why to run collectstatic
+		- Explain what the different buckets are doing, and commands to clear them etc.
+		** gsutil ls -lR gs://staging.createflashcardapp.appspot.com
+		** gsutil -m rm -r gs://staging.createflashcardapp.appspot.com/
+		** versions > Tools > Debug (see file directory of deployed code)
+		- think about UAT environments and releases in future
+
+https://cloud.google.com/appengine/docs/standard/java/using-cloud-storage
+When you create an app, App Engine creates a default bucket that provides the first 5GB of storage for free:  project-id.appspot.com
+App Engine also creates a bucket that it uses for temporary storage when it deploys new versions of your app. This bucket, named staging.project-id.appspot.com, is for use by App Engine only. Apps can't interact with this bucket.
+The default service account that's associated with your app has all of the permissions required to read and write to buckets in your project.
+
+you need a private key to sign credentials.the credentials you are currently using <class 'google.auth.compute_engine.credentials.Credentials'> just contains a token. see https://googleapis.dev/python/google-api-core/latest/auth.html#setting-up-a-service-account for more details.
+
+django_settings:
+GS_BUCKET_NAME=createflashcardapp_speakize-static
+
+DNS:  Only 1 of 4 ip specified. Why?
+
+What about 'python manage.py collectstatic'
+
+###############################################
+
+Not registering new users due to emailing issue - configure ADMIN approval during BETA stage
+	-> https://cloud.google.com/compute/docs/tutorials/sending-mail
+	-> https://cloud.google.com/appengine/docs/standard/java/mail#Java_Sending_mail
+	-> SMTP backends: https://docs.djangoproject.com/en/4.0/topics/email/#topic-email-backends
+
+These are just the standard config settings in the django send_mail component:
+	https://docs.djangoproject.com/en/4.0/ref/settings/#std:setting-EMAIL_HOST
+So, we still need to configure something in the django app
+
+OPTIONS: https://cloud.google.com/compute/docs/tutorials/sending-mail
+	- a) use SendGrid, Mailgun, or Mailjet:
+	- b) set up a relay service to send email through Google Workspace
+	- c) set up your own email server on an instance
+
+b) Set up a relay service to send email through Google Workspace:
+	https://support.google.com/a/answer/176600
+
+
+Port 587 is the default port for modern web  (https://kinsta.com/blog/smtp-port/ , port 25 is very old and usually blocked)
+
+
+DONE:
+	Added config to django settings:
+		REGISTRATION_DEFAULT_FROM_EMAIL = 'noreply@speakize.com'
+		EMAIL_PORT = 587
+		EMAIL_HOST = 'smtp-relay.gmail.com'
+	Added noreply@speakize.com as an alias for alex@speakize.com in Workspace Admin
+	Added noreply (later resolves to alex) to email-senders list in App>Settings 	https://console.cloud.google.com/appengine/settings/emailsenders?project=createflashcardapp
+	Added a rule in 'SMTP relay service'	https://admin.google.com/ac/apps/gmail/routing   requires either:
+		- SSL verification TLS + SMTP
+		- IP address/range - but how to get the OUTGOING IP address of appengine services? (not guaranteed to be 
+
+I think where I am is:
+	1) Outgoing IP address is either incorrect, or changes not propagated yet. Try again on Friday.
+		- "Note: It can take up to 24 hours for changes to propagate to user accounts. "
+	2) Need to set up SSL certificate between the app and smtp server, since I can't provide EMAIL_HOST_PASSWORD
+
+https://stackoverflow.com/questions/12524617/django-registration-smtpserverdisconnected-error
+	- the disconnect is error message is consistent with a badly configured connection
+
+HSTS - Yes, this is the right thing to do, google says so:
+For security reasons, all applications should encourage clients to connect over https. To instruct the browser to prefer https over http for a given page or entire domain, set the Strict-Transport-Security header in your responses. 
+I guess it's not default in Django since its useful to develop & debug without it
+It's already set for 365 days for the static stuff
+
+###############################################
+Response caching - (why google storage doesn't seem to update when file is overwritten)
+https://cloud.google.com/appengine/docs/standard/python3/how-requests-are-handled#http_strict_transport_security
+
+The Google Frontend, and potentially the user's browser and other intermediate caching proxy servers, will cache your app's responses as instructed by standard caching headers that you specify in the response. 
+
+By default, the caching headers that App Engine static file and directory handlers add to responses instruct clients and web proxies such as the Google Frontend to expire the cache after 10 minutes.
+
+After a file is transmitted with a given expiration time, there is generally no way to clear it out of web-proxy caches, even if the user clears their own browser cache. Re-deploying a new version of the app will not reset any caches. Therefore, if you ever plan to modify a static file, it should have a short (less than one hour) expiration time. In most cases, the default 10-minute expiration time is appropriate.
+###############################################
