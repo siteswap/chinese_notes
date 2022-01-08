@@ -49,19 +49,17 @@ Priority:
 	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
 
 	word_info.html/?additional_info=off   # during SRS mode
-	Paginate target_words -> not now, just raise to 1000 (it's enough to show people)
-	Move chosen phrase more prominently, segment and highlight it
 
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
-	Configure ADMIN approval during BETA stage
+		- Configure ADMIN approval during BETA stage
 
 	When you've got liuxinghuayuan back up on site, improve / optimize choice of phrase:
 		- squeeze in some higher pts words in the example sentences, get some cross-training
 
 	Solve this "ease" issue - it's a problem for you, it will be a problem for users
-		- Copy the 'ease' thing from ANKI
+		- Count use in well-practised phrases towards 'done'
+		- Finish implementing 'ease' thing from ANKI
 		- Set ease/interval/already-know in a table (like lingq does) -> v.v. useful for those HSK4 words
-		- For each word, expose number of reviews in other things
 
 ###############################################
 How to upload your intervals on current cards, for other users?
@@ -82,6 +80,11 @@ IDEA:
 
 	Allow multiple phrases that rotate.
 	Work on understanding phrases like "我有话给你说", "我跟你讲"
+
+#################################
+Hidden reports:
+	https://speakize.com/catalogue/upcoming_words
+	https://speakize.com/catalogue/item/103%20cards/hanzi_report/
 #################################
 
 Usability Testing:
@@ -209,6 +212,9 @@ Future:
 https://www.teachingenglish.org.uk/article/lexical-approach-1-what-does-lexical-approach-look
 #############################################
 Future USP: Smart-SRS
+#############################################
+Kids - speakize.com/kids - focus on top 60 words, all speech based activities, great confidence builder.
+Thought - if half of all speech is these words, then mastering every combination could be key to chunking, and the quick sound processing - if half the sentence is trivial for your ear, then it's like the rest of it is said at half speed. These 60 words are like a micro language in own right.
 #############################################
 
 Phase 2:

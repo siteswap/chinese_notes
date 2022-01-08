@@ -1,25 +1,5 @@
-The site:
-
-1) Targets words by frequency from real-world content relevant to you
-2) Intelligently identify phrases with highest learning value for your current language level
-3) Combine in to AI-enhanced spoken word SRS
-
-Tries to combine efficiency of frequency based SRS deck, with interest of learning in-context of your own materials.
-
-(NB 你好 is #2021)
-
-#############################################
 
 MUST HAVES:
-	1) Fix Admin ProfileRegistration corrupt
-
-	2) SRS doesn't make sense without this:
-	Move chosen phrase more prominently - needs database to persist segmented + translated version
-		-> then can export this to anki
-
-	3) "Start Here" article - starts with 'how to', then includes top 150 word examples
-
-
 	Input validation
 	https://docs.djangoproject.com/en/4.0/ref/forms/validation/
 
@@ -27,11 +7,12 @@ MUST HAVES:
 	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
 	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
 	Bug - phrase field needs a limit
-	Bug - Max limits and quotas on everything expensive to run
+	Bug - Max limits and quotas on everything expensive to run (e.g. anki exports! - quotas table)
 
 	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
 	Bug - Tables should probably link through User, not RegistrationProfile
 
+	Do the basic usability feedback stuff from Andrew & commit 'Start Here' article
 
 I think these 2 things offer a USP:
 	AI:
@@ -41,13 +22,12 @@ I think these 2 things offer a USP:
 
 NICE
 	Popover for words in word_list
-	Button: sort by most occurances in article
+	Button: sort by most occurances in article (have full reports in a hidden /stats)
 	Use translations from CE.tsv
 	Optimize choice of phrases ** do this, it's easy and it's a USP
-	Fix 999999 rank -> call 'unranked'
 	Word search field
 	Turn off loop where no example phrase
-	'Already Know' button for use when importing existing cards
+	'Already Know' button for use when importing existing cards - access via big 'Words' table
 	Target words - include pts for KnownWords as base, then add.
 
 FEATURES:
@@ -64,61 +44,6 @@ FUTURE ROADMAP:
 	Multimedia - pictures, short videos
 	Better stats tracking progress, word reviews etc.
 
-#############################################
-
-If you want to quickly improve your comprehension of spoken Chinese, it's a good idea to start with the most frequently used words first. Did you know that the 60 most frequent words cover half of all spoken Chinese?
-
-So: 
-	1) Click the 'Word List' button, or click the high-lighted words
-	2) Click 'Add to Deck' button to create spoken word flashcards
-	3) Click 'Study Now' to train your skills on these words
-
-To get you started, here are some phrases using the 60 most frequently spoken Chinese words:
-
-你好吗？
-你呢
-你说什么
-你说得对
-什么都没有
-我没去过上海
-我不知道
-就到了
-是的
-我呢？
-看什么看
-是你的
-还有呢 ？
-我真的很想去
-没有人能看
-看着我吧！
-我这是怎么了呢 ？
-你不是一个人
-那个是他吗？
-这是我的
-在我的 iPhone 上
-我们也要去
-你在说什么
-我就会知道
-他们来说
-也和我
-我不知道你说什么
-我来了！
-我想她
-你给我说
-让我们看啊
-现在，你可以
-我就会给你们看
-把那个给我
-在这一点，我们可以
-你做什么？
-如果你想去
-你真想要我说这个？
-什么事
-我现在过得就好
-
-When you're ready, you can start adding your own content. So, if your goal is to follow casual conversation, then TV series dialogue from opensubtitles.org could be a good learning resource. Or perhaps your italki.com lesson notes.
-
-The tool will identify words most relevant to your learning, as well as the most helpful phrases to learn these words in-context with relevant lexical chunks and collocations. It will then create spoken word flashcards so you can train your ear, and use spaced repetition ( https://en.wikipedia.org/wiki/Spaced_repetition) so that you don't forget.
 
 
 
