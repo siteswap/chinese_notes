@@ -18,53 +18,57 @@
 	- Comprehensible Input
 	- with Spaced Repetition
 	- that they Care About
-NB - learn from real world phrases, no individual words, not textbook/hsk/google-translate
 #############################################
-Started out as something for myself, particularly to improve my Chiness listening comprehension:
-	1) Target words in the order that they are used in typical daily speech.
-	2) Learn these words in the context of high-frequency, spoken Chinese phrases. Not as individual words, nor as overly formal textbook examples. Your ear needs to learn to "chunk" which it can't do by listening to individual words. This is especially important in mandarin because there are many homophones and less sound information than other languages.
-	3) Create as much sound and repetition as possible, to really train the ear with a high volume of exposure.
-	4) Optimise learning using SRS principles
-
-** Optimize learning with ML model:
-	- Recognise where word is re-used across phrases. Use this to predict 'ease'. Occasionally sample from 'easy' to judge correctness of model.
-	- Recommend phrases with high learning value (i.e. multiple useful words)
-** Keep flashcards interesting with changing phrases, pictures, short-clips, intelligently balancing ease and difficulty
-
-NB - you can create "phrase" within lingq, and you can listen to it
-It has elements of Memrise and Lingq, but the focus is to optimize learning journey.
-#############################################
-USP 1: Turn notes in to ANKI so you don't forget what you learned
-	-> Don't rely on other people's lessons, create your own from stuff that interests YOU.
+USP 1:  Intelligently create soundcards from any material 
 #############################################
 Ultimate USP: ML optimized learning model
 	- optimize for efficiency, AND, optimize for retention/boredom
 	- with this in mind, we should probably offer site for free, but charge for anki exports
 #############################################
 
-Priority:
-	Bug - handle translation failures better (1000 line limit?)
+MUST HAVES:
+
+	Bug - target_words says 3% and doesn' start from wordsknown
+	Input validation: https://docs.djangoproject.com/en/4.0/ref/forms/validation/
+	Bug - handle translation failures better (1000 line limit, 100 article limit).
 	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
 	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
+	Bug - phrase field needs a limit
+	Bug - Max limits and quotas on everything expensive to run (e.g. anki exports! - quotas table)
 	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
+	Bug - Tables should probably link through User, not RegistrationProfile
 
 	word_info.html/?additional_info=off   # during SRS mode
+	Update common audio files with nicer voice
 
+	See Andrew's usability feedback.
+
+AI USP:
+	Optimize choice of phrases ** do this, it's easy and it's a USP
+	Recognise cross training occured (need to log reviews)
+
+NICE
+	Optimize choice of phrases ** do this, it's easy and it's a USP
+	Popover for words in word_list
+	Make the ANKI cards really nice quality
+	Add back to big report: sort by most occurances in article (have full reports in a hidden /stats)
+	Use translations from CE.tsv
+	Word search field
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
-
-	When you've got liuxinghuayuan back up on site, improve / optimize choice of phrase:
-		- squeeze in some higher pts words in the example sentences, get some cross-training
 
 	Solve this "ease" issue - it's a problem for you, it will be a problem for users
 		- Count use in well-practised phrases towards 'done'
 		- Finish implementing 'ease' thing from ANKI
 		- Set ease/interval/already-know in a table (like lingq does) -> v.v. useful for those HSK4 words
 
-###############################################
-How to upload your intervals on current cards, for other users?
-Ease: implement this so that we don't get ease-hell, or some ‘already know’ button.
-Create deck based on all target words with example phrases.
+FUTURE ROADMAP:
+	AI - Target ease:comprehension value
+	SRS based content recommendation - cover SRS goals, but in more interesting way
+	Rotating phrases (same word, different contexts)
+	Multimedia - pictures, short videos
+	Better stats tracking progress, word reviews etc.
+
 #################################
 Smart SRS 
 	Optional "source" for the notes. We can (later) decide to try doing something smart with it, like embed the video/soundfile etc.
@@ -80,6 +84,7 @@ IDEA:
 
 	Allow multiple phrases that rotate.
 	Work on understanding phrases like "我有话给你说", "我跟你讲"
+
 
 #################################
 Hidden reports:
@@ -202,10 +207,24 @@ Usability Testing:
 			- just deploy the json key with the app (though, maybe create a 'sound_file_bucket_access' user just for this)
 
 	Make look better:
-		- put the top word_info elements in a container, decks in a list lower down
 		- related words should be list of cards, not a table
 		- anki card info (more info on the back!) - ask a fiverr ANKI expert to design them
 
+
+#############################################
+Started out as something for myself, particularly to improve my Chiness listening comprehension:
+	1) Target words in the order that they are used in typical daily speech.
+	2) Learn these words in the context of high-frequency, spoken Chinese phrases. Not as individual words, nor as overly formal textbook examples. Your ear needs to learn to "chunk" which it can't do by listening to individual words. This is especially important in mandarin because there are many homophones and less sound information than other languages.
+	3) Create as much sound and repetition as possible, to really train the ear with a high volume of exposure.
+	4) Optimise learning using SRS principles
+
+** Optimize learning with ML model:
+	- Recognise where word is re-used across phrases. Use this to predict 'ease'. Occasionally sample from 'easy' to judge correctness of model.
+	- Recommend phrases with high learning value (i.e. multiple useful words)
+** Keep flashcards interesting with changing phrases, pictures, short-clips, intelligently balancing ease and difficulty
+
+NB - you can create "phrase" within lingq, and you can listen to it
+It has elements of Memrise and Lingq, but the focus is to optimize learning journey.
 #############################################
 Future:
 	Use corpus to define most useful lexical chunks and collocations
