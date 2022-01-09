@@ -13,6 +13,12 @@
 		- review: https://www.youtube.com/watch?v=SxpoDqSdQrs
 			- user generated courses are poor and patchy
 	 Fleex, a service for learning English via subtitled movies. Based on content from Netflix, Fleex has expanded to also include video content from YouTube, TED Talks, and custom video files.
+	Lingwave:
+		https://www.facebook.com/lingwavechinese/
+		They started their Facebook page in May 2015, Kickstarter in 14 March 2016 - 6 years of development?!
+		Some content:
+		https://www.lingwave.com/2021/08/13/lesson-1-first-experience-in-beijing/
+		- guessing they couldn't deliver on all the promises and it's not in active development
 
 #############################################
 3 Principles:
@@ -25,10 +31,10 @@ USP 1:  Intelligently create soundcards from any material
 Ultimate USP: ML optimized learning model (we consume your clicks, we produce your learning content)
 	- optimize for efficiency, AND, optimize for retention/boredom
 	- produce tiktok-like SRS feed
+	- ML model to predict 'ease' to optimize ease:value
 #############################################
 
 MUST HAVES:
-	Bug - target_words says 3% and doesn' start from wordsknown
 	Input validation: https://docs.djangoproject.com/en/4.0/ref/forms/validation/
 	Bug - handle translation failures better (1000 line limit, 100 article limit).
 	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
@@ -41,32 +47,25 @@ MUST HAVES:
 
 	word_info.html/?additional_info=off   # during SRS mode
 
-USABILITY:
-	Make "60 words cover 50%" first thing on page.
-	Move the 'highlight' stuff elsewhere
-	Translations ON by default
-	'Study Now' button on episode page
-	Move intro text above the article, in to the html (don't worry that it's permanent)
-	Clicking Speakize doesn't do anything
-	Fix the issues with seeing 'Start Here' everywhere
-	DIFFICULT - how to 'Add to Deck' without leaving the article page? 
-		offcanvas - log the request, then populate offcanvas from this request?
-		popovers?
-	Ask for better 60 phrases from teacher on Fiverr
-	Review notes made, anything missed?
-
 AI USP:
 	Optimize choice of phrases ** do this, it's easy and it's a USP
 	Recognise cross training occured (need to log reviews), also helps solve the ease issue
+	'Sell' these AI features in the intro and landing page
+	Produce 10 tiktok 'micro-dialogues' every day -> the smallness means we can better micro-target them
 
 NICE
-	Popover for words in word_list
+	'Add to Deck' without leaving the Notes page
 	Make the ANKI cards really nice quality **USP-1
+	Ask for better 60 phrases from teacher on Fiverr, 10 tiktok 'micro-dialogues' every day 
+		-> the smallness means we can better micro-target them
 	Add the big reports back to hidden /stats
 	Use translations from CE.tsv
 	Word search field
 	Update 20,000 common audio files with nice voice
 	Implement ANKI's full 'ease' model
+	Highlight usage in reports
+	Create 'episode' types: text|srt|intro - intro will have all this StartHere bumf
+	Toggle translations on/off properly
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
 
@@ -92,8 +91,6 @@ IDEA:
 
 	Allow multiple phrases that rotate.
 	Work on understanding phrases like "我有话给你说", "我跟你讲"
-
-
 #################################
 Hidden reports:
 	https://speakize.com/catalogue/upcoming_words
@@ -239,8 +236,6 @@ Future:
 	Use corpus to define most useful lexical chunks and collocations
 https://www.teachingenglish.org.uk/article/lexical-approach-1-what-does-lexical-approach-look
 #############################################
-Future USP: Smart-SRS
-#############################################
 Kids - speakize.com/kids - focus on top 60 words, all speech based activities, great confidence builder.
 Thought - if half of all speech is these words, then mastering every combination could be key to chunking, and the quick sound processing - if half the sentence is trivial for your ear, then it's like the rest of it is said at half speed. These 60 words are like a micro language in own right.
 #############################################
@@ -249,10 +244,7 @@ Phase 2:
 
 - Explainer video: https://www.fiverr.com/ricky8001/a-modern-whiteboard-animation-video-in-hd
 
--  'Already know' button at top -> creates card with 30-day interval
-- Whole line translations available on tooltip, or similar easily accessed
 - Words with deleted decks e.g. 臭 (create default 'no deck'?)
-- info page to open in side window
 - Use subtlex translations (better)
   
 - Give me some useful stats to define my goal and track my progress
@@ -275,7 +267,7 @@ Account/Profile/Settings page (when/if you add payments)
 LATER:
 Reading/hanzi focused features
 Content recommender / syllabus gen - "For a word to stick, I need to recognize it in another completely different context"
-A way to "play" SRT files in a browser window at same speed of netflix
+A way to "play" SRT files in a browser window at same speed as netflix - meh, it won't be synced like fleex though
 
 Store segmentation results in POSTGRE:
 	- postgre has an ArrayField for storing lists and multi-dimensional arrays! -> could be very efficient for storing list-of-segmented-lines.
@@ -328,7 +320,6 @@ Getting users:
 Next :
 	Pull out high coverage 'named entities' like character names 
 	Enable custom deck creation - create one for reading new chars (e.g. 愤怒)
-	Tidy up the code.
 	Ask fiverr html dev to produce something that will 'color' a sohu.com page with known/review_due/unknown words + cover over
 	For the higher-frequency words, start to introduce "production" questions, s.t. say, 50% of your passive vocab, is active.
 	Merge both english and Chinese SRT files for better translation than google translate
@@ -339,41 +330,17 @@ Next :
 	Sanitize 'title' of Catalogue additions - html in there breaks everything!
 	Reading - add load of stuff about datascience / use that to create a syllabus.
 	Get django contractor to look at it
-	Auto-include phrases.
-	Load word_info (back of card) much faster!
-	New user may need <user>/audio dir created
-	Factor out 'deck' as a package
-	Word_info field should be collapsable		
-	Episode level option to turn on/off line level translations
+	Factor out 'deck' as a package	
 	Add homophones as a 'Content' report, maybe later as a field
 	Have something to pull out "names of characters & places", these shouldn't count towards coverage. They should feature in summary of report.
 	From the episode page, be able to add the word.example.line to relevant deck.
-	inline translations on/off button
 	Include speaking/production cards ... somehow ... focus on the most frequent constructions?
-	Fix crappy translations e.g. 事业
-	READ: https://aws.amazon.com/blogs/machine-learning/powering-language-learning-on-duolingo-with-amazon-polly/
-	'Again' not always working - other day's cards will have an earlier start
 	Series level report -> make sense to have some groups / folders to 
 		- 370 words (order by series occurances) gets you to 95%.
 		- So, do ~40 cards per show and you're over 95% (probably higher because some of these 'words' are obvious)
 		- What if you gave 50/50 priority weighting to show vs subtlex?
 		- Load 10 more episodes
 		- you can get to 93% fairly quickly
-	Try an 'Already know' button to add words starting with interval of 30 days
-	Implement anki 'ease' model? (can estimate starting value for new words) 
-		- ease might reflect how much actual novelity there is, as well as how much coverage its getting from other sources
-	Highlight target words differently from low value words. Have a 'target set' of 30 top value words for the episode!
-	django/bootstrap needs to either 1) have all the data upfront (though, potentially hidden), or 2) refresh the whole page
-	( see the bootstrap example dashboards -> the sidebar refreshes, unlike an angular page. )
-	Options:
-		- Try making catalogue load faster
-		- Pre-load all ~1000 word_info pages 
-		- Paginate catalogue to make it load faster (also would help pre-loaded word_info pages)
-	Dynamically update a single field (ajax?)
-		- View word_info in https://getbootstrap.com/docs/5.1/components/offcanvas/
-		- Present word_info nicely - make it load faster!
-		- https://stackoverflow.com/questions/3711349/django-and-query-string-parameters
-	Have a 'words' page (searchable) with 'upcoming words' and 'target words' ?
 	https://zhdict.net/  ??
 	- 6 "styles" of deck study:
 		- word+sound
@@ -386,29 +353,20 @@ Next :
 		https://developers.google.com/machine-learning/guides/rules-of-ml
 	All word-reports should come with some sort of cumulative_coverage stats / burn down / so you can see what you're aiming for. You can see that, say, you only need 2000 hanzi to read 99%, or 3000 words to hear 95% etc. Same goes for the content you are watching - provide stats on it's usefulness and relevance.
 	Get 60Mb of subtitles from movies/series from opensubtitles.com, train some basic tensor-flow language models, work your way up to a transformer model.
-	CONSIDER WRITTEN ENGLISH ALONGSIDE, IT MIGHT BE VERY EFFECTIVE:
-		- https://www.youtube.com/watch?v=c8LAwozrXPo
-	瞎子 blind (search based on 害 using zhongwen.com)
-	Fun - 'earn' different themes - darkula, dota, mountains, different-google-voices
-	Provide hanzi breakdown in to radicals
+
 	Freelancer - You should review portfolios and find a few teams/individuals which  you think are good prospects. Create project, state your budget, invite your picks, you can ask them extra questions before you accept
 	'仁' gets cut off of line 65 in Scissor_Seven/S1/E1.txt - FIXME
-	老板来份牛杂  - ictclas and google both split this same way, but lingq somehow gets 牛杂 as single word. But then, 牛杂 isn't even in to 100k subtlex words.
-	https://docs.python.org/3/tutorial/classes.html , using __init__, Modules vs Packages?
-	Word_info should include top 'sound alikes' e.g. 前，钱
-	Dont do 'Already know' button -> not necessary, as actually very few trivial words, cleaner just to add cards for them.
-	Class based view for wordlists?
+
 	Bring back the reference count 'in_srcs'
 	NB - subtlex is maybe the wrong measure to use for individual hanzi - maybe CHR frequency is more relevant?
 	Drive the revision from subtlex rankings, regardless of what cards have already been made
-	Analyse and drill common sentence constructions, so you can keep up with conversation on TV
-	For a given TV-series, provide the word needed for 90%, 95%,98%,99% comprehension.
+
 	Need much better dictionary than bulk_word_translations.tsv
 	Include notes you've already made on the anki card - maybe in the concordance?
-	Create links from one note to other related notes.
+
 	巧 - has very different meanings whether it is an adverb or adjective. These 2 cases should be treated differently.
 	Add italki notes (starting from 18_03_2021), all of meteor garden.
-	Create browsable word-lists (like spotify play-lists) that I can export decks from
+
 	Filter upcoming_words report on deck_name (so you can revise specific shows)
 	Catalogue summary_stats (word count, coverage, new words, new hanzi, review target, new target)
 	Custom user tracked words (SRS - just track 'last time seen'):
@@ -543,7 +501,6 @@ Pull to the top likely proper names that you only need once - otherwise, these l
 		- Olly Richards says you do NEED a SYSTEM to know that you are increasing your vocabulary everyday (don't be unfocused and just trust)
 		- Buy the CSLPOD content? (site seems down, or they aren't managing it at all well)
 		- Get a wordpress scrolling front page like ： https://www.lingwave.com/
-		- Research how to get netflix subtitles without lingq
 		- 你要 vs 你药 - totally homophonic, so you absolutely must be learning words in context with useful colocations (like, 疼，医院，医生）
 		- Try hugging-face autonlp https://huggingface.co/autonlp
 		- Google "字幕数据库" - there are many subtitle websites, you can download from these!

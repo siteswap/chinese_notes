@@ -1,11 +1,10 @@
-If you want to quickly improve your comprehension of spoken Chinese, it's a good idea to start with the most frequently used words first. Did you know that the 60 most frequent words cover half of all spoken Chinese?
+Did you know that the 60 most frequent words cover half of all spoken Chinese?
 
-So: 
-	1) Click the 'Word List' button, or click the high-lighted words
-	2) Click 'Add to Deck' button to create spoken word flashcards
-	3) Click 'Study Now' to train your skills on these words
+To quickly improve your comprehension, it's a good idea to start with the most frequent words first. To get you started, below are some phrases using the 60 most frequently spoken Chinese words.
 
-To get you started, here are some phrases using the 60 most frequently spoken Chinese words:
+1) Select the 'Word List' button, or click the highlighted words1
+2) Select 'Add to Deck' button to create spoken word flashcards
+3) Select 'Study Now' to train your listening skills on these words
 
 你好吗？
 你呢
@@ -48,6 +47,6 @@ To get you started, here are some phrases using the 60 most frequently spoken Ch
 什么事
 我现在过得就好
 
-When you're ready, you can start adding your own content. So, if your goal is to follow casual conversation, then TV series dialogue from opensubtitles.org could be a good learning resource. Or perhaps your italki.com lesson notes.
+When you're ready, you can start adding your own content, like TV series dialogue from opensubtitles.org or lesson notes from italki.com .
 
-The tool will identify words most relevant to your learning, as well as the most helpful phrases to learn these words in-context with relevant lexical chunks and collocations. It will then create spoken word flashcards so you can train your ear, and use spaced repetition ( https://en.wikipedia.org/wiki/Spaced_repetition) so that you don't forget.
+Speakize will highlight words most relevant to your learning, and find helpful phrases to learn these words in-context, with relevant lexical chunks and collocations. It will then create spoken word flashcards so you can train your ear, and use spaced repetition so that you don't forget.
