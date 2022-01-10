@@ -247,7 +247,7 @@ It has elements of Memrise and Lingq, but the focus is to optimize learning jour
 #############################################
 Future:
 	Use corpus to define most useful lexical chunks and collocations
-https://www.teachingenglish.org.uk/article/lexical-approach-1-what-does-lexical-approach-look
+	https://www.teachingenglish.org.uk/article/lexical-approach-1-what-does-lexical-approach-look
 #############################################
 Kids - speakize.com/kids - focus on top 60 words, all speech based activities, great confidence builder.
 Thought - if half of all speech is these words, then mastering every combination could be key to chunking, and the quick sound processing - if half the sentence is trivial for your ear, then it's like the rest of it is said at half speed. These 60 words are like a micro language in own right.
@@ -282,7 +282,7 @@ Reading/hanzi focused features
 Content recommender / syllabus gen - "For a word to stick, I need to recognize it in another completely different context"
 A way to "play" SRT files in a browser window at same speed as netflix - meh, it won't be synced like fleex though
 
-Store segmentation results in POSTGRE:
+Store segmentation results in POSTGRESQL:
 	- postgre has an ArrayField for storing lists and multi-dimensional arrays! -> could be very efficient for storing list-of-segmented-lines.
 	- postgre has HStoreField is just mapping string to string and does not support nested structure
 	- JSONField which come as built-in Posgres Field in Django 1.9+ and posgres 9.4+

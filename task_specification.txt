@@ -1,12 +1,10 @@
 
-Background: 
-I want to do some lexical-analysis research, and I need to build a corpus from TV-series subtitles
-
+Background: I want to do some lexical-analysis research, and I need to build a corpus from Chinese TV-series subtitles
 
 I would like:
 
 	- A python script that:
-		- takes arg tv_series_names as a list of strings like  'Meteor Garden','Here to Heart'
+		- takes arg tv_series_names as a list of strings like 'Meteor Garden','Here to Heart'
 		- takes arg max_episodes as an integer
 		- initializes a postgresql database
 		- creates 4 tables:
@@ -18,7 +16,7 @@ I would like:
 			- download max_episodes number of SRT files from opensubtitles.com 
 				(NB: they have an API: https://opensubtitles.stoplight.io/docs/opensubtitles-api )
 			- strip out the timestamps and blank lines from the srt files
-			- tokenize each line (i.e. split on whitespace) in the file to get a list of words
+			- tokenize each line using https://pypi.org/project/PyNLPIR/ 
 			- insert the data in to tables Series, Episode, Episode_line 
 		- Runs a word count on the whole database and inserts results in to Words tables
 		- Create a postgre function get_lines_containing(target_word) that will:
@@ -26,6 +24,16 @@ I would like:
 			- the function must not table scan the whole of Episode_line.
 		- Link the tables with relevant keys to make get_lines_containing(target_word) run quickly even when Episode_line contains millions of rows.
 
-	The python script should be in a git repo that I can clone to my desktop and run
+	The python script should be in a git repo that I can clone to my desktop and run.
+
+
+I think Episode_line table could look something like this:
+
+series_id	episode_id	line_number	text (ArrayField)
+0	1	    	0		['你', '叫', '什么', '名字']
+0	1		1		['我', '叫', '道明']
+0	1		2		['我', '很', '开心', '认识', '你']
+0	2		0		['糟糕']
+0	2		1		['什么', '都', '发生', '了']
 
 
