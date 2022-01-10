@@ -53,7 +53,12 @@ AI USP:
 	'Sell' these AI features in the intro and landing page
 	Produce 10 tiktok 'micro-dialogues' every day -> the smallness means we can better micro-target them
 
+Take all the thinking out of it (option to override, sensible default):
+	Automatically suggest additions and content if you don't have your own
+
 NICE
+	Auto-play all flashcards under /experimental - that's ZERO friction!
+	Updating phrase takes you out of SRS :(
 	Make the ANKI cards really nice quality **USP-1
 	Ask for better 60 phrases from teacher on Fiverr 
 	10 tiktok 'micro-dialogues' every day -> the smallness means we can better micro-target them

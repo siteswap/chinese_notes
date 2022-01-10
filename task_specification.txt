@@ -1,7 +1,9 @@
 
+Hi, is this something you could do?
+
 Background: I want to do some lexical-analysis research, and I need to build a corpus from Chinese TV-series subtitles
 
-I would like:
+This is the spec:
 
 	- A python script that:
 		- takes arg tv_series_names as a list of strings like 'Meteor Garden','Here to Heart'

@@ -1,0 +1,90 @@
+
+1) Explore the site unprompted
+
+Start - 19:10
+
+Goes to 'Start Here' though tempted to click along the menus
+
+Woah, that's a lot of incomprehensible chinese chars
+
+I won't 'add to deck' because I don't know what a deck is
+
+I'd like to 'Study Now' because I know about that.
+
+He adds some english to a new notes
+
+"im looking to see how to start"
+
+BUG - Server Error 500 - by hitting WordList with now chinese text.
+
+Tentatively adds 1 word in most frequent words report
+
+Puzzled by "whats hard and whats easy" is this feedback?
+
+Goes back to most frequent words
+ -  do I have to select all of these individually? not fun.
+
+So, what do I have
+Useful list of words, but no english translation. Why? 
+
+Gets lost when updating phrase (no buttons)
+
+Clicks 'Speakize' but thinks he's stuck.
+
+I don't understand the utility of all thse 1, 2, 3 steps -> maybe some graphics
+
+keeps adding only english to new items
+
+
+2) Quiz about basic Value Proposition
+
+Duolingo is spoonfed in to you
+It's super obvious
+No big red 'go here'
+
+The steps 1,2,3 text is very clear, BUT, my eye is draw directly to buttons. I want to press buttons first, only after that failed did I back to read the text.
+
+####################################
+
+New idea:
+
+1) Go straight to flashcards 
+2) Very first text should introduce "as you go"
+
+"how did you find that?"  Easy | Hard
+
+3) Graphics (preferred by Jared as videos too slow for him) as you go, like the duolingo experience.
+Other people like a 60s video on the landing page
+
+Backend would still look same, but the initial bit needs more explanation about what it is.
+
+Start with flashcards (inc instructions)
+Then, maybe some easier ways to import content. Pre-include some content if possible.
+
+Many of the pages are ugly looking, compared to pretty DuoLingo.
+
+Jared likes the gamification of DuoLingo. He uses it for brain training, not worried about actual skills.
+
+####################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
