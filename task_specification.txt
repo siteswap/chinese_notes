@@ -1,0 +1,31 @@
+
+Background: 
+I want to do some lexical-analysis research, and I need to build a corpus from TV-series subtitles
+
+
+I would like:
+
+	- A python script that:
+		- takes arg tv_series_names as a list of strings like  'Meteor Garden','Here to Heart'
+		- takes arg max_episodes as an integer
+		- initializes a postgresql database
+		- creates 4 tables:
+			- Series
+			- Episode
+			- Episode_line (lines should be tokenized in to a list of words)
+			- Words
+		- For each tv series name:
+			- download max_episodes number of SRT files from opensubtitles.com 
+				(NB: they have an API: https://opensubtitles.stoplight.io/docs/opensubtitles-api )
+			- strip out the timestamps and blank lines from the srt files
+			- tokenize each line (i.e. split on whitespace) in the file to get a list of words
+			- insert the data in to tables Series, Episode, Episode_line 
+		- Runs a word count on the whole database and inserts results in to Words tables
+		- Create a postgre function get_lines_containing(target_word) that will:
+			- efficiently return all Episode_line row with Series and Episode information, that contain target_word.
+			- the function must not table scan the whole of Episode_line.
+		- Link the tables with relevant keys to make get_lines_containing(target_word) run quickly even when Episode_line contains millions of rows.
+
+	The python script should be in a git repo that I can clone to my desktop and run
+
+

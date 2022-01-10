@@ -54,18 +54,22 @@ AI USP:
 	Produce 10 tiktok 'micro-dialogues' every day -> the smallness means we can better micro-target them
 
 NICE
-	'Add to Deck' without leaving the Notes page
 	Make the ANKI cards really nice quality **USP-1
-	Ask for better 60 phrases from teacher on Fiverr, 10 tiktok 'micro-dialogues' every day 
-		-> the smallness means we can better micro-target them
+	Ask for better 60 phrases from teacher on Fiverr 
+	10 tiktok 'micro-dialogues' every day -> the smallness means we can better micro-target them
 	Add the big reports back to hidden /stats
 	Use translations from CE.tsv
 	Word search field
+	After finishing all decks, start going through WordReport, suggesting to add new-phrases (optimized by learning value of course).
+	New content suggestions with 1-click import
+	'Add to Deck' without leaving the Notes page (ajax)
 	Update 20,000 common audio files with nice voice
+	Paginate long Notes files for faster rendering
 	Implement ANKI's full 'ease' model
 	Highlight usage in reports
 	Create 'episode' types: text|srt|intro - intro will have all this StartHere bumf
 	Toggle translations on/off properly
+	If you've got no decks, and got no notes, insert the 'Start Here' article in user's database.
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
 
@@ -91,6 +95,15 @@ IDEA:
 
 	Allow multiple phrases that rotate.
 	Work on understanding phrases like "我有话给你说", "我跟你讲"
+
+#################################
+Start opensubs with top 20 tv-series / 1000 srt files / 
+	- 'here to heart', 'liuxing gongyuan', 18 others (not court dramas!)
+Contact OpenSubtitles API - can we just use VIP membership? 1000 downloads per 24hours?
+Costs 10EUR for the year
+They have 48,000 simplified Chinese subtitles (@ around 50kb each -> 2.5Gb of data. We can fit that in to our postgres DB).
+OR, do 1000 titles, for 50Mb, which is ~4,000,000 words -> should still be quite good stats from that.
+https://opensubtitles.stoplight.io/docs/opensubtitles-api/ZG9jOjI3NTQ2OTAy-getting-started
 #################################
 Hidden reports:
 	https://speakize.com/catalogue/upcoming_words

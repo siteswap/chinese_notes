@@ -1,0 +1,18 @@
+SYNTAX_ANALYSIS:  
+
+First 5000 requests: FREE
+
+Next 1 million requests:
+$0.1c / request (i.e. 1 USD per 1000 requests)
+Large documents charge for 1 request per 1000 unicode characters
+
+So, segmenting 1000 TV-shows should cost 8 USD:
+	1000 episodes  x  ~8requests/episode  x  $0.1c
+
+Src: https://cloud.google.com/natural-language/pricing
+
+
+TRANSLATION:
+
+
+TEXT-TO-SPEECH:
