@@ -1,6 +1,10 @@
 Run 'psql -U postgres' from any cmd line or pgAdmin for graphical interface
 
-DATABASE_URL=postgres://catalogue-postgre-1-superuser:pa33w0rd@local:5432/catalogue
+DATABASE_URL=postgres://catalogue-postgre-1-superuser:pa33w0rd@localhost:5432/catalogue
 
 Adding new users:  https://www.guru99.com/postgresql-create-alter-add-user.html
 Compare to cloud postgresql:  https://console.cloud.google.com/sql/instances/catalogue-postgre-1/users?project=createflashcardapp
+
+python manage.py migrate
+
+python manage.py createsuperuser
