@@ -19,7 +19,9 @@
 		Some content:
 		https://www.lingwave.com/2021/08/13/lesson-1-first-experience-in-beijing/
 		- guessing they couldn't deliver on all the promises and it's not in active development
-
+#############################################
+blog.speakize.com is better than speakize.com/blog 
+blog.speakize.com lets us put a stand alone site here so it doesn't interfere with the main site
 #############################################
 3 Principles:
 	- Comprehensible Input
@@ -44,6 +46,8 @@ MUST HAVES:
 	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
 	Bug - Tables should probably link through User, not RegistrationProfile
 	Bug - RuntimeWarning: line buffering (buffering=1)	
+	Bug - Server Error 500 - by hitting WordList with now chinese text.
+	Bug - 'Again' button cards are not going to the back, they are repeating too soon.
 
 	word_info.html/?additional_info=off   # during SRS mode
 
@@ -58,10 +62,8 @@ Take all the thinking out of it (option to override, sensible default):
 
 NICE
 	Auto-play all flashcards under /experimental - that's ZERO friction!
-	Updating phrase takes you out of SRS :(
 	Make the ANKI cards really nice quality **USP-1
 	Ask for better 60 phrases from teacher on Fiverr 
-	10 tiktok 'micro-dialogues' every day -> the smallness means we can better micro-target them
 	Add the big reports back to hidden /stats
 	Use translations from CE.tsv
 	Word search field
@@ -113,6 +115,13 @@ https://opensubtitles.stoplight.io/docs/opensubtitles-api/ZG9jOjI3NTQ2OTAy-getti
 Hidden reports:
 	https://speakize.com/catalogue/upcoming_words
 	https://speakize.com/catalogue/item/103%20cards/hanzi_report/
+#################################
+Per card Settings:
+	- Speed (could speed up as getting easier)
+	- Show Hanzi (for new hanzi)
+	- Own notes / over-ride translation etc.
+	- Phrase only
+From a Lexical approach, it's probably BETTER to have just phrases. We are still very *word* focused.
 #################################
 
 Usability Testing:

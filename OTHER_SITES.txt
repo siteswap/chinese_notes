@@ -1,5 +1,13 @@
 
 ###################
+##### DuoLingo #####
+###################
+
+DuoLingo does not use SRS:
+
+https://blog.duolingo.com/review-exercises-help-measure-learner-recall/
+
+###################
 ####### LingQ ######
 ###################
 
