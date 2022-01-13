@@ -1,0 +1,42 @@
+
+This is the new code on branch refactor-highlighting querying episode 13 of meteor garden.
+Running on my desktop with local postgres database.
+The response has 124840 lines of html (including empty lines).
+The downloaded html is 3KB on disk.
+
+SUMMARY:
+Build response object from database: 1.3 seconds
+Render object to string: 1.6 seconds
+Desktop browser rendering: 5 seconds
+
+2022-01-13 13:16:58.532028 episode rcvd
+2022-01-13 13:16:59.845380 episode response generated
+2022-01-13 13:17:01.446361 episode response rendered
+[13/Jan/2022 13:17:01] "GET /catalogue/item/Meteor%20Garden%20S1%20E13/ HTTP/1.1" 200 7303189
+
+2022-01-13 13:17:56.114533 episode rcvd
+2022-01-13 13:17:57.401017 episode response generated
+2022-01-13 13:17:59.029861 episode response rendered
+[13/Jan/2022 13:17:59] "GET /catalogue/item/Meteor%20Garden%20S1%20E13/ HTTP/1.1" 200 7303189
+
+2022-01-13 13:19:51.802615 episode rcvd
+2022-01-13 13:19:53.106030 episode response generated
+2022-01-13 13:19:54.683198 episode response rendered
+[13/Jan/2022 13:19:54] "GET /catalogue/item/Meteor%20Garden%20S1%20E13/ HTTP/1.1" 200 7303189
+
+~4 seconds from here for browser to finish rendering and go to #ref
+http://127.0.0.1:8000/catalogue/item/Meteor%20Garden%20S1%20E13/#500
+
+2022-01-13 13:21:13.617229 episode rcvd
+2022-01-13 13:21:14.987662 episode response generated
+2022-01-13 13:21:16.654796 episode response rendered
+[13/Jan/2022 13:21:16] "GET /catalogue/item/Meteor%20Garden%20S1%20E13/ HTTP/1.1" 200 7303189
+
+~5 seconds to render
+
+2022-01-13 13:22:01.569242 episode rcvd
+2022-01-13 13:22:02.878638 episode response generated
+2022-01-13 13:22:04.456288 episode response rendered
+[13/Jan/2022 13:22:04] "GET /catalogue/item/Meteor%20Garden%20S1%20E13/ HTTP/1.1" 200 7303189
+
+Exactly 5 seconds to render

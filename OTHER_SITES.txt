@@ -1,5 +1,25 @@
 
 ###################
+#### Daily Chinese ###
+###################
+
+Try this: https://www.dailychinese.app/
+
+
+
+###################
+#### ANKI plugins ####
+###################
+
+ANKI has a plugin where you give it a spreadsheet of phrases, it will automatically add pinyin and translate and create a flashcard deck.
+This guy talks about it at 08:20
+https://www.bilibili.com/video/BV1pa41167ag?from=search&seid=9481521359505658541&spm_id_from=333.337.0.0
+
+USPs of your thing:
+	- Speaking
+	- Frequency targetting
+	- Automatic finding of relevant phrases, if you don't have a syllabus
+###################
 ##### DuoLingo #####
 ###################
 
@@ -126,5 +146,10 @@ no transcript / subtitles so you if they say something you don't understand, the
 Like most sources, the topic/vocab/phrases don't fit into any clear framework for progression.
 
 
+###################
+##### lingumi  #######
+###################
 
+Teaches Kids English, with no English teacher or parent!
+https://lingumi.com/
 

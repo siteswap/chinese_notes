@@ -1,0 +1,23 @@
+
+A python script that:
+	- takes arg tv_series_names as a list of strings like 'Meteor Garden','Here to Heart'
+	- takes arg max_episodes as an integer
+	- For each tv series name:
+		- download max_episodes number of SRT files from opensubtitles.com 
+				(NB: they have an API: https://opensubtitles.stoplight.io/docs/opensubtitles-api )
+		- strip out the timestamps and blank lines from the srt files
+
+
+### On my side:
+
+content = Content.objects.create(user=common, title="series::episode", text_body=text)
+content.create_content_lines()
+
+Run insert/upload with:
+$env:GOOGLE_CLOUD_PROJECT="createflashcardapp"
+$env:USE_CLOUD_SQL_AUTH_PROXY="true"
+python manage.py shell
+
+Interact with this data like:
+We could just have an optional 'include_common' argument to get_segmented_sentences(self)
+This could be passed as a query_string to word_list and word_info
