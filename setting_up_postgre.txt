@@ -8,3 +8,11 @@ Compare to cloud postgresql:  https://console.cloud.google.com/sql/instances/cat
 python manage.py migrate
 
 python manage.py createsuperuser
+
+Use: 
+	Winkey+R
+	services.msc
+	https://tableplus.com/blog/2018/10/how-to-start-stop-restart-postgresql-server.html
+
+( Don't use this:  pg_ctl -D "C:\Program Files\PostgreSQL\14\data" stop )
+
