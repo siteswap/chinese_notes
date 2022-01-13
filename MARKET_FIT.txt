@@ -2,9 +2,9 @@
 LISTEN TO THIS GUY:  https://www.youtube.com/watch?v=0LNQxT9LvM0
 
 Phase 1 - x30 iterations of functional prototypes and talking to customers & UX testing sessions
-Phase 2 - Launch, aim for product-market fit based on returning usage metrics
+Phase 2 - Launch, aim for product-market fit based on returning usage metrics (keep prototype iterations in background)
 
-	- Monetization is a much easier problem than product-market fit)
+	- Monetization is a much easier problem than product-market fit
 	- Focus on getting a functional prototype in front of users ASAP (don't worry about scaling)
 		- use throwaway code
 	- Fast prototyping and high-iterations to find the "hidden needs"
@@ -28,17 +28,24 @@ Most helpful tools:
 
 When Launch one of these prototypes:
 	MVP: Mimimum **Remarkable** Product
-	Launch as soon as the product is better than what's out there. But don't wait til it's perferct or finished.
+	Launch as soon as the product does 1 thing better than anyone else.
 
 Prioritizing:
 	Don't optimize for cost x benefit
 	Optimize for Learning value - learning tasks change your priorities
 
-When have I acheived product-market fit:
+Product-market fit definition
 	1. Returning usage (Day 1, 3, 7, 30 retention)
 	2. NPS (Should be > 50) "How likely to recomend to recommend this?"
 	3. Paying customer renewal rates
 
+Scaling the team:
+	Don't scale past 20 people before finding product-market fit
+	Good to know everything that is going on, for making good decisions
+	Once you've found product-market fit, scale aggressively to capture it before others do
+
+When to raise a round:
+	Early 'traction' phase
 
 ##################################################################
 Ask Charles (of LSB) about this "product-market fit", also ask your Morgan Stanley millionaire guy.
