@@ -1,0 +1,27 @@
+
+CC-CEDICT (downloadable public-domain Chinese-English dictionary)
+	- Attribution-ShareAlike 3.0 Unported
+	- You can copy this, so long as you attribute it
+	- But, if you modify/remix, the new thing must also be under same license
+	- Ssing a ShareAlike photo as a separate element within it does not require original materials in the larger work to be ShareAlike or compatible.
+	-> So, don't try to adapt the stuff, and then prevent others from copying it. 
+	-> But, I don't care if people copy the content of the site, it's the tool/service that is being sold.
+
+Tatoeba is CC attribution license: https://tatoeba.org/en/about
+	Basically, you can do what ever you like, as long as you credit the source
+
+Subtlex is also CC attribution license:
+	Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+
+Opensubtitles only specifies "Commercial use prohibited". However, it's not free to redistribute film subtitles b/c its a "derivative work":
+	https://opensource.stackexchange.com/questions/1663/when-is-making-a-subtitle-file-for-a-commercial-movie-legal
+Reverso-context seems to cover itself by only giving 5 lines of context, and only stating source as "Subtitles of movies/series"
+	https://context.reverso.net/translation/legal	
+
+Quoting is ok if it is "fair use": https://www.janefriedman.com/sample-permission-letter/
+	- 200-300 words from a book-length work was guideline
+	- if it doesn't reduce likelihood of original being sold/bought
+	- I think quoting a single line from a film should be fine, BUT DONT MAKE THE WHOLE THING ACCESSIBLE!
+
+Check out all the resources this thing uses:
+	https://github.com/luoliyan/chinese-support-redux

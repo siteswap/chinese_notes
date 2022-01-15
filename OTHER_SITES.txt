@@ -5,11 +5,29 @@
 
 Try this: https://www.dailychinese.app/
 
+Meh - just has some static decks that you review ANKI-style.
+
+No ability to load in your own documents. 
+No ability to build your own decks.
+The google voice is that cheap one.
+No frequency info etc. etc.
+I'd rather use TrainChinese.
+
+It *is* pretty though.
 
 
 ###################
 #### ANKI plugins ####
 ###################
+
+https://github.com/luoliyan/chinese-support-redux
+    Usage Sentence Examples - Chinese/English sentence pairs from Tatoeba
+    Translation (from built-in dictionary; supports English, German and French)
+    Romanisation (supports Pīnyīn (拼音) and Cantonese Jyutping (粵拼))
+    Mandarin Audio (fetched from Google or Baidu)
+    Traditional (繁體字) and simplified (簡體字) characters
+    Frequency (from “very basic” to “obscure”) - based on anki-chinese-word-frequency
+
 
 ANKI has a plugin where you give it a spreadsheet of phrases, it will automatically add pinyin and translate and create a flashcard deck.
 This guy talks about it at 08:20
