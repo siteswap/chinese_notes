@@ -38,6 +38,8 @@ Ultimate USP: ML optimized learning model (we consume your clicks, we produce yo
 
 MUST HAVES:
 	Input validation: https://docs.djangoproject.com/en/4.0/ref/forms/validation/
+	Form validation: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
+	
 	Bug - handle translation failures better (1000 line limit, 100 article limit).
 	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
 	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
@@ -50,6 +52,7 @@ MUST HAVES:
 	Bug - 'Again' button cards are not going to the back, they are repeating too soon.
 
 	word_info.html/?additional_info=off   # during SRS mode
+	paginate big Notes - too slow to load on mobiles
 
 AI USP:
 	Optimize choice of phrases ** do this, it's easy and it's a USP
@@ -63,10 +66,9 @@ Take all the thinking out of it (option to override, sensible default):
 NICE
 	Auto-play all flashcards under /experimental - that's ZERO friction!
 	Make the ANKI cards really nice quality **USP-1
-	Ask for better 60 phrases from teacher on Fiverr 
+	Ask for better 60 phrases from teacher on Fiverr - maybe 1000 phrases?
 	Add the big reports back to hidden /stats
-	Use translations from CE.tsv
-	Word search field
+	Use translations from CE-DICT
 	After finishing all decks, start going through WordReport, suggesting to add new-phrases (optimized by learning value of course).
 	New content suggestions with 1-click import
 	'Add to Deck' without leaving the Notes page (ajax)
@@ -79,6 +81,7 @@ NICE
 	If you've got no decks, and got no notes, insert the 'Start Here' article in user's database.
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
+	Simple 'Translation Only' option on Deck settings so you can test *production*
 
 FUTURE ROADMAP:
 	AI - Target ease:comprehension value
@@ -86,6 +89,7 @@ FUTURE ROADMAP:
 	Rotating phrases (same word, different contexts)
 	Multimedia - pictures, short videos
 	Better stats tracking progress, word reviews etc.
+
 
 #################################
 Smart SRS 
@@ -122,6 +126,8 @@ Per card Settings:
 	- Own notes / over-ride translation etc.
 	- Phrase only
 From a Lexical approach, it's probably BETTER to have just phrases. We are still very *word* focused.
+#################################
+Pywordseg - state of the art from 2019, doesn't *need* GPU: https://pypi.org/project/pywordseg/
 #################################
 
 Usability Testing:
@@ -222,9 +228,6 @@ Usability Testing:
 		Include translation on card back
 		Link or tooltip on each word
 
-	Need to a) move local sqlite3 to postgre b) migrate your existing decks
-		- https://medium.com/djangotube/django-sqlite-to-postgresql-database-migration-e3c1f76711e
-
 	Security:
 		2-factor alex@speakize login
 		IP verify login to speakize.com/admin 
@@ -272,7 +275,7 @@ Phase 2:
 - Explainer video: https://www.fiverr.com/ricky8001/a-modern-whiteboard-animation-video-in-hd
 
 - Words with deleted decks e.g. 臭 (create default 'no deck'?)
-- Use subtlex translations (better)
+- Use CE-DICT translations (better)
   
 - Give me some useful stats to define my goal and track my progress
 - Word report should pull-out the episode specific names -> google entity-recognition
@@ -295,11 +298,6 @@ LATER:
 Reading/hanzi focused features
 Content recommender / syllabus gen - "For a word to stick, I need to recognize it in another completely different context"
 A way to "play" SRT files in a browser window at same speed as netflix - meh, it won't be synced like fleex though
-
-Store segmentation results in POSTGRESQL:
-	- postgre has an ArrayField for storing lists and multi-dimensional arrays! -> could be very efficient for storing list-of-segmented-lines.
-	- postgre has HStoreField is just mapping string to string and does not support nested structure
-	- JSONField which come as built-in Posgres Field in Django 1.9+ and posgres 9.4+
 
 NB - don't take table-per-user strategy (just set a user-index):
 	https://stackoverflow.com/questions/7544544/database-efficiency-table-per-user-vs-table-of-users
@@ -345,19 +343,22 @@ Getting users:
 #############################################
 
 Next :
+	Use SqlBrowser to explore the ANKI database:
+		https://www.juliensobczak.com/write/2016/12/26/anki-scripting.html
+
+	Create a single 20 minute long sound file from the due decks, so you can study like pimsleur.
+
 	Pull out high coverage 'named entities' like character names 
 	Enable custom deck creation - create one for reading new chars (e.g. 愤怒)
 	Ask fiverr html dev to produce something that will 'color' a sohu.com page with known/review_due/unknown words + cover over
+		- this very similar to MDGB reader: https://mdbg.loqu8.com/
 	For the higher-frequency words, start to introduce "production" questions, s.t. say, 50% of your passive vocab, is active.
 	Merge both english and Chinese SRT files for better translation than google translate
-	BUG - the site keep a handle on the old word_xx.mp3 file, so even when the new file overwrites it, the old one is still used.
-	The site should CENTRALLY communicate this: Actually, top 3000 words (plus the proper nouns of Characters and places) gives you 95% word coverage -> not bad! Another ~75 words (in range 4,000-10,000) and you've got 95% word coverage.
-	Create a single 20 minute long sound file from the due decks, so you can study like pimsleur.
+
 	Make deck export accept hanzi-only / sound-only / both. 
 	Sanitize 'title' of Catalogue additions - html in there breaks everything!
 	Reading - add load of stuff about datascience / use that to create a syllabus.
-	Get django contractor to look at it
-	Factor out 'deck' as a package	
+
 	Add homophones as a 'Content' report, maybe later as a field
 	Have something to pull out "names of characters & places", these shouldn't count towards coverage. They should feature in summary of report.
 	From the episode page, be able to add the word.example.line to relevant deck.
@@ -388,7 +389,6 @@ Next :
 	NB - subtlex is maybe the wrong measure to use for individual hanzi - maybe CHR frequency is more relevant?
 	Drive the revision from subtlex rankings, regardless of what cards have already been made
 
-	Need much better dictionary than bulk_word_translations.tsv
 	Include notes you've already made on the anki card - maybe in the concordance?
 
 	巧 - has very different meanings whether it is an adverb or adjective. These 2 cases should be treated differently.
@@ -400,13 +400,11 @@ Next :
 		- progress report: known hanzi, known words, coverage%
 		- words-ranked-by-freq vs coverage over last x-days. Can change freq axis between subtlex, HSK, ngram, Jun_Da, custom.
 	SRS-optimized content recommendations
-	Upload webinterface for:
-		- anki.pkg 
-		- user content (e.g. lesson notes)
-	Export anki package feature.
+	Upload webinterface for  anki.pkg  ??
+
 	Take the learning-value-optimisation idea and apply it to chunking and grammar patterns:
 		- e.g. learn 还有这么多,   但我们就只能,  放在桌子上， as if they were individual words (in fact, these constructions may be as frequent as individual words)
-	SRS-optimized chatbot (experiment with it in English first)
+
 	Review your POST code against this https://docs.djangoproject.com/en/3.2/intro/tutorial04/  
 	Put sherpa on a speakize github account and setup workflow: "Build and Deploy to GKE".
 	New HANZI cards should have a LOW ease factor - https://readbroca.com/anki/ease-hell/
@@ -428,9 +426,9 @@ Next :
 	- If a word features a new hanzi, create a hanzi-specific card (include hanzi etymology)
 	- Enlived existing-word flashcard with new example sentences grabbed from news-sites or short youtube videos
 	- Add user defined words to their ictclas dictionary? Maybe not necessary.
-	- Consider reading: 'English Collocations in Use' to understand more
 	- Add graphing capabilities: https://github.com/wq/django-rest-pandas  ??
 	- Bring back a 'readize' site that lets you revise your ngram prioritized hanzi deck based on news headlines / intro paragraphs.
+
 
 
 Using the method, hire people to learn (from scratch) first 1000 words - how does it take them?
