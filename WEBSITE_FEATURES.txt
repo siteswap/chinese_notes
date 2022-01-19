@@ -40,6 +40,10 @@ MUST HAVES:
 	Input validation: https://docs.djangoproject.com/en/4.0/ref/forms/validation/
 	Form validation: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 	
+	Bug - 500 error trying to add stuff from here: http://lwc.daanvanesch.nl/worddetails.php?id=27071
+		- value too long for type character varying(200)
+	Bug - Deck list not showing
+	Bug - Errors trying to update undecked card phrase
 	Bug - handle translation failures better (1000 line limit, 100 article limit).
 	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
 	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
@@ -50,29 +54,29 @@ MUST HAVES:
 	Bug - RuntimeWarning: line buffering (buffering=1)	
 	Bug - Server Error 500 - by hitting WordList with now chinese text.
 	Bug - 'Again' button cards are not going to the back, they are repeating too soon.
+	Bug - if you change the title, it creates a new Notes
+	Bug - words count as 'known' but not in any deck	
+	Bug - Server Error 500 - by hitting WordList with now chinese text.
+	Bug - get known_words from Deck list so you don't include KnownWords in no deck.
+
 
 	word_info.html/?additional_info=off   # during SRS mode
 	paginate big Notes - too slow to load on mobiles
 
-	Use translations from CE-DICT
-	Make flashcards reflect settings, include more word_info 
-
-AI USP:
-	Optimize choice of phrases ** do this, it's easy and it's a USP
-	Recognise cross training occured (need to log reviews), also helps solve the ease issue
-	'Sell' these AI features in the intro and landing page
-	Produce 10 tiktok 'micro-dialogues' every day -> the smallness means we can better micro-target them
-
-Take all the thinking out of it (option to override, sensible default):
-	Automatically suggest additions and content if you don't have your own
+	Use translations from CC-CEDICT: https://cc-cedict.org/wiki/
+	Make flashcards reflect settings, include more word_info
+	Toggle translations on/off properly
 
 NICE
-	Auto-play all flashcards under /experimental - that's ZERO friction!
 	Make the ANKI cards really nice quality **USP-1
+	The MDBG 'feed' (just words, not content) https://www.mdbg.net/chinese/dictionary?page=feeds
+	Auto-play all flashcards under /experimental - that's ZERO friction!
+	Front end: "post your project" on freelancer - https://www.freelancer.com/articles/web-development?w=f&ngsw-bypass=#
+	Some one-click way to say 'raise this with teacher later'
+	TikTok style Feed based on your SRS goals.
 	Ask for better 60 phrases from teacher on Fiverr - maybe 1000 phrases?
 	Add the big reports back to hidden /stats
-	Use translations from CE-DICT
-	After finishing all decks, start going through WordReport, suggesting to add new-phrases (optimized by learning value of course).
+	After finishing all decks, start going through WordReport, suggesting to add new-phrases (optimized by learning value).
 	New content suggestions with 1-click import
 	'Add to Deck' without leaving the Notes page (ajax)
 	Update 20,000 common audio files with nice voice
@@ -80,7 +84,6 @@ NICE
 	Implement ANKI's full 'ease' model
 	Highlight usage in reports
 	Create 'episode' types: text|srt|intro - intro will have all this StartHere bumf
-	Toggle translations on/off properly
 	If you've got no decks, and got no notes, insert the 'Start Here' article in user's database.
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
@@ -92,7 +95,17 @@ FUTURE ROADMAP:
 	Rotating phrases (same word, different contexts)
 	Multimedia - pictures, short videos
 	Better stats tracking progress, word reviews etc.
+	Smarter phrases - based on lexical analysis, MI etc. https://digitalresearchtools.pbworks.com/w/page/17801708/Text%20Analysis%20Tools
 
+STATS / REPORTING / TRACKING
+	Predict study time til next level, and give time spent so far (under /stats)
+	Include stats on words covered in SRS phrases
+	Let user override default highlighted rank (via query_string)
+	Automatically line up new words and examples if user doesn't have their own
+
+USER-REPORTING
+	In admin, create a 'Returning Usage / Retention' report (Day 1, 3, 7, 30 retention)
+	Make robust - price limits on everything, max threads, quotas etc. etc.
 
 #################################
 Smart SRS 
@@ -272,6 +285,11 @@ Future:
 Kids - speakize.com/kids - focus on top 60 words, all speech based activities, great confidence builder.
 Thought - if half of all speech is these words, then mastering every combination could be key to chunking, and the quick sound processing - if half the sentence is trivial for your ear, then it's like the rest of it is said at half speed. These 60 words are like a micro language in own right.
 #############################################
+Better pop-ups:
+See wikipedia's popups / link preview - https://www.mediawiki.org/wiki/Page_Previews  (they don't do anything on mobile)
+	(Also see https://en.wikipedia.org/wiki/Wikipedia:Tools/Navigation_popups)
+Related - https://andrejgajdos.com/how-to-create-a-link-preview/
+#############################################
 
 Phase 2:
 
@@ -433,11 +451,9 @@ Next :
 	- Bring back a 'readize' site that lets you revise your ngram prioritized hanzi deck based on news headlines / intro paragraphs.
 
 
-
 Using the method, hire people to learn (from scratch) first 1000 words - how does it take them?
 	- average 30 words / day, for 30 days?
 	- what if you pay them *more* for correctly passing the reviews?
-
 
 #############################################
 ################ EASE-HELL ##################
@@ -466,6 +482,10 @@ E.g. names: 道明, 静学姐, 墨鱼, 三亚, 学长, 邀请函
 Pull to the top likely proper names that you only need once - otherwise, these lower the *real* cumulative coverage stats.
 
 #############################################
+
+READ THIS - what does it mean for our study & app?
+	https://www.supermemo.com/en/archives1990-2015/articles/20rules
+
 #############################################
 
 定 has multiple uses, we need more than 1 card / 1 phrase for this
@@ -480,6 +500,9 @@ Pull to the top likely proper names that you only need once - otherwise, these l
 	- https://subflicks.com/
 	- https://chrome.google.com/webstore/detail/subtitles-for-netflix/oddfihdjoneffhjjlpgdjaefeklefmdi
 	- https://github.com/isaacbernat/netflix-to-srt
+
+	# strip excess lines from srt file
+	cat episode.srt | grep -v '^[[:space:]]*$' | grep -v '^[0-9]' > S1_E14.txt
 
 #############################################
 ############### SIDE-PANEL ###################

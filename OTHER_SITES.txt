@@ -7,6 +7,15 @@ What is this software she uses?
 
 https://www.youtube.com/watch?v=JXT12oCFddI
 
+####################
+# Leiden Weibo Corpus #
+####################
+
+http://lwc.daanvanesch.nl/
+
+5m messages, 100m words. (prob ~1Gb)
+Processed using Stanford NLP and Penn Treebank
+
 ###################
 #### HanziCraft #####
 ###################
@@ -41,6 +50,14 @@ I'd rather use TrainChinese.
 
 It *is* pretty though.
 
+
+###################
+####  nciku.com  #####
+###################
+
+(aka jukuu)
+
+Top Chinese dictionary: http://www.nciku.com/  句酷 aka 句库 sentence database
 
 ###################
 #### ANKI plugins ####
