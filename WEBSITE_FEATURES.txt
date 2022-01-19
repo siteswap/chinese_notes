@@ -54,6 +54,9 @@ MUST HAVES:
 	word_info.html/?additional_info=off   # during SRS mode
 	paginate big Notes - too slow to load on mobiles
 
+	Use translations from CE-DICT
+	Make flashcards reflect settings, include more word_info 
+
 AI USP:
 	Optimize choice of phrases ** do this, it's easy and it's a USP
 	Recognise cross training occured (need to log reviews), also helps solve the ease issue

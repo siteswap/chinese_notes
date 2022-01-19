@@ -1,5 +1,31 @@
 
 ###################
+### chinesewithjen ###
+###################
+
+What is this software she uses?
+
+https://www.youtube.com/watch?v=JXT12oCFddI
+
+###################
+#### HanziCraft #####
+###################
+
+https://hanzicraft.com/character/%E5%AE%89
+
+It lists characters that share a common component like 女  - VERY nice!
+
+https://www.facebook.com/Hanzicraft-276212839123898/
+
+Nice frequency list too: https://hanzicraft.com/lists
+
+DECOMP data here (not maintained):
+https://github.com/amake/cjk-decomp
+
+Still maintained:
+https://github.com/cjkvi/cjkvi-ids
+
+###################
 #### Daily Chinese ###
 ###################
 
@@ -32,6 +58,10 @@ https://github.com/luoliyan/chinese-support-redux
 ANKI has a plugin where you give it a spreadsheet of phrases, it will automatically add pinyin and translate and create a flashcard deck.
 This guy talks about it at 08:20
 https://www.bilibili.com/video/BV1pa41167ag?from=search&seid=9481521359505658541&spm_id_from=333.337.0.0
+
+Linking between ANKI cards can't be done:
+	https://www.reddit.com/r/Anki/comments/8zx6hj/how_to_create_hyperlink_from_one_card_to_another/
+	This comes closest: https://www.patreon.com/posts/55380992
 
 USPs of your thing:
 	- Speaking
