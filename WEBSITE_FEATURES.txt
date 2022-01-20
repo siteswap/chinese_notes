@@ -37,50 +37,57 @@ Ultimate USP: ML optimized learning model (we consume your clicks, we produce yo
 #############################################
 
 MUST HAVES:
-	Input validation: https://docs.djangoproject.com/en/4.0/ref/forms/validation/
-	Form validation: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
-	
-	Bug - 500 error trying to add stuff from here: http://lwc.daanvanesch.nl/worddetails.php?id=27071
-		- value too long for type character varying(200)
-	Bug - Deck list not showing
-	Bug - Errors trying to update undecked card phrase
-	Bug - handle translation failures better (1000 line limit, 100 article limit).
-	Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
-	Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
-	Bug - phrase field needs a limit
-	Bug - Max limits and quotas on everything expensive to run (e.g. anki exports! - quotas table)
+	Big tasks:
+		Explanatory landing page
+		Email registration & reset working (use Firebase)
+		User: limits and usage reporting
+
 	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
+		- fix the english to english translations losing spaces
+
+	Manage 'Add to Deck' s.t. you don't add an overly long phrase
+		- causes rendering problems in WordList as you've got 700 lines (1 per word) and each line is a whole paragraph!
+		- try split on commas and full stops, after that just slice out 30 character substrings
+
+	Validate Note name:
+		Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
+		Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
+
+	Set your quotas
+
+	Bug - episode lines presenting out of order!
+	Bug - Max limits and quotas on everything expensive to run (e.g. anki exports! - quotas table)
 	Bug - Tables should probably link through User, not RegistrationProfile
 	Bug - RuntimeWarning: line buffering (buffering=1)	
-	Bug - Server Error 500 - by hitting WordList with now chinese text.
 	Bug - 'Again' button cards are not going to the back, they are repeating too soon.
 	Bug - if you change the title, it creates a new Notes
-	Bug - words count as 'known' but not in any deck	
-	Bug - Server Error 500 - by hitting WordList with now chinese text.
-	Bug - get known_words from Deck list so you don't include KnownWords in no deck.
+	Bug - Server Error 500 - by hitting WordList with no chinese text.
+	Get known_words from Deck list so you miss KnownWords without a deck.
 
+	word_info.html/?additional_info=off   # during SRS mode - even with 20 item limit, still creates slowness
+	Paginate WordsList to 50 Words -> will render quickly, and let use skip to less frequent words.
+	Paginate big Notes? May be awkward for linking. For now, just limit the size.
+	Get your pop-ups working faster, like yellowbridge. The site is slooooow.
 
-	word_info.html/?additional_info=off   # during SRS mode
-	paginate big Notes - too slow to load on mobiles
-
-	Use translations from CC-CEDICT: https://cc-cedict.org/wiki/
 	Make flashcards reflect settings, include more word_info
 	Toggle translations on/off properly
 
 NICE
+	Include Word and Radicals details info:
+		- words to link to hanzi
+		- hanzi to link to components (cjk decomp)
 	Make the ANKI cards really nice quality **USP-1
+	Load more Tatoeba data (up to #3000)
+	'Add to Deck' without leaving the Notes page (ajax)
 	The MDBG 'feed' (just words, not content) https://www.mdbg.net/chinese/dictionary?page=feeds
 	Auto-play all flashcards under /experimental - that's ZERO friction!
 	Front end: "post your project" on freelancer - https://www.freelancer.com/articles/web-development?w=f&ngsw-bypass=#
 	Some one-click way to say 'raise this with teacher later'
 	TikTok style Feed based on your SRS goals.
-	Ask for better 60 phrases from teacher on Fiverr - maybe 1000 phrases?
 	Add the big reports back to hidden /stats
 	After finishing all decks, start going through WordReport, suggesting to add new-phrases (optimized by learning value).
 	New content suggestions with 1-click import
-	'Add to Deck' without leaving the Notes page (ajax)
 	Update 20,000 common audio files with nice voice
-	Paginate long Notes files for faster rendering
 	Implement ANKI's full 'ease' model
 	Highlight usage in reports
 	Create 'episode' types: text|srt|intro - intro will have all this StartHere bumf
@@ -90,10 +97,10 @@ NICE
 	Simple 'Translation Only' option on Deck settings so you can test *production*
 
 FUTURE ROADMAP:
-	AI - Target ease:comprehension value
-	SRS based content recommendation - cover SRS goals, but in more interesting way
+	Feed: SRS based content recommendation - cover SRS goals, but in more interesting way
 	Rotating phrases (same word, different contexts)
 	Multimedia - pictures, short videos
+	AI - Target ease:comprehension value
 	Better stats tracking progress, word reviews etc.
 	Smarter phrases - based on lexical analysis, MI etc. https://digitalresearchtools.pbworks.com/w/page/17801708/Text%20Analysis%20Tools
 
@@ -201,7 +208,7 @@ Usability Testing:
 	We should be able to provide good translations ourselves, but if they aren't available, THEN populate from google translate.
 		- google translate can get stuff quite wrong, and users will want to correct this
 
-
+嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了
 
 	Word lookup
 	"Play" button on the examples and inline with subtitle files
