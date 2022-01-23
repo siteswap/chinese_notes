@@ -53,13 +53,15 @@ Src: https://cloud.google.com/appengine/pricing
 OUTGOING DATA:
 Outgoing network traffic* 	Gigabytes 	$0.12
 
+E.g. 20KB per mp3, x1000 cards in deck -> 20MB apkg file -> 0.24c 
+
 Src: https://cloud.google.com/appengine/pricing
 Src: https://cloud.google.com/storage/pricing#network-egress
 
 
 CLOUD STORAGE:
 $1 / 50Gb / month
-TODO - clean up old anki pkg files
+TODO - clean up old anki apkg files
 
 
 Total Calculator:
