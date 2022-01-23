@@ -23,10 +23,19 @@
 blog.speakize.com is better than speakize.com/blog 
 blog.speakize.com lets us put a stand alone site here so it doesn't interfere with the main site
 #############################################
+Speakize is to learning a language, what Django is to building a website - its a framework.
+We solved all the problems you might get lost in your first time, so you can just do it right first time.
+#############################################
 3 Principles:
-	- Comprehensible Input
+	- Comprehensible Input (i+1)
 	- with Spaced Repetition
 	- that they Care About
+#############################################
+We acquire language in only 1 way: "When we understand messages, in a low anxiety environment"
+We call this Comprehensible Input: https://www.youtube.com/watch?v=fnUc_W3xE1w
+(Therefore, talking doesn't help. The evidence is in the academic literature.)
+i+1
+https://en.wikipedia.org/wiki/Input_hypothesis
 #############################################
 USP 1:  Intelligently create soundcards from any material 
 #############################################
@@ -37,48 +46,47 @@ Ultimate USP: ML optimized learning model (we consume your clicks, we produce yo
 #############################################
 
 MUST HAVES:
-	Big tasks:
-		Explanatory landing page
-		Email registration & reset working (use Firebase)
-		User: limits and usage reporting
+	In order of importance:
+		1) Site level quotas
+		2) User level limits
+		3) User tracking (find out who has done something, and who is visiting):
+			https://pypi.org/project/django-user-tracking/
+			https://github.com/yunojuno/django-user-visit
+		4) Error & performance monitoring
 
-	Bug - RAND issue - piece apart with a loop, might make segmentation better too.
-		- fix the english to english translations losing spaces
+	How do we know it won't become slow once database gets big?
 
-	Manage 'Add to Deck' s.t. you don't add an overly long phrase
-		- causes rendering problems in WordList as you've got 700 lines (1 per word) and each line is a whole paragraph!
-		- try split on commas and full stops, after that just slice out 30 character substrings
-
-	Validate Note name:
-		Bug - content item name not sanitized. Slugify.  (See how google cloud looks re site tree and query strings)
-		Bug - deck name not sanitized. Slugify. (It's good to have the episode name as part of the url, this is good design)
-
-	Set your quotas
-
-	Bug - episode lines presenting out of order!
-	Bug - Max limits and quotas on everything expensive to run (e.g. anki exports! - quotas table)
-	Bug - Tables should probably link through User, not RegistrationProfile
-	Bug - RuntimeWarning: line buffering (buffering=1)	
-	Bug - 'Again' button cards are not going to the back, they are repeating too soon.
 	Bug - if you change the title, it creates a new Notes
+	Bug - Tables should probably link through User, not RegistrationProfile
+	Bug - 'Again' button cards are not going to the back, they are repeating too soon.
 	Bug - Server Error 500 - by hitting WordList with no chinese text.
-	Get known_words from Deck list so you miss KnownWords without a deck.
+	Bug - RuntimeWarning: line buffering (buffering=1)	
+	Bug - If content is empty, an error is reported (noise)
+
+	Toggle translations properly as a Content item setting (i.e. it's persisted per Note)
+	Delete buttons for Content, Deck, Word-in-deck
 
 	word_info.html/?additional_info=off   # during SRS mode - even with 20 item limit, still creates slowness
-	Paginate WordsList to 50 Words -> will render quickly, and let use skip to less frequent words.
-	Paginate big Notes? May be awkward for linking. For now, just limit the size.
-	Get your pop-ups working faster, like yellowbridge. The site is slooooow.
+	Paginate WordList - a single, long line of text would create a 
 
-	Make flashcards reflect settings, include more word_info
-	Toggle translations on/off properly
+	Explanatory landing page (with signup)
+	Email settings working
 
 NICE
+	Create a "common" section with (most) Tatoeba data to #5000
+	Review site layout (see google_cloud_layout example)
 	Include Word and Radicals details info:
 		- words to link to hanzi
 		- hanzi to link to components (cjk decomp)
+	Include allsetlearning links for grammar words
+	WordList but for 1) Hanzi (spoken, ngrams, Leiden) 2) Words (ngrams & Leiden)
 	Make the ANKI cards really nice quality **USP-1
-	Load more Tatoeba data (up to #3000)
+		- reflect 'no hanzi' setting
+		- Tooltips and segmentation for example phrase
+	Add TV-show data for it's naturalness.
+	Pre-loaded images for words?
 	'Add to Deck' without leaving the Notes page (ajax)
+	Refactor WordLists as QuerySets so we can use Paginate & DjangoTables
 	The MDBG 'feed' (just words, not content) https://www.mdbg.net/chinese/dictionary?page=feeds
 	Auto-play all flashcards under /experimental - that's ZERO friction!
 	Front end: "post your project" on freelancer - https://www.freelancer.com/articles/web-development?w=f&ngsw-bypass=#
@@ -95,6 +103,13 @@ NICE
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
 	Simple 'Translation Only' option on Deck settings so you can test *production*
+	Get known_words from Deck list so you miss KnownWords without a deck.
+	Get your pop-ups working faster, like yellowbridge. The site is slooooow.
+	On input, forceably break up any line longer than 50 hanzi? We are just putting a '\r' in there, not starting a new sentence.
+	0) Test the RAND fix, and add some tests for it
+		- Swap the while loop for something guaranteed to finish (worst case is less than 2 * len(doc)
+		- C&P seems to use \n instead of \r for newline, TEST, TEST, TEST all this heavily:
+		- https://stackoverflow.com/questions/1761051/difference-between-n-and-r#:~:text=The%20%2Fr%20stands%20for%20return,down%20to%20a%20new%20line.
 
 FUTURE ROADMAP:
 	Feed: SRS based content recommendation - cover SRS goals, but in more interesting way
@@ -114,6 +129,8 @@ USER-REPORTING
 	In admin, create a 'Returning Usage / Retention' report (Day 1, 3, 7, 30 retention)
 	Make robust - price limits on everything, max threads, quotas etc. etc.
 
+#################################
+The 4000 Essential English Words is the highest rated deck on the platform with nearly 2000 upvotes.
 #################################
 Smart SRS 
 	Optional "source" for the notes. We can (later) decide to try doing something smart with it, like embed the video/soundfile etc.
@@ -269,6 +286,8 @@ Usability Testing:
 		- related words should be list of cards, not a table
 		- anki card info (more info on the back!) - ask a fiverr ANKI expert to design them
 
+	Bug - Sanitize models.CharField(max_length=5) ? 
+	We filter these for segments for valid_hanzi, and control chars don't get segmented together with valid hanzi, so seems ok. 	If a fix is needed - then, limit highlighting to valid_hanzi+AlphaNumeric. Utlimately it would only break 1 page, and could be 	fixed by the user.
 
 #############################################
 Started out as something for myself, particularly to improve my Chiness listening comprehension:
