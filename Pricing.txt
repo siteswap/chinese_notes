@@ -29,7 +29,7 @@ $16 / million characters
 Src: https://cloud.google.com/text-to-speech/pricing
 
 
-COSTS PER ACTION:
+################# COSTS PER ACTION ########################
 Update Phrase:
 	~0.25c (0.1 segmentation min charge, 0.05 translation, 0.1 wavenet)
 Add to Deck:
@@ -39,6 +39,7 @@ Update/Create a Note:
 	8.4c for 4000 char document (0.4c segmentation, 8.0c translation)
 
 TODO - if you amend a 3500 char document twice / day, you've already cost $5.20 per month!!!
+###########################################################
 
 
 CPU TIME:
@@ -53,6 +54,7 @@ OUTGOING DATA:
 Outgoing network traffic* 	Gigabytes 	$0.12
 
 Src: https://cloud.google.com/appengine/pricing
+Src: https://cloud.google.com/storage/pricing#network-egress
 
 
 CLOUD STORAGE:
@@ -62,3 +64,15 @@ TODO - clean up old anki pkg files
 
 Total Calculator:
 https://cloud.google.com/products/calculator
+
+
+QUOTAS
+Translate chars set to 1,000,000 chars / day (ie. max cost $20 / day):
+	https://console.cloud.google.com/apis/api/translate.googleapis.com/quotas?project=createflashcardapp
+Language requests set to 20,000 requests / day (ie. max cost $20 / day):
+	https://console.cloud.google.com/apis/api/language.googleapis.com/quotas?project=createflashcardapp
+WaveNet 20,000 chars / minute (max cost 32c/minute, $19 / hour, $456 / day):
+	(they only have per-minute limits, which doesn't model spikey use well)
+	https://console.cloud.google.com/apis/api/texttospeech.googleapis.com/quotas?project=createflashcardappo
+
+All APIs: https://console.cloud.google.com/apis/dashboard?project=createflashcardapp
