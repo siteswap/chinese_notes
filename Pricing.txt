@@ -29,23 +29,35 @@ $16 / million characters
 Src: https://cloud.google.com/text-to-speech/pricing
 
 
-So, every 'Update Phrase' costs ~0.25c (0.1 segmentation min charge, 0.05 translation, 0.1 wavenet)
-Each, 'Add to Deck' costs 0.1c since we only require wavenet.
-Update/Create a Note costs:
+COSTS PER ACTION:
+Update Phrase:
+	~0.25c (0.1 segmentation min charge, 0.05 translation, 0.1 wavenet)
+Add to Deck:
+	0.1c (since we only require wavenet)
+Update/Create a Note:
 	0.3c for 100 char document (0.1 segmentation min charge, 0.2c for translating 100 chars)
 	8.4c for 4000 char document (0.4c segmentation, 8.0c translation)
 
-NB - if you amend a 3500 char document twice / day, you've already cost $5.20 per month!!!
+TODO - if you amend a 3500 char document twice / day, you've already cost $5.20 per month!!!
 
 
-CPU time:
+CPU TIME:
+F4 	$0.20 / hour / instance
+$144 / month per F4 instance (if no down time)
+TODO - cap instances to 2
+
+Src: https://cloud.google.com/appengine/pricing
 
 
-Outgoing data:
+OUTGOING DATA:
+Outgoing network traffic* 	Gigabytes 	$0.12
+
+Src: https://cloud.google.com/appengine/pricing
 
 
-Cloud storage:
-
+CLOUD STORAGE:
+$1 / 50Gb / month
+TODO - clean up old anki pkg files
 
 
 Total Calculator:
