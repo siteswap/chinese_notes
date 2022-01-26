@@ -46,43 +46,69 @@ Ultimate USP: ML optimized learning model (we consume your clicks, we produce yo
 #############################################
 
 MUST HAVES:
+	Words needs to be much faster!
+	Put "Studied 4 cards in 2.38 minutes today (35.75s/card)" on deck page (or just on flashcards)
+
+	On a branch:
+		Try using the ajax to make it async
+		Paginate WordList (a single, long line of text would create unrenderable table). 'Add' directly from the line, just like in episode.
+			- Needs the async thing working -> actually, can just direct back to same page like word_info does
+		Paginate long doc (links will know the pagination to go to b/c they have the line number).
+			- If doc is small enough, the 'Add to Deck' reverse link will work ok.
+
+	Nice looking homepage?
+
+	Create a "common" section with (most) Tatoeba data to #10,000
+		- randomize it so you don't get the same/first sentence so often
+		- do we really need to create another /path for every function?
+
+	edit_content -> Make it look nicer
+	
+	Legal & Compliance: 
+		https://termly.io/  - privacy policy, ToS, GDPR etc.
+		https://www.iubenda.com/en/terms-and-conditions-generator
+
+	Delete buttons for Content, Deck, Word-in-deck
+
 	In order of importance:
-		1) Site level quotas
-			Cap instances to 2 (that's max $290 / month worst case)
-		2) User level limits
-		3) User tracking (find out who has done something, and who is visiting):
+		1) User level limits
+		2) User tracking (find out who has done something, and who is visiting):
 			https://pypi.org/project/django-user-tracking/
 			https://github.com/yunojuno/django-user-visit
-		4) Error & performance monitoring
+		3) Error & performance monitoring
 
 	How do we know it won't become slow once database gets big?
 		- Write a test script, test the scaling.
 
+	Bug - you change title, you get all '\n' and "translation not available"
 	Bug - if you change the title, it creates a new Notes
 	Bug - Tables should probably link through User, not RegistrationProfile
 	Bug - 'Again' button cards are not going to the back, they are repeating too soon.
 	Bug - Server Error 500 - by hitting WordList with no chinese text.
 	Bug - RuntimeWarning: line buffering (buffering=1)	
 	Bug - If content is empty, an error is reported (noise)
+	Bug - segmenting 'Review 2021 03 26':  seems to object to "11:00"  (but ":" or "11:00" are ok).
+2022-01-24 21:54:04 default[20220124t214512]  [libprotobuf ERROR google/protobuf/wire_format_lite.cc:581] String field 'google.cloud.language.v1.TextSpan.content' contains invalid UTF-8 data when parsing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes.
+		-> make this fail more elegantly, AND, see if we can validate the data for utf-8
+	Bug - If no words in deck yet, the 'Study Now' button produces an ugly page -> make it instruct user to click highlighted words (or just grey out).
+	
+	Best practise for 'control' buttons - do we really need to create another /path for every function?
 
-	Toggle translations properly as a Content item setting (i.e. it's persisted per Note)
-		- don't translate if this is turned off, as it gets expensive for large docs
-	Delete buttons for Content, Deck, Word-in-deck
-
-	word_info.html/?additional_info=off   # during SRS mode - even with 20 item limit, still creates slowness
-	Paginate WordList - a single, long line of text would create a 
-
-	Explanatory landing page (with signup) - should be served from static files, so we don't wake up F1 instance to deal with it (bots etc.)
 	Email settings working
 	NB - regularly translating large Notes could get expensive
 
 NICE
-	Create a "common" section with (most) Tatoeba data to #5000
+	Include a collapsible "Help" button on the episode page - put all your explanation stuff there.
+	Improve start-up time? Or maybe try a permanently up F1 instance? (£27/month always up)
+	List - you should choose Add/Already_Known directly from the table (no tick box, no scrolling to top buttons). That gets away from issues with paginating. Would need to do async.
 	Review site layout (see google_cloud_layout example)
+	"Common" database should have minimum 1 reference for every word up to #30k (so, every character has an examples should you make 'char' decks).
+		- Start with zh.wikipedia as reference (it won't change as frequently), then 
 	Include Word and Radicals details info:
 		- words to link to hanzi
 		- hanzi to link to components (cjk decomp)
 	Include allsetlearning links for grammar words
+	readibu reader - nice way it accesses content, solves the problem of searching for content that lingq has
 	WordList but for 1) Hanzi (spoken, ngrams, Leiden) 2) Words (ngrams & Leiden)
 	Make the ANKI cards really nice quality **USP-1
 		- reflect 'no hanzi' setting
