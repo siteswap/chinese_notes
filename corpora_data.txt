@@ -1,0 +1,20 @@
+
+This, apparently is a cleaner version: https://opus.nlpl.eu/OpenSubtitles-v2018.php
+This is the older one you have: https://opus.nlpl.eu/OpenSubtitles.php
+The chatty nature of this subtitle data is definitely much more 适合 than Common Crawl.
+How much of this is translated from a non-chinese source? That might produce in-authentic Chinese.
+May be better to just hand-pick 20 TV series.
+
+###############################################
+Build your CORPUS database:
+	https://opus.nlpl.eu/
+	https://commoncrawl.org/
+	Common Crawl: https://registry.opendata.aws/commoncrawl/
+	Chinese specific parrallel corpus!!  http://nlp2ct.cis.umac.mo/um-corpus/
+Currently we have 15,000 lines to datamine, but 1m would be better.
+
+###############################################
+Please, add a link to http://www.opensubtitles.org/ to your website and to your reports and publications produced with the data! I promised this when I got the data from the providers of that website!
+https://opus.nlpl.eu/OpenSubtitles.php
+Please cite the following article if you use any part of the corpus in your own work:
+P. Lison and J. Tiedemann, 2016, OpenSubtitles2016: Extracting Large Parallel Corpora from Movie and TV Subtitles. In Proceedings of the 10th International Conference on Language Resources and Evaluation (LREC 2016)

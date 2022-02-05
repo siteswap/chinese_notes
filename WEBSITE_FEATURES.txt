@@ -26,6 +26,9 @@ blog.speakize.com lets us put a stand alone site here so it doesn't interfere wi
 Speakize is to learning a language, what Django is to building a website - its a framework.
 We solved all the problems you might get lost in your first time, so you can just do it right first time.
 #############################################
+New approach - sell directly to businesses who spend money on language training, offer them a 
+faster way to learn. Offer customized content (e.g. tech, business, science).
+#############################################
 3 Principles:
 	- Comprehensible Input (i+1)
 	- with Spaced Repetition
@@ -44,10 +47,18 @@ Ultimate USP: ML optimized learning model (we consume your clicks, we produce yo
 	- produce tiktok-like SRS feed
 	- ML model to predict 'ease' to optimize ease:value
 #############################################
+S.Kaufman recommends flashcards for **PHRASES**, not for individual words
+We need **MULTIPLE** contexts for each word:
+https://www.youtube.com/watch?v=8EqcL-HVYWE
+--> SO, we should aim for 3 references for EACH word
+###############################################
 
 MUST HAVES:
-	Words needs to be much faster!
-	Put "Studied 4 cards in 2.38 minutes today (35.75s/card)" on deck page (or just on flashcards)
+	Email settings working - this is the main thing holding user testing back.
+
+	Needs to be easier to TARGET and ADD new words.
+		- don't list words already covered in the existing phrases
+	If you run out of flashcards, it should AUTOMATICALLY add some.
 
 	On a branch:
 		Try using the ajax to make it async
@@ -55,8 +66,6 @@ MUST HAVES:
 			- Needs the async thing working -> actually, can just direct back to same page like word_info does
 		Paginate long doc (links will know the pagination to go to b/c they have the line number).
 			- If doc is small enough, the 'Add to Deck' reverse link will work ok.
-
-	Nice looking homepage?
 
 	Create a "common" section with (most) Tatoeba data to #10,000
 		- randomize it so you don't get the same/first sentence so often
@@ -80,6 +89,8 @@ MUST HAVES:
 	How do we know it won't become slow once database gets big?
 		- Write a test script, test the scaling.
 
+	Bug - Error - different length docs: 0 1 - keeps getting called every time you try to get concordance
+	Bug - in phrase_report, words close to the frequency cutoff are getting missed (probably a rounding issue with pts).
 	Bug - you change title, you get all '\n' and "translation not available"
 	Bug - if you change the title, it creates a new Notes
 	Bug - Tables should probably link through User, not RegistrationProfile
@@ -94,7 +105,6 @@ MUST HAVES:
 	
 	Best practise for 'control' buttons - do we really need to create another /path for every function?
 
-	Email settings working
 	NB - regularly translating large Notes could get expensive
 
 NICE
@@ -160,6 +170,14 @@ USER-REPORTING
 	Make robust - price limits on everything, max threads, quotas etc. etc.
 
 #################################
+############ PHRASES ############
+#################################
+S.Kaufman recommends flashcards for **PHRASES**, not for individual words
+Can one learn 100 words per day? Steve says "yes":  https://www.youtube.com/watch?v=8EqcL-HVYWE
+We need **MULTIPLE** contexts for each word:
+https://www.youtube.com/watch?v=8EqcL-HVYWE
+--> SO, we should aim for 3 references for EACH word
+#################################
 The 4000 Essential English Words is the highest rated deck on the platform with nearly 2000 upvotes.
 Next add: English (x50 more learners), French, Spanish, Hindi
 #################################
@@ -178,6 +196,17 @@ IDEA:
 	Allow multiple phrases that rotate.
 	Work on understanding phrases like "我有话给你说", "我跟你讲"
 
+#################################
+How to Beta:
+	README: https://www.gov.uk/service-manual/agile-delivery/how-the-beta-phase-works
+	Read all of this: https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit
+		- weekly poll your existing users "how disappointed would you be if you couldnt use it next week", once that's over 40%, you're winning.
+		- https://coda.io/@rahulvohra/superhuman-product-market-fit-engine
+
+	How to talk to users: https://www.youtube.com/watch?v=MT4Ig2uqjTc
+	- the best founders maintain a DIRECT connection to users throughout lifetime of company
+	- buy/borrow 'The Mom Test'
+	HXC - make something a small number of ppl want a huge amount, not lots of people want a little.
 #################################
 Start opensubs with top 20 tv-series / 1000 srt files / 
 	- 'here to heart', 'liuxing gongyuan', 18 others (not court dramas!)
@@ -256,12 +285,10 @@ Usability Testing:
 	We should be able to provide good translations ourselves, but if they aren't available, THEN populate from google translate.
 		- google translate can get stuff quite wrong, and users will want to correct this
 
-嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了嘿起来了
-
-	Word lookup
 	"Play" button on the examples and inline with subtitle files
 	Add MI and these type of stats - will help you identify efficient phrases to learn from
 
+	Feature? - for a long phrase, have 'sub-phrase' cards? Or atleast some way to reference one from the other.
 
 	Contact the ANKI expert on Fiverr, some ppl have BEAUTIFUL anki decks:
 		https://www.reddit.com/r/Anki/comments/gayewn/tip_how_to_add_tooltips_on_ankidroid/

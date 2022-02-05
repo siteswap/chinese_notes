@@ -10,12 +10,23 @@ Covers their grammarbot:
 https://www.alllanguageresources.com/memrise-review-good-beginners-dont-overuse/
 
 ###################
-### chinesewithjen ###
+#### readibu.com ####
 ###################
 
-What is this software she uses?
+For reading, this is great.
+It solves one of lingq's problems - that of finding level appropriate reading content.
+It does this by:
+- keeping a catalogue of reading sites, with statistics and a very-short excerpt.
+- creating a 'reader' s.t. you still visit the original page within the app (thus, no copyright infringment) and select 'load'
 
-https://www.youtube.com/watch?v=JXT12oCFddI
+###################
+### languagereactor ###
+###################
+
+https://www.languagereactor.com/
+https://languagelearningwithnetflix.com/
+
+Apparently this has similar functionality, but more asian language support (as of 2019): https://www.viki.com/
 
 ####################
 # Leiden Weibo Corpus #
@@ -132,6 +143,19 @@ ANKI export only does "term | phrase | meaning" and even that doesn't work
 Seems SRS is all-items or nothing, but can't revise individual decks, we lose the original article reference
 	https://www.lingq.com/en/community/forum/support-feedback-forum/srs-question
 	"My big problem is that there is apparently no way to make different decks. It seems like it is always drawing words from your total list on LingQs."
+
+###############################################
+Main issues with Lingq:
+	- not efficient going through so much non-CI material, very unfocused trying to learn every word
+	- the lack of phrases-level translations in-place makes the material non-CI
+	- the flashcards are ****
+	- lack of sound-repetition to train the ear
+	- For following a TV-show, LanguageReactor.com is better
+Strengths:
+	- their inteface for selecting phrases is nice
+	- they log every click / look-up
+	- big table of phrases with filters etc. is nice
+	- netflix subs import
 
 ###################
 ###### Fluentu ######
