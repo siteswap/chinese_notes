@@ -18,3 +18,8 @@ Please, add a link to http://www.opensubtitles.org/ to your website and to your 
 https://opus.nlpl.eu/OpenSubtitles.php
 Please cite the following article if you use any part of the corpus in your own work:
 P. Lison and J. Tiedemann, 2016, OpenSubtitles2016: Extracting Large Parallel Corpora from Movie and TV Subtitles. In Proceedings of the 10th International Conference on Language Resources and Evaluation (LREC 2016)
+
+###############################################
+See what the un-tokenized files at the bottom look like: https://opus.nlpl.eu/OpenSubtitles-v2018.php
+ - Load up your database with OpenSubs (CCMatrix is too 书面语 focused and too messy. Maybe it's ok for NMT, but not good source for spoken examples.）
+

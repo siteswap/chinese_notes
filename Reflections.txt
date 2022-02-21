@@ -1,0 +1,51 @@
+
+I feel that the most important thing is having a series/progression of relevant phrases:
+
+	- They need to be at the right level for the learner：
+		- Very short phrases for beginner, getting longer and more complex as they progress (similar to how toddlers learn language from parents **)
+			- Toddlers typically have an active vocabulary of ~40 single words (mostly nouns and names) before producing any 2-word phrases
+		- They should be relevant to the learner：
+			- so for kids stuff like: 我肚子饿了，请穿上你的外套, 你去哪里
+			- for adult learners: 请慢慢说，听得懂？, 请再说一遍 (useful phrases to use with a teacher or language-exchange partner)
+		- There needs to be a lot of sound repetition. They need to hear the phrase many times before trying to reproduce it. ***
+		- Use SRS principles
+		- Must progress according to the specific individual, not some class-level average
+
+
+** https://teachmetotalk.com/2008/03/03/making-the-leap-from-words-to-phrases-tips-for-helping-your-toddler-learn-to-say-phrases/
+*** Seems many learners are learning from textbooks, with little listening practise. So, words are not recognised in speech, and mis-pronounced by the learner.
+
+###########################################################################
+
+ANTI-PATTERNS:
+	Don't teach grammar, teach useful phrases and the learner will naturally generalize the rules for themselves.
+	Don't teach individual words (except for the first 50 nouns), they don't mean anything on their own and can't be used. Teach short phrases and useful expressions (放在周子上) with relevant collocations and MI.
+	Don't teach something once and move on, it will only be forgotten, you must use SRS principles
+	As much as possible, teach using sound rather than text.
+	Don't throw people at advanced material. None of it is CI. It just makes students feel stupid. Find
+
+###########################################################################
+
+GOOD:
+	Give students an early taste of success. Let them get really comfortable before moving on.
+	Repetition of sound
+
+###########################################################################
+
+PROBLEMS:
+	TV shows are a good, context relevant environment, but they go straight in to top level language. It's almost all non-CI. They are good if YOU ARE ALREADY AT ADVANCED LEVEL. 
+	These earlier environments only exist in the home of native speakers
+	Examples available are often very formal, or not relevant to what you want to say.
+	No good way to get examples of what you want to say, so you guess, and get corrections from native speakers.
+	Even teachers often talk too fast, or don't subtitle what they say, so again, listening is not CI.
+
+###########################################################################
+
+In a sense, children learn a series of staged languages:
+	- 50 single most used words around home (mother, water, bread)
+	- 2 word phrases (eat bread, drink water, want bread, where mother, bye-bye, kick-ball)
+	- 3 word phrases
+	- Start combining 3 word phrases with conjunctions
+
+TODO:
+	Ask translator to produce Mandarin equivalents of most common first baby words, start sticking these up around the house

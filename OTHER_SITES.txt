@@ -2,6 +2,21 @@
 Someone else's overview of Chinese learning sites:
 	https://www.alllanguageresources.com/best-apps-learn-chinese/
 
+
+###################
+#### Useful stuff #####
+###################
+
+https://youglish.com/  -  searches youtube subtitles for specific 
+Check out out the 'Getting Started' html here: https://youglish.com/api/doc/js-api
+They also have a hover-over text demo too.
+
+Access youtube captions via API: https://developers.google.com/youtube/v3/docs/captions
+WebVTT - (extends SRT file functionality for html 'tracks') - https://www.youtube.com/watch?v=NLfs-SUEerY
+Youtube search add ", cc " in search field to restrict to videos with closed captions
+
+https://ttsmp3.com/ - download google-voice sound files
+
 ###################
 ###### Memrise #####
 ###################

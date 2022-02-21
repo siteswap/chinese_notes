@@ -47,47 +47,45 @@ Ultimate USP: ML optimized learning model (we consume your clicks, we produce yo
 	- produce tiktok-like SRS feed
 	- ML model to predict 'ease' to optimize ease:value
 #############################################
-S.Kaufman recommends flashcards for **PHRASES**, not for individual words
-We need **MULTIPLE** contexts for each word:
-https://www.youtube.com/watch?v=8EqcL-HVYWE
---> SO, we should aim for 3 references for EACH word
+1) Optimized set of phrases
+2) Character flashcards (choice of lists)
+3) Production cards
+4) Spanish
+#############################################
+Pre-live Goals:
+	- focus on phrases, not words
+	- ability to track production cards
+	- settings: Highlighting based on user goals (like, allow 3-refs to count as complete, not just 1-card)
+	- Word references in word_page
+	- polish the stats report
+Selling point:
+	- Whatever you syllabus/goal (e.g. GCSE, HSK5), we will create an optimized set of CI-content/flashcards for learning this, including content-recommendation.
+		- scrape youtube vids and jump-to relevant sections!
+
+Assume any front-end is only temporary: languagereactor and readibu do this well already. Aim to aquire or be aquired.
+###############################################
+NOTE 	- Liu says English teachers with standard (American) pronunciation are EXPENSIVE.
+	- TED talks are all about single topics, better to learn phrases from Native speakers.
+	- Definitely produce the site for English learners
 ###############################################
 
 MUST HAVES:
 	Email settings working - this is the main thing holding user testing back.
 
-	Needs to be easier to TARGET and ADD new words.
-		- don't list words already covered in the existing phrases
-	If you run out of flashcards, it should AUTOMATICALLY add some.
-
-	On a branch:
-		Try using the ajax to make it async
-		Paginate WordList (a single, long line of text would create unrenderable table). 'Add' directly from the line, just like in episode.
-			- Needs the async thing working -> actually, can just direct back to same page like word_info does
-		Paginate long doc (links will know the pagination to go to b/c they have the line number).
-			- If doc is small enough, the 'Add to Deck' reverse link will work ok.
-
 	Create a "common" section with (most) Tatoeba data to #10,000
 		- randomize it so you don't get the same/first sentence so often
 		- do we really need to create another /path for every function?
 
-	edit_content -> Make it look nicer
-	
 	Legal & Compliance: 
 		https://termly.io/  - privacy policy, ToS, GDPR etc.
 		https://www.iubenda.com/en/terms-and-conditions-generator
 
 	Delete buttons for Content, Deck, Word-in-deck
 
-	In order of importance:
-		1) User level limits
-		2) User tracking (find out who has done something, and who is visiting):
-			https://pypi.org/project/django-user-tracking/
-			https://github.com/yunojuno/django-user-visit
-		3) Error & performance monitoring
-
-	How do we know it won't become slow once database gets big?
-		- Write a test script, test the scaling.
+	User Tracking / UserActions table:
+		https://pypi.org/project/django-user-tracking/
+		https://github.com/yunojuno/django-user-visit
+		Cost per user report, NPS, map where they go and why they leave (Day 1, 3, 7, 30 retention)
 
 	Bug - Error - different length docs: 0 1 - keeps getting called every time you try to get concordance
 	Bug - in phrase_report, words close to the frequency cutoff are getting missed (probably a rounding issue with pts).
@@ -103,22 +101,12 @@ MUST HAVES:
 		-> make this fail more elegantly, AND, see if we can validate the data for utf-8
 	Bug - If no words in deck yet, the 'Study Now' button produces an ugly page -> make it instruct user to click highlighted words (or just grey out).
 	
-	Best practise for 'control' buttons - do we really need to create another /path for every function?
-
-	NB - regularly translating large Notes could get expensive
 
 NICE
-	Include a collapsible "Help" button on the episode page - put all your explanation stuff there.
-	Improve start-up time? Or maybe try a permanently up F1 instance? (£27/month always up)
-	List - you should choose Add/Already_Known directly from the table (no tick box, no scrolling to top buttons). That gets away from issues with paginating. Would need to do async.
-	Review site layout (see google_cloud_layout example)
-	"Common" database should have minimum 1 reference for every word up to #30k (so, every character has an examples should you make 'char' decks).
-		- Start with zh.wikipedia as reference (it won't change as frequently), then 
 	Include Word and Radicals details info:
 		- words to link to hanzi
 		- hanzi to link to components (cjk decomp)
 	Include allsetlearning links for grammar words
-	readibu reader - nice way it accesses content, solves the problem of searching for content that lingq has
 	WordList but for 1) Hanzi (spoken, ngrams, Leiden) 2) Words (ngrams & Leiden)
 	Make the ANKI cards really nice quality **USP-1
 		- reflect 'no hanzi' setting
@@ -128,17 +116,7 @@ NICE
 	'Add to Deck' without leaving the Notes page (ajax)
 	Refactor WordLists as QuerySets so we can use Paginate & DjangoTables
 	The MDBG 'feed' (just words, not content) https://www.mdbg.net/chinese/dictionary?page=feeds
-	Auto-play all flashcards under /experimental - that's ZERO friction!
-	Front end: "post your project" on freelancer - https://www.freelancer.com/articles/web-development?w=f&ngsw-bypass=#
-	Some one-click way to say 'raise this with teacher later'
-	TikTok style Feed based on your SRS goals.
-	Add the big reports back to hidden /stats
-	After finishing all decks, start going through WordReport, suggesting to add new-phrases (optimized by learning value).
-	New content suggestions with 1-click import
-	Update 20,000 common audio files with nice voice
 	Implement ANKI's full 'ease' model
-	Highlight usage in reports
-	Create 'episode' types: text|srt|intro - intro will have all this StartHere bumf
 	If you've got no decks, and got no notes, insert the 'Start Here' article in user's database.
 	Set up the certificates for TLS & SMTP (create a service@speakize.com user?). IP addresses keep changing anyway.
 		- Configure ADMIN approval during BETA stage
@@ -151,13 +129,6 @@ NICE
 		- C&P seems to use \n instead of \r for newline, TEST, TEST, TEST all this heavily:
 		- https://stackoverflow.com/questions/1761051/difference-between-n-and-r#:~:text=The%20%2Fr%20stands%20for%20return,down%20to%20a%20new%20line.
 
-FUTURE ROADMAP:
-	Feed: SRS based content recommendation - cover SRS goals, but in more interesting way
-	Rotating phrases (same word, different contexts)
-	Multimedia - pictures, short videos
-	AI - Target ease:comprehension value
-	Better stats tracking progress, word reviews etc.
-	Smarter phrases - based on lexical analysis, MI etc. https://digitalresearchtools.pbworks.com/w/page/17801708/Text%20Analysis%20Tools
 
 STATS / REPORTING / TRACKING
 	Predict study time til next level, and give time spent so far (under /stats)
@@ -165,9 +136,10 @@ STATS / REPORTING / TRACKING
 	Let user override default highlighted rank (via query_string)
 	Automatically line up new words and examples if user doesn't have their own
 
-USER-REPORTING
-	In admin, create a 'Returning Usage / Retention' report (Day 1, 3, 7, 30 retention)
-	Make robust - price limits on everything, max threads, quotas etc. etc.
+Ease prediction model (of some kind):
+	- Predict 'EASE' button based on previous number of reviews, refs, time taken previously etc.
+	- Just get some DESCRIPTIVE stats - just plot some stuff
+	- Predict how long it will take to hit 'Good' on a card (length of phrase, known words, known grammar)
 
 #################################
 ############ PHRASES ############
@@ -180,52 +152,6 @@ https://www.youtube.com/watch?v=8EqcL-HVYWE
 #################################
 The 4000 Essential English Words is the highest rated deck on the platform with nearly 2000 upvotes.
 Next add: English (x50 more learners), French, Spanish, Hindi
-#################################
-Smart SRS 
-	Optional "source" for the notes. We can (later) decide to try doing something smart with it, like embed the video/soundfile etc.
-	Add multimedia embed field (youtube, bilibili, douyin etc.):
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/tRa3fOlnN7k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	Incredibly minimal, dynamic, recommendation page (it's just so central of an idea) -> just base it on your own personal content.
-	**TASTE** of the smart-SRS future, so that beta users know it's not just about making flashcards 
-		- something dynamic on the welcome page - it's too static, there's nothing to pull you in. 
-		- just enough to hint at the future for BETA users
-IDEA:
-	Split notes vs Content
-	Content reviewer can add their youtube picks & subtitles, we can add it to 'our' followed content.
-
-	Allow multiple phrases that rotate.
-	Work on understanding phrases like "我有话给你说", "我跟你讲"
-
-#################################
-How to Beta:
-	README: https://www.gov.uk/service-manual/agile-delivery/how-the-beta-phase-works
-	Read all of this: https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit
-		- weekly poll your existing users "how disappointed would you be if you couldnt use it next week", once that's over 40%, you're winning.
-		- https://coda.io/@rahulvohra/superhuman-product-market-fit-engine
-
-	How to talk to users: https://www.youtube.com/watch?v=MT4Ig2uqjTc
-	- the best founders maintain a DIRECT connection to users throughout lifetime of company
-	- buy/borrow 'The Mom Test'
-	HXC - make something a small number of ppl want a huge amount, not lots of people want a little.
-#################################
-Start opensubs with top 20 tv-series / 1000 srt files / 
-	- 'here to heart', 'liuxing gongyuan', 18 others (not court dramas!)
-Contact OpenSubtitles API - can we just use VIP membership? 1000 downloads per 24hours?
-Costs 10EUR for the year
-They have 48,000 simplified Chinese subtitles (@ around 50kb each -> 2.5Gb of data. We can fit that in to our postgres DB).
-OR, do 1000 titles, for 50Mb, which is ~4,000,000 words -> should still be quite good stats from that.
-https://opensubtitles.stoplight.io/docs/opensubtitles-api/ZG9jOjI3NTQ2OTAy-getting-started
-#################################
-Hidden reports:
-	https://speakize.com/catalogue/upcoming_words
-	https://speakize.com/catalogue/item/103%20cards/hanzi_report/
-#################################
-Per card Settings:
-	- Speed (could speed up as getting easier)
-	- Show Hanzi (for new hanzi)
-	- Own notes / over-ride translation etc.
-	- Phrase only
-From a Lexical approach, it's probably BETTER to have just phrases. We are still very *word* focused.
 #################################
 Pywordseg - state of the art from 2019, doesn't *need* GPU: https://pypi.org/project/pywordseg/
 #################################
@@ -273,14 +199,6 @@ Usability Testing:
 	Implement the EASE bit of the model from ANKI
 		- Ease: implement this so that we don't get ease-hell, or some ‘already know’ button.
 	Upload your intervals on current cards
-
-	Target hanzi report
-
-	Include links to reverso-context (lots of good examples in here!):
-		这是我不希望你变成的样子  --  This is what I don't want you to become.
-		这就是我最终变成的样子  --  It's what I've become.
-		我不想做他们把我变成的样子  --  I don't want to be what they made me. 
-		https://context.reverso.net/translation/chinese-english/%E5%8F%98%E6%88%90%E7%9A%84%E6%A0%B7%E5%AD%90
 
 	We should be able to provide good translations ourselves, but if they aren't available, THEN populate from google translate.
 		- google translate can get stuff quite wrong, and users will want to correct this
