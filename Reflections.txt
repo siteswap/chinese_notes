@@ -11,6 +11,8 @@ I feel that the most important thing is having a series/progression of relevant 
 		- Use SRS principles
 		- Must progress according to the specific individual, not some class-level average
 
+When we talk in a conversation, have a lesson, watch a TV-show, we are finding relevant phrases to learn. 而已。
+These activities find good phrases, but they are quite inefficient at finding them. Is there another way?
 
 ** https://teachmetotalk.com/2008/03/03/making-the-leap-from-words-to-phrases-tips-for-helping-your-toddler-learn-to-say-phrases/
 *** Seems many learners are learning from textbooks, with little listening practise. So, words are not recognised in speech, and mis-pronounced by the learner.
@@ -20,7 +22,7 @@ I feel that the most important thing is having a series/progression of relevant 
 ANTI-PATTERNS:
 	Don't teach grammar, teach useful phrases and the learner will naturally generalize the rules for themselves.
 	Don't teach individual words (except for the first 50 nouns), they don't mean anything on their own and can't be used. Teach short phrases and useful expressions (放在周子上) with relevant collocations and MI.
-	Don't teach something once and move on, it will only be forgotten, you must use SRS principles
+	Don't teach something once and move on, it will be forgotten, you must use SRS principles
 	As much as possible, teach using sound rather than text.
 	Don't throw people at advanced material. None of it is CI. It just makes students feel stupid. Find
 
@@ -34,10 +36,20 @@ GOOD:
 
 PROBLEMS:
 	TV shows are a good, context relevant environment, but they go straight in to top level language. It's almost all non-CI. They are good if YOU ARE ALREADY AT ADVANCED LEVEL. 
+	TV shows talks etc. are not a informal conversation, they are usually about some specialized topic.
 	These earlier environments only exist in the home of native speakers
 	Examples available are often very formal, or not relevant to what you want to say.
 	No good way to get examples of what you want to say, so you guess, and get corrections from native speakers.
 	Even teachers often talk too fast, or don't subtitle what they say, so again, listening is not CI.
+	It's hard to get anyone (even teachers) to talk at the speed necessary for comprehension.
+	Children and second-language speakers are easier to follow - b/c language is simple
+	Colloquialisms make this harder. A native speaker first learns "want to" before progressing to "wanna". And learned "what do you" before progressing to "wodja".
+	Like this: 会长大左 - short, with only simple hanzi, but no idea what it means!?!
+
+This difficulty accessing 地道表达 and 自然口语 on the topics relevant for you, is also a big problem for learners of English. Often they can develop some ideas from written examples or translation software, but to get really natural examples, they need to get corrections from a native speaker. It's a difficult situation.
+
+I think it's also about getting examples at the right level. It's not just about taking advanced text and just using short-sections of it. Some short usages are actually very advanced, and maybe spoken very quickly.
+It's more about finding examples at the right development level - kids shows, or shows where kids speak a lot, or non-native speakers (Eileen Gu, 老外 on 非正式会谈).
 
 ###########################################################################
 
@@ -46,6 +58,9 @@ In a sense, children learn a series of staged languages:
 	- 2 word phrases (eat bread, drink water, want bread, where mother, bye-bye, kick-ball)
 	- 3 word phrases
 	- Start combining 3 word phrases with conjunctions
+
+This is why it's easier for small children to learn a language at school - because the children around them speak a simplified form of the language.
+This is why I find it easier to follow the laowai speaking zhongwen on 非正式会谈, because they speak a simplified form (and speak more slowly).
 
 TODO:
 	Ask translator to produce Mandarin equivalents of most common first baby words, start sticking these up around the house

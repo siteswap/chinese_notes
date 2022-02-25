@@ -1,0 +1,54 @@
+
+Language acquisition theory: The Sociocultural Theory
+
+This language acquisition theory states that children are able to learn language out of a desire to communicate with their surrounding environment and world. Language thus is dependent upon and emerges from social interaction.
+
+#################################
+
+The Language Instinct: Pinker (this is the definitive one)
+https://newlearningonline.com/new-learning/chapter-6/supporting-material/pinker-on-the-language-instinct
+- people don't "think in a language", thinking is pre-verbal
+- long-term memory retains the "gist" of the words, not the actual words
+- lots of non-verbal logic required to understand meaning
+
+Language is:
+	- Words
+	- Rules (syntax, phonology[standard sounds and sound orderings])
+
+Typical high school grad has vocab of 60,000 words - that means they learned ~10 new words every day since birth.
+
+The main problem to explain with language is creativity / "productivity". How can you produce an entirely new sentence and someone else know what you mean by this. This shows we haven't just memorised a list of sentences, but have internalized some grammar / recipe.
+
+@24:00 - children (using Chomsky's universal grammar) produce novel sentences like "more outside". This is not a grammar than an adult would use, so the child has not memorised this, they have constructed it themselves. Children do this is quite standard ways, even when no reference sentences are available.
+
+
+
+(Me: One has an internal model of the world, words are used to point to that model of the world, and the words will be interpreted based on that model, given all the other context about when it was said)
+
+#################################
+https://www.babbel.com/en/magazine/whats-the-difference-between-pidgin-and-creole
+
+A pidgin (mini language) turns in to a Creole (fully developed language)
+
+(A pidgin is the first-generation version of a language that forms between native speakers of different languages — a makeshift communication bridge, if you will. A creole is a pidgin with native speakers, or one that’s been passed down to a second generation of speakers who will formalize it and fortify the bridge into a robust structure with a fully developed grammar and syntax.
+
+Middle English Creole Hypothesis:
+https://en.wikipedia.org/wiki/Middle_English_creole_hypothesis
+
+English drammatically simplified inflections around time of Norman Conquest:
+Inflections:
+	- declension of nouns (foot, feet)
+	- conjugation of verbs (cycles, cycling, cycled)
+as well as many other simplifications that reflect those observed in pidgins and creoles.
+
+Regular verb - form their inflected/conjugated parts by adding the typical endings (-s, -ing and -ed): I cycled, I cycle, He cycles, I am cycling.
+Irregular verbs: sing-sang-sung
+Typically these irregular verbs derived from Germanic 'Strong Verbs' whereby past tense is indicated by changes in the stem vowel. (Weak verbs just add -ed). Strong verbs have origins in earliest PIE.
+https://en.wikipedia.org/wiki/English_irregular_verbs
+
+Although English still has ~200 irregular verbs in common usage, this is much fewer than before the change.
+
+
+
+
+
