@@ -1,7 +1,7 @@
 
 Top wants:
 1) Be able to make different types of card from the same lesson - especially for these italki things.
-2) Make 3 card types export nicely to ANKI
+2) Make the 3 card types export nicely to ANKI
 
 ################################
 
@@ -15,7 +15,7 @@ NEED:
 	Do need to do a bit of sentence production to really understand the grammar:
 		- i.e. the bidirectional method
 
-	For HANZI, current method works pretty well.
+	For learning HANZI, current method works pretty well.
 
 ################################
 
@@ -56,6 +56,9 @@ Some way to combine the efficiency of SRS method with fun of other stuff:
 
 i.e. you need to revise 改善, so use the web-interface to pull a 10 second clip from youtube using 改善。
 i.e. you need to revise word 咒骂 and 亲戚, so find short newspaper extracts using these words.
+
+Check out the sentences and collocations in SketchEngine:
+	https://www.zerotohero.ca/en/zh/phrase/search/%E6%88%91%E8%BF%87%E4%BA%86
 
 ################################
 
