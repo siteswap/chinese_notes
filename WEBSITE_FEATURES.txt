@@ -51,7 +51,6 @@ Ultimate USP: ML optimized learning model (we consume your clicks, we produce yo
 1) Optimized set of phrases
 2) Character flashcards (choice of lists)
 3) Production cards
-4) Spanish
 #############################################
 Pre-live Goals:
 	- focus on phrases, not words

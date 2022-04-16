@@ -1,0 +1,66 @@
+
+Top wants:
+1) Be able to make different types of card from the same lesson - especially for these italki things.
+2) Make the 3 card types export nicely to ANKI
+
+################################
+
+NEED:
+	Learn PHRASES, not indvidiaul words.
+		- must learn the relevant collocations and phrasal verbs 
+		- nb a list of know words cannot be processed, you must learn the patterns
+	Need repeated SOUND exposure to train the ear:
+		- graded to learner's speed
+		- a standard pronunciation
+	Do need to do a bit of sentence production to really understand the grammar:
+		- i.e. the bidirectional method
+
+	For learning HANZI, current method works pretty well.
+
+################################
+
+FF method mostly nails it apart from:	
+	- focus on phrases, not words
+		- help from phrase optimizer?
+	- cards need SOUND
+		- SOLVED
+	- TV series need to be graded for the watcher (with subs to feedback from)
+		- grade youtube subtitles content?
+
+################################
+
+Although the flashcard approach is very EFFICIENT, you tend to want to move on to TV asap because:
+	- flashcards are boring
+	- TV gives really good CONTEXT for words/phrases
+
+Keep using flashcards to:
+	- Feedback on mistakes / interesting examples from your TV / talks.
+	- Target specific areas of vocab e.g. software, econ, oratory
+	- Train listening skills on content that is otherwise too fast
+
+For these reasons, you probably wouldn't use flashcards alone to get to 20,000 word vocab - too dull and would not get the meaning.
+
+################################
+
+As a LESSON -> FLASHCARD tool
+
+Remember the Notes + Decks pattern was because we had lots of lesson notes. Also, we often want to annotate like "what is the difference between 应用 and 程序). I like to dump feedback from penpals in there, and maybe only create flashcards later.
+
+You can imagine a CompSci or Medical lecture where you have the main lesson with lots of detail, but also some flashcards summarizing the main points. We want to keep the long-form lesson. 
+
+################################
+
+Some way to combine the efficiency of SRS method with fun of other stuff:
+	- Grade youtube based on subs
+	- Create stream of changing videos / reading clips to hit your revision goals
+
+i.e. you need to revise 改善, so use the web-interface to pull a 10 second clip from youtube using 改善。
+i.e. you need to revise word 咒骂 and 亲戚, so find short newspaper extracts using these words.
+
+Check out the sentences and collocations in SketchEngine:
+	https://www.zerotohero.ca/en/zh/phrase/search/%E6%88%91%E8%BF%87%E4%BA%86
+
+################################
+
+OPTIMIZED PHRASES - really like the principle, but it prioritizes weird, un-natural phrases. phrases from TV/talks give me something that I really connect to.
+As a first 1000 words / first 1000 phrases tool, this would be awesome - could it pull from youtube subtitles search?
