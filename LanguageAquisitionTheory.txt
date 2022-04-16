@@ -4,6 +4,8 @@ Language acquisition theory: The Sociocultural Theory
 This language acquisition theory states that children are able to learn language out of a desire to communicate with their surrounding environment and world. Language thus is dependent upon and emerges from social interaction.
 
 #################################
+Playing with word boundaries: https://en.wikipedia.org/wiki/Mairzy_Doats
+#################################
 
 The Language Instinct: Pinker (this is the definitive one)
 https://newlearningonline.com/new-learning/chapter-6/supporting-material/pinker-on-the-language-instinct
@@ -21,9 +23,16 @@ The main problem to explain with language is creativity / "productivity". How ca
 
 @24:00 - children (using Chomsky's universal grammar) produce novel sentences like "more outside". This is not a grammar than an adult would use, so the child has not memorised this, they have constructed it themselves. Children do this is quite standard ways, even when no reference sentences are available.
 
+Pragmatics - the linguistics of interpreting language using knowledge of human world, and language partners both trying to advance a conversation. This is not something a computer does well.
 
+Modern Linguistics is driven by Chomsky's 5 questions:
+How is unlimited creativity possible?
+What are the abstract mental structures that relate words?
+How to children aquire language?
+What is universal about languages?
+And what does that say about the human mind?
 
-(Me: One has an internal model of the world, words are used to point to that model of the world, and the words will be interpreted based on that model, given all the other context about when it was said)
+(Me: One has an internal model of the world, words are used to point to that model of the world, and the words will be interpreted based on that model, given all the other context about when it was said. This is why computer speech-recognition is very hard, it has no internal model of the world, so it can't know what interpretation makes sense. Lots of text could help generate a large probability model based on word associations, but it's still only a proxy.)
 
 #################################
 https://www.babbel.com/en/magazine/whats-the-difference-between-pidgin-and-creole
@@ -48,7 +57,7 @@ https://en.wikipedia.org/wiki/English_irregular_verbs
 
 Although English still has ~200 irregular verbs in common usage, this is much fewer than before the change.
 
-
-
-
+NB - Newton started publishing in Latin, but later switched to English. The
+standard changed during his lifetime. At this time, writers would publish in a
+variety of widely-spoken vernacular languages (e.g. French, German). New Latin had no single pronunciation. https://en.wikipedia.org/w/index.php?title=New_Latin
 
