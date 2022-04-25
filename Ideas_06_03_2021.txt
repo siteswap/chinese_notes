@@ -1,0 +1,211 @@
+
+Take your peppa pig lingqs, learn the sounds with ANKI
+Then, play peppa pig at 0.5 or 0.75 speed - slowing the audio is a good solution, eventually you will be able to speed it up. Try listening at different speeds.
+Repeat the words back. Write what you hear.
+
+https://www.lucalampariello.com/improve-listening-comprehension/
+
+ - listen ACTIVELY by repeating, or taking notes
+ - ALWAYS LISTEN AND READ AT THE SAME TIME.
+
+########################################
+
+BUILD - Something that takes words you know, creates sentences only from these and speaks them slowly to you.
+BUILD something to make the web a comprehensible input, from sources you are interested in.
+
+########################################
+
+MICRO-LEARNING:
+https://www.babbel.com/en/magazine/how-much-time-study-each-day-learn-language
+https://link.springer.com/chapter/10.1007/978-3-540-76652-0_4
+
+Elaborated language - rather than simplify, you "elaborate" real sources by for example:
+1) Subtitles
+2) Flashcarding key words first
+3) Some other multi-media stuff
+
+ -> Problem here is, we are teaching lots of low frequency words to help the user reach the content
+ -> Still, it would be good to automatically choose the content based on word/dialogue frequncy/usefulness
+
+########################################
+
+I think where we are going with this is spaced repetition where you must:
+	1) Construct the phrase (much more demanding than listening/reading where you can get away with only partial understanding/recall)
+	2) Say the phrase with correct enough pronunciation for google translate to understand you
+Try with ANKI deck on half the screen, google translate on the other. The anki speaking deck you have is pretty good - it plays the correct one back as much as you like.
+ONLY MISSING:
+	1) Translate component to test your pronunciation
+	2) Some more useful phrases - the deck itself repeats some words too much, but others only appear once or twice. Better to have per word logging.
+
+
+
+0) IDEA - calculate the PERPLEXITY score for each canned phrase! Then pick the highest one!
+	- take the model generated response/responses, add the canned responses, pick the best (adding in spaced repetition modifier).
+
+1） Option： english / pinyin (Mandarin only) / off
+1.1) Option to turn off text - so you have to rely on hearing and not reading
+2） Build in google's speech-to-text is really needed. Windows just not good enough. Prioritise this.
+3) To get pronunciation back, you should hear it repeated back to you alot.
+5） Break-out to teacher mode "can you say ‘Chéngxù   yuán’ "
+6) Start logging conversations to build in spaced repetition
+7) Need to bring conversation back to the desired vocab / dialogue. Otherwise, you only use these phrases once, you need lots of repetition to build speed and accuracy.
+8) Organise code for a new game-bot.
+
+9） Provide translation in-text box before it is sent (or just after would be easier)
+
+
+
+
+########################################
+############## SHERPA ##################
+
+Start just logging the phrases and make an ANKI deck.
+
+With the bot, where does it go from a product perspective?
+		- is it going to be a product?
+		- if not a product, why not just build an anki deck for speaking?
+
+Build some dialogues, using your 300 words and practise speaking them
+	-> Write some dialogues and practise speaking them:
+		-> What do you do for work?
+		-> I am computer programmer. I work from home.
+		-> What are your plans today?
+		-> In the morning, I take kids to school. Then I go for a run. Then I work.
+	-> As another anki deck?
+		-> https://www.writtenchinese.com/20-essential-chinese-phrases-for-newbies-and-travellers-2/
+		-> https://students.mandarinhq.com/real-spoken-chinese-vault-written-chinese/
+		-> freelancer.com - ask a chinese speaker to document common, everyday conversations
+
+Take the idea of controlling a thing - like siri, unicycle, bot - but you do it through speaking the language.
+"walk to end of the road, then turn left, go in to the restaurant"
+
+
+#############################################################################
+####### FEEDBACK FROM LEARNING - WHAT COULD AN APP HELP WITH? ###############
+
+FEEDBACK - speaking in to google.translate is the feedback you need to make the anki speaking deck work.
+
+Improvements that an app can provide:
+	0) Active speaking output is the most important language activity. unscripted speaking is by far the best test of your actual level in a language.
+	1) Track word usage so you can do maximally efficient spaced repetition
+		1.1) Generalize some of the phrases so, if 'jintian' has been used alot, try it with zhoumo
+	2) Spaced repetition on grammatical structures as well as words
+	3) Turn it in to a dialogue format, maybe the bot tries to stretch you
+	4) Some easier/automatic way to enter new words/new-phrases, like if you say something once, it will ask you to repeat it 2 days later.
+	5) You will remember and use language that is most relevant to you and your life. Students want language about school, adults about work, tourists about how to get around, sports fans about sports etc. So, the domain words must be controlled by the user.
+	6) Gamify it for fun - give points, rankings, visuals, easter-eggs etc.
+	7) If the teacher leads the lesson, they may try to teach topics more relevant.
+	8) Have a nice tool to record yourself speaking, then play it back alongside the example speech.
+		- Keeping a record of these recordings is really good at showing your progress (very motivating!)
+		- Watch this guy's tech-heavy method: https://www.mimicmethod.com/two-infamous-polyglots-challenge-you-to-self-record-your-language-learning/
+	8.1) "SHADOWING" - just repeat what you hear (don't try to understand it)
+	8.2) Any reading, read it out loud 
+	8.3) chineseclass101.com has voice recorder so you can listen side-by-side https://youtu.be/3cD1ZLRV0x4
+	8.4) 'Say it' app (afaik only for English) 
+	9) Teachers are keen to put you on a standard lesson plan to avoid awkward silences.
+	10) GCSE syllabus nicely breaks vocab up between core grammar & high frequency words, and domain specific vocab. focusing on the core grammar/vocab is the fastest way to build high comprehension. It also provides a framework to drop domain specific words into.
+	11) Can we apply some KL-divergence metric to compare user-produced sound with target sound?
+	12) Finding relevant and motivating content is really important. Learning 'ma po dou fu' at a restaurant is not helpful.
+	13) GOAL ORIENTED - like BBC micro 'Podd' game - need a way to validate / test / end state for all our practise.
+
+
+########################################
+
+Pat:
+Frontend looks decent. Liked it.
+Not clear how I benefit from it. Not clear how I should use it.
+Add features of the standard apps e.g. vocab learning. Emphasize it's additional feature of the app, over things like duolingo, ankidroid.
+AI support conversations - can pick up on conversational topics. You should be able to pick the domain (e.g. directions, restaurant).
+TODO - add Spanish, add Polish.
+Get some freelancer to do bits and pieces for peanuts. Used freelancer.com - give them a spec, agree to review daily. He used a team from Thailand, was really quick and communication was perfect, really good job (android java). They also use fiverr for their work. 
+ANKI style spaced repetition included would be a really nice. Your app looks so much better than anki-droid. Spaced repetition
+TODO - pick the bot with a certain domain, e.g. restaurant situation.
+
+Pat would really use it for Spanish, and really try to use it, if it has anki features + bot + nice interface.
+
+Handing over to freelancer will help motivate you. It's someone to work with.
+Poland is bad for doing business - government doesn't like small businesses.
+
+($35k average Thai dev salary. Mainland Chinese is even more.)
+
+####################
+####################
+####################
+####################
+
+You should give it some words you know, and some words you want to learn, it should provide you useful sentences the cover the words you want to learn.
+You should be able to hover on the words you want to use more, and it offers ways to use them.
+
+####################
+
+Rather than model the dialogue, have 2 people do a text-chat, and the software will translate from english to simple-chinese. Then from simple-chinese back to english. The chinese language learner gets to read and respond in simple chinese, and the english friend just types normally.
+
+Would a the full encodier-decoder model.
+
+#### AIMEE 6 #######
+Control layer to pick up on unused words / phrases
+Can we tweak the attention directly to focus on untouched parts of the dialogue?
+go for a closed-domain model (BERT? / programmatic-responses?), where we have clearly defined content to cover in each session?
+Maybe some programmatically generated content from Sherpa could be given to Aimee
+####################
+'Export to anki' button creates text+audio flashcard from your conversation history. So that you can work on difficult sentences.
+####################
+Have a cool mascot like https://github.myshopify.com/
+####################
+How to limit vocab in the *RESPONSE*:
+Get top 20 suggestions from beam-search, create some distance metric, then get translations for the most distinct 5. Then return the translations that fewest new words.
+####################
+ANKI++
+Improved anki where the voice is added for you (so you don't have to search for voice recordings).
+Users could upload text sentences they want to learn.
+
+Use anki cards, but use speech-to-text to input text:
+https://www.youtube.com/watch?v=5tYObQ3ocrw&yt:cc=on
+####################
+Could try the google 'Voice Access'. There is a voice option for the desktop version. Could use bluetooth microphone/earphones with your laptop for garden/kitchen.
+
+####################
+Load your DL notes as a dialogue:
+	<speaker1> What is difference between softmax and sigmoid?
+	<speaker2> softmax maps to (0,1), sigmoid maps to (-1,+1)
+####################
+Dashboard so we can hot-swap (avoids slow restart):
+	- personalities, vocab, chat-state, translation language, beam_width ...
+	-> NOTE, you can hot-swap variables from the 'evaluate expression' in debugger mode.
+	-> Visualize model weights - maybe use tensorboard???
+	-> NOTE tensorboard works for pytorch too: https://pytorch.org/docs/stable/tensorboard.html
+	-> All in python? https://pythonawesome.com/covid19-dashboard-web-app-using-python/
+####################
+Use ipad as second monitor just for dashboards - touch interaction is good. 
+####################
+Closed-domain bot "Trevor"
+####################
+Hybrid-closed-domain bot:
+	If you are learning *patterns of speech*, like [I would like a|I like to drink][tea|coffee|beer|water]
+	Then, make these fragments be the tokens in your embedding.
+####################
+Try just 50 words - maximise your expressivity with just 50 word vocab.
+Offer phrases the user already has the words for, so they can say more with what they already know
+Track tokens used in the conversation already, and start to add weight so they are used in future.
+Offer sequence normalization alpha so we don't have to prefer short sequences
+De-weight commonly used words 
+Suggest conversation back for the user
+
+
+You need to add some nouns (so you have some *thing* to talk about, maybe a name 'Lucy', 'Aimee'?) 
+
+*BE SMARTER ABOUT TOP WORDS* - choose words that maximise possibilities (how?), which aren't necessarily the top ones.
+
+
+'control layer' to direct conversation s.t. it is at the right level, covering the relevant stuff
+A chatbot that lets you add your own dialogues? Find something that existing apps don't do, but paying users would like.
+    -> market research for this - ask those 2 youtubers for a review
+Make it configurable? - no one else is doing that - be able to turn the text off to force you in to listening only.
+Aimee dialogue datasets - CEFR textbook conversations? Do a 'dialogue augmentation' trick to create more dialogues from existing
+(in similar way that ImageAugmentation does for images). Scrape common-crawl ?
+Closed domain model?
+
+####################
+
+Marketting - give away 100, 1 year subs to 'beta users'.
+Future users get first week free, then pay (always require CC card to avoid robots or those who will never pay).

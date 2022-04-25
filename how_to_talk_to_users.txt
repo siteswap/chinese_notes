@@ -1,0 +1,38 @@
+
+How to talk to users: https://www.youtube.com/watch?v=MT4Ig2uqjTc
+- the best founders maintain a DIRECT connection to users throughout lifetime of company
+- buy 'The Mom Test'
+
+User/Customer interviews:
+1) what is the hardest part of learning chinese?
+2) tell me about the last time you encountered this problem?
+	(get the context, would my solution have helped)
+3) why was that hard?
+	(this can inform your marketing)
+4) what, if anything, have you done to try to solve this problem?
+	(what tools did they use)
+	(what *did* they find really effective?)
+5) what don't you love about the solutions that you've tried?
+
+Finding first customers for questions (10-15 minutes):
+	- Yourself (answer the questions yourself)
+	- Ask friends and coworkers for introductions to relevant people
+	- Just show up to industry relevant events
+
+Tips:
+	- Take detailed notes (ask if you can record if you can't take notes fast)
+	- Keep it casual
+	- Careful with their time (10-15 minutes)
+
+Identify who will be your best first customer/s:
+Numerical answers to:
+	- what does the problem currently cost them
+	- how frequent is the problem (higher frequency means we can test the idea more often)
+	- how large is their budget for solving the problem
+
+Read all of this:
+https://review.firstround.com/how-superhuman-built-an-engine-to-find-product-market-fit
+
+Put user phone number on signup, so you can talk to them directly (if they are ok with it) ask them about why x.
+Stick to specifics, don't get in to hypotheticals.
+

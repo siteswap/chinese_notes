@@ -1,3 +1,12 @@
+
+Peppa pig transcripts on wenku.baidu:
+This page is 99% accurate:
+https://wenku.baidu.com/view/6615aaed974bcf84b9d528ea81c758f5f71f291c.html
+https://wenku.baidu.com/view/2192c750d0f34693daef5ef7ba0d4a7303766c27.html
+https://wenku.baidu.com/view/942d62b62f3f5727a5e9856a561252d381eb2044.html
+https://wenku.baidu.com/view/11b06cf2773231126edb6f1aff00bed5b8f37329.html
+Where are 41-52 ?
+
 	Spend more time with LingQ - try to use it instead of Speakize.
 		- Lingq blog: https://www.lingq.com/blog/chinese-short-stories/
 		- include subtlex rank as a tag?
@@ -18,19 +27,12 @@
 		Some content:
 		https://www.lingwave.com/2021/08/13/lesson-1-first-experience-in-beijing/
 		- guessing they couldn't deliver on all the promises and it's not in active development
-#############################################
-blog.speakize.com is better than speakize.com/blog 
-blog.speakize.com lets us put a stand alone site here so it doesn't interfere with the main site
-#############################################
-Speakize is to learning a language, what Django is to building a website - its a framework.
-We solved all the problems you might get lost in your first time, so you can just do it right first time.
-#############################################
-New approach - sell directly to businesses who spend money on language training, offer them a 
-faster way to learn. Offer customized content (e.g. tech, business, science).
+
 #############################################
 3 Principles:
-	- Comprehensible Input (i+1)
-	- with Spaced Repetition
+	- Comprehensible Input (i+1) (TV is really good for CI, it gives so
+	  much context
+	- with Spaced Repetition (TV often do lots of repetition)
 	- that they Care About
 #############################################
 We acquire language in only 1 way: "When we understand messages, in a low anxiety environment"

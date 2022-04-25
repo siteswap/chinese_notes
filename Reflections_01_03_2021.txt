@@ -1,0 +1,43 @@
+
+It's been 6 months since I got Speakize.com version 1 running.
+I've spent several months learning chinese, mostly following advice from Fluent Forever.
+This is my current thinking:
+
+######################################
+
+Thoughts on this approach:
+	- Spaced repetition is great
+	- Anki cards lack sound (critical)
+	- Anki cards take too long to produce. The 'pick a google images photo' method is not efficient way to make the connection. If I'm talking with a friend, the word will also come up a few times and I will make a meaningful connection this way. It only costs ~1 minute. The images search thing takes a lot longer and often the connection isn't great (except perhaps for nouns). 
+	- Anki cards for single words don't help me with abstract nouns, adjectives etc. I really want the word within some useful sentence that I *want* to use.
+	- Anki lacks *SPEAKING*
+	- Ultimately, flashcards are an aid, but it only comes together when you LISTEN, SPEAK, READ, WRITE. For this *COMPREHENSIBLE INPUT* is critical. It's a totally demotivating waste of time working on something that is way past your level. A parents provides comprehensible input to a child because they will constantly adjust their speech to the child - speed, sentence complexity, repetition. Language buddies, even language teachers don't do this, they find it awkward, they find it boring, they have 50 students so they don't know exactly what level the student is at.
+
+ => What would be useful: Take the SRS approach, but provide a speaking(writing) and listening(reading) chat-bot that is always tuned to the optimal level of comprehensible, progressive (and fun).
+
+######################################
+
+1 - enjoyable (motivating)
+2 - daily
+3 - comprehensible
+4 - holistic (4 elements reading, writing, speaking, listening)
+5 - progressive - keep getting harder at the correct pace
+
+######################################
+
+I've just re-read my notes from 6 months ago. The thoughts about seem quite inline with them.
+NB - the reason you focused on speaking over listening, is that you were well practised with your listening deck, but couldn't put a sentence together. You could understand a sentence when it was spoken to you, but would not be able to produce it yourself. With this is mind, speaking is more important than listening - its easy to convince yourself you have listening comprehension, but speaking is the real test.
+
+######################################
+
+NEXT STAGE:
+	- 1) Add voice to your ANKI cards
+	- 2) Get speakize running again
+	- 3) Get speakize using the vocab you want to practise
+	- 4) For a given word, automatically create ANKI cards with useful phrases and photos based on other words you already know
+
+######################################
+
+
+
+
