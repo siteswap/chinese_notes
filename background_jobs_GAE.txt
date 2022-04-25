@@ -1,0 +1,66 @@
+
+Options:
+django-q - simple, runs within django, refers to a simple django db table of tasks
+Celery - hardcore, stand alone, probably would want to replace it with GCP cloud tasks
+GCP cloud tasks - best long term option, but more initial set up than django-q
+
+https://dev.to/parselfinger/asynchronous-tasks-with-django-and-gcp-cloud-tasks-448n
+https://mattsegal.dev/offline-tasks.html	
+https://mattsegal.dev/simple-scheduled-tasks.html
+https://cloud.google.com/tasks/docs/creating-appengine-tasks
+
+#################################
+#################################
+
+Setting up django-q tables: 
+
+^C(venv) (base) alex@snuc-desktop:~/PycharmProjects/sherpa$ python manage.py migrate
+/home/alex/PycharmProjects/sherpa/venv/lib/python3.9/site-packages/django_q/conf.py:139: UserWarning: Retry and timeout are misconfigured. Set retry larger than timeout, 
+        failure to do so will cause the tasks to be retriggered before completion. 
+        See https://django-q.readthedocs.io/en/latest/configure.html#retry for details.
+  warn(
+Parsing dictionary . . .
+Operations to perform:
+  Apply all migrations: admin, auth, catalogue, contenttypes, django_q, registration, sessions
+Running migrations:
+  Applying django_q.0001_initial... OK
+  Applying django_q.0002_auto_20150630_1624... OK
+  Applying django_q.0003_auto_20150708_1326... OK
+  Applying django_q.0004_auto_20150710_1043... OK
+  Applying django_q.0005_auto_20150718_1506... OK
+  Applying django_q.0006_auto_20150805_1817... OK
+  Applying django_q.0007_ormq... OK
+  Applying django_q.0008_auto_20160224_1026... OK
+  Applying django_q.0009_auto_20171009_0915... OK
+  Applying django_q.0010_auto_20200610_0856... OK
+  Applying django_q.0011_auto_20200628_1055... OK
+  Applying django_q.0012_auto_20200702_1608... OK
+  Applying django_q.0013_task_attempt_count... OK
+  Applying django_q.0014_schedule_cluster... OK
+(venv) (base) alex@snuc-desktop:~/PycharmProjects/sherpa$
+
+When I run 'python manage.py qcluster' it actually starts up 12 always-running python processes - this will cost a fortune to keep running on Google Cloud!!!
+
+
+#################################
+## Cloud functions
+#################################
+
+Cloud function - takes a regular python .py file, no special imports. *BUT* you must define a main method with signature: main(data, event)
+# NB - you don't need to do anything with data and event, just make sure its in the signature.
+Cloud Scheduler - create a job that posts a message to Pub/Sub
+		- the cloud function listens on a topic
+Pub/Sub - need to set up the topic on this
+
+
+#################################
+## Cloud Tasks
+#################################
+
+https://cloud.google.com/tasks/docs/comp-pub-sub
+https://cloud.google.com/tasks
+
+I built an app to GCP and I used both services. Pub/sub is almost always the number one choice but Cloud Tasks is used to send requests to external API which has strict quotas. Cloud Tasks can be throttled so that was the choice for this action.  -  https://www.reddit.com/r/googlecloud/comments/j0o192/cloud_tasks_or_pubsub/
+
+Cloud tasks - seems to focus on having a queue, and managing that queue. So, it's more specific than pub/sub.
+I think you want pub/sub - its method invocation, but across a multi-server system.

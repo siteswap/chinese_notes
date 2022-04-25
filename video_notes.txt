@@ -1,0 +1,125 @@
+
+
+WIDGET for playing youtube inside your site:
+	https://developers.google.com/youtube/iframe_api_reference
+
+Transcript search? But will this do what we want?
+	https://developers.google.com/youtube/v3/docs/search/list#usage
+
+lib/youtube.js:222 seems to be where videos are searched
+Literally it just runs a http query to google and limits results to videos "tbm=vid"
+
+https://www.google.com/search?q=%E9%92%A5%E5%8C%99&tbm=vid&lr=lang_zh-cn&safe=active
+
+At another point in code they also use:
+
+https://www.youtube.com/results?search_query=
+
+What is videoByApi() ?
+	- this seems to be a lookup, based on the video id, not a search
+
+How is tvshowfilter defined? 
+
+Seems like it *does* query some central server to get video list:
+https://db2.zerotohero.ca/zerotohero/items/youtube_videos?filter[l2][eq]=7731&filter[tv_show][nnull]=1&filter[subs_l2][contains]=%E5%95%A5&sort=-date&timestamp=0
+
+So, we can get *ALL* the videos they cover here (response capped at 200):
+https://db2.zerotohero.ca/zerotohero/items/youtube_videos
+
+
+So, I think that because you need to have a paid account to use the proper youtube API, your video request goes via a zerotohero service. But, it looks very much like they are ultimately using this interface:
+	https://developers.google.com/youtube/v3/docs/search/list
+For example: tvshowFilter seems to be videoType=episode - Only retrieve episodes of shows.
+
+Conclusion:
+	Pretty sure you can't search transcripts directly (too expensive for google). But, you can search for videos (which may be indexed using their transcripts) and then fetch the transcripts. You could cache/persist these transcripts for faster searches in future, or for statistics generation.
+
+
+##########################################################################
+##########################################################################
+
+http://subs2srs.sourceforge.net/
+subs2srs relies on ffmpeg to extract video and thus supports:
+	most video codecs (MPEG-4, h.264, XviD, DivX, MPEG-2, etc.) 
+	and most video containers (.avi, .mkv, .ogm, .mp4, .flv, .vob, etc.). 
+
+
+##########################################################################
+##########################################################################
+
+Videogrep
+
+Videogrep is a python script written by Sam Lavigne, that goes through the subtitle tracks of movies and makes supercuts based on what it finds. For instance, here is an automatic supercut of every time the White House press secretary tells us what he can tell us:
+https://lav.io/2014/06/videogrep-automatic-supercuts-with-python/
+https://github.com/antiboredom/videogrep/
+
+This is how they put together those 'casette boy' videos of politicians speaking song lyrics.
+
+
+mp3 to mp4:
+https://zulko.github.io/moviepy/getting_started/audioclips.html
+
+from moviepy.editor import *
+audioclip = AudioFileClip("some_audiofile.mp3")
+videoclip2 = videoclip.set_audio(my_audioclip)
+
+For each mp3:
+	Turn in to an mp4
+	Add text for whole length of the video
+Stitch all the videos together
+
+(base) alex@snuc-desktop:~/anaconda3/bin$ jupyter-lab
+
+
+
+##########################################################################
+##########################################################################
+
+from moviepy.editor import ImageClip, AudioFileClip
+# clip = TextClip("Hello !", font="Amiri-Bold", fontsize=70, color="black")  # needs imagemagick - awkward
+
+img1 = "/home/alex/PycharmProjects/sherpa/catalogue/static/user/localuser/audio/img.png"
+my_clip = ImageClip(img1)
+
+file1 = "/home/alex/PycharmProjects/sherpa/catalogue/static/user/localuser/audio/phrase_2c011f18-4e9b-4ca0-b3bd-45f83dbab9f7.mp3"
+audio_file1 = AudioFileClip(file1)
+video = my_clip.set_audio(audio_file1)
+
+video.set_duration(audio_file1.duration).set_fps(25).write_videofile("/home/alex/PycharmProjects/sherpa/catalogue/static/user/localuser/audio/flower2.mp4")   # works !
+
+##########################################################################
+##########################################################################
+
+Even with TextClip, we've got very limited control. Like, we can't even put the chinese and english on different lines. We really want to build the image nicely with a lot of control, choosing nice fonts.
+
+Nice output here: 
+https://stackoverflow.com/questions/50854235/how-to-draw-chinese-text-on-the-image-using-cv2-puttextcorrectly-pythonopen
+
+
+##########################################################################
+##########################################################################
+
+Actually, imageMagick on google cloud is ok!!
+https://cloud.google.com/functions/docs/tutorials/imagemagick#functions_imagemagick_setup-python
+
+I think this is will help you install woes:
+https://askubuntu.com/questions/873112/imagemagick-cannot-be-detected-by-moviepy
+
+##########################################################################
+##########################################################################
+
+Install imagemagick on google cloud:
+                - https://stackoverflow.com/questions/36253667/imagemagick-on-google-cloud
+                - https://cloud.google.com/functions/docs/tutorials/imagemagick#functions_imagemagick_setup-python
+Note: ImageMagick and its command-line tool convert are included by default within the Google Cloud Functions execution environment. Cloud Functions does not support installing custom system-level packages.
+
+##########################################################################
+##########################################################################
+
+
+videoclip = VideoFileClip(video_filename)
+        # Convert stereo audio to mono audio with ffmpeg.
+        # FFmpeg is automatically downloaded when moviepy is called. We don't need to install it.
+        videoclip.audio.write_audiofile(audio_file_name, ffmpeg_params=['-ac', '1'])
+https://gist.github.com/ramsrigouthamg/0d149507ad7129be800a1986d4cdb842
+
