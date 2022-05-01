@@ -1,0 +1,29 @@
+Try this on your laptop: https://mdbg.loqu8.com/download.php
+
+Hanzi report: top 3000 | inc_refs | reviewed_月 | common_lib_例子
+Be able to list phrases by most infrequently reviewed hanzi.
+Rotating, novelty news feed? (Word report so static)
+
+HANZI FEATURES:
+Hanzi should still be presented:
+	- in context of high-freq word
+	- inside a meaningful PHRASE (didn't do this on my anki deck)
+		- One writing based from sohu
+		- One speaking based from youglish / zerotohero
+	- exploded decomposition should accompany new hanzi, so we learn to see the decomp:
+		- emphasise differences from similar hanzi
+	- whole phrase spoken clearly and slowly (youglish is typically spoken too quickly to be clear)
+	- picture or short video to give a sense of the idea
+
+When you present a new character for first few times -> show the related hanzi that you already know, so that you can help build that WEB of connections.
+
+Hanzi progress:
+	Recognise hanzi use in full sentence
+	Recognise hanzi in a word (same word used in that sentence)
+	Recognise hanzi on it's own
+	Write the hanzi when given a closure of a sentence
+	
+Export option:
+	Hanzi phone/desktop wallpaper
+
+Break out these reports in to their own files (can import them in to views.py)

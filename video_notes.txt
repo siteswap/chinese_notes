@@ -1,5 +1,17 @@
 
 
+Regular pytube (not pytube3) is the one that currently works.
+But, you need this answer from April 17th:
+https://stackoverflow.com/questions/68945080/pytube-exceptions-regexmatcherror-get-throttling-function-name-could-not-find
+
+##########################################################################
+youtube official api supports downloading caption track:
+	https://developers.google.com/youtube/v3/docs/captions/download
+
+But it doesn't seem to support downloading the video itself.
+
+##########################################################################
+
 WIDGET for playing youtube inside your site:
 	https://developers.google.com/youtube/iframe_api_reference
 
