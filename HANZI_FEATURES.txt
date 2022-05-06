@@ -1,8 +1,17 @@
-Try this on your laptop: https://mdbg.loqu8.com/download.php
 
-Hanzi report: top 3000 | inc_refs | reviewed_月 | common_lib_例子
-Be able to list phrases by most infrequently reviewed hanzi.
-Rotating, novelty news feed? (Word report so static)
+A) For each priority-review, fetch something from youtube library or zhihu.
+
+Rotating, novelty news feed (Word report so static)
+	- Make 'Speakize' promote mp3/mp4 exports, short videos, pictures (see 知乎 is example of this). 
+	- zhihu headlines are brilliant for grabbing your attention, very click-baity
+
+Media feed:
+	- Use user site browsing data to suggest stuff they haven't looked at for a while
+	- Consider a page view or an mp3/mp4 export a 'passive exposure'
+	-> Prompt user with hanzi they've not had 'passive exposure' to
+		- Create a 50 x 50 grid of hanzi, with heatmap of exposure!!!
+
+Limit 'related hanzi' to ones in your database (or highlight grey)
 
 HANZI FEATURES:
 Hanzi should still be presented:
@@ -11,11 +20,14 @@ Hanzi should still be presented:
 		- One writing based from sohu
 		- One speaking based from youglish / zerotohero
 	- exploded decomposition should accompany new hanzi, so we learn to see the decomp:
-		- emphasise differences from similar hanzi
+		- emphasise differences from similar hanzi **
 	- whole phrase spoken clearly and slowly (youglish is typically spoken too quickly to be clear)
 	- picture or short video to give a sense of the idea
 
-When you present a new character for first few times -> show the related hanzi that you already know, so that you can help build that WEB of connections.
+** We currently show hanzi where the whole character is part of the hanzi. 
+   We should also show hanzi that share a component, like 氛 is related to 汽, 拿 is related to 盒.
+	- this can help use learn new characters by building on a WEB of connections.
+
 
 Hanzi progress:
 	Recognise hanzi use in full sentence
@@ -27,3 +39,121 @@ Export option:
 	Hanzi phone/desktop wallpaper
 
 Break out these reports in to their own files (can import them in to views.py)
+
+Try this on your laptop: https://mdbg.loqu8.com/download.php
+
+
+
+Explore by radical?
+	 - How to learn writing by focusing on the hanzi with known radicals?
+	 - Rank most used component radicals, challenge to draw all the hanzi with these standard rads
+	 - Draw a network graph
+	 - Give me some phrases to write that cover the major hanzi
+
+
+
+query_string vs POST body best practise:
+https://stackoverflow.com/questions/25385559/rest-api-best-practices-args-in-query-string-vs-in-request-body
+NB - POST body is more for data than query params
+
+
+Words -> Reports (Hanzi, Words, Phrases)
+word_list.html -> tabular_report.html OR phrase_table.html** OR phrase_report.html
+
+
+##################################################################################
+##################################################################################
+
+NOTES ON VIDEO:
+
+	Try transcribing youtube videos for you site -> might be good study practise.
+
+	Preceed / splice 5 new words/phrases based on:
+		- High-use in the episode: 停电
+		- High-use in the series: 恐龙, 乔治，花园
+		- High-use in general language: 爸爸，妈妈，非常好
+
+	I try listening to some video on 百度, 哔哩哔哩, zhihu, and although I know all the hanzi:
+		- I can't quite understand the kouyin (speed? clarity?)
+		- I feel vague about the meaning 
+
+	Keep working on this video thing, it's got legs. Especially as a video board.
+		- Compare word usage across all videos
+		- Put the English bits inside the complete video (7.5Mb / 5 minute show).
+		- Fix Paige -> Peppa!
+		- Create an interface that you could leave them alone with, and they would explore 50 episodes of Peppa pig.
+
+
+	How to make this PP comprehensible (automatically)?
+		1) Show the translation first? then video
+			- chinese, english, chinese, english, actual-video
+			- Show a background clip image instead of grey image
+		2) Trim long spoken lines down to key phrases!
+		- Start with word_report top words (and the phrases that use them)
+
+	Order drydrinker.com
+	Order protein spread.
+
+	Word report on common_lib sources would be helpful.
+		- key phrase report?
+
+	Try doing a peppa pig CI show: pre-cede every line with the translation
+		- now try it for adult-level content
+		- when you've got this working, make it part of a SRS-optim feed.
+
+	This stuff is mostly accessible (save a handful of words) but it just takes some time to deconstruct and parse the sentence. I think if it was just slowed-and-stepped, it would be ok.
+	-> TRY THIS.
+	
+	I should be able to link a bilibili video, and put a few notes with timestamps there.
+		- shouldn't need the whole video contents, just the 关键 notes from first 1-2 mins
+		- E.g. 东南亚的华人移民 from BV1Jb4y1s7kr 青田人占50%左右
+		- 德国也喜欢中国人勤劳善良的品格
+
+	Scrape these videos, make them Comprehensible. 
+
+	Log page requests and file exports as 'passive review'
+
+	Scraping / making-CI-of-video-material:
+		Youtube - he's here too: https://www.youtube.com/watch?v=ffsDnpy5RwY
+		Bilibili - page source HAS opengraph tags ( https://ogp.me/ ) 
+		https://www.bilibili.com/video/BV1JT4y1a7zw
+			- This video id is on the phone info page
+
+16 mins is too long to study from, but up to first 1:46 is nice.
+
+I think if we take each line (or maybe just the difficult ones) and:
+1) Give the Chinese
+2) Give the english + per word translation
+3) Give the Chinese again
+Then, this makes the content CI without it getting dull.
+
+弹幕敲个1
+词幕
+RUN谐音，就是指移民到中外
+
+我们今天就较为系统的探讨一下
+宏观的聊一聊世界移民的现状
+macro-talk: world-migration current-situation.
+
+联合国移民署
+但数据来源截止到2020年
+所以说才有参考价值
+
+世界移民趋势的一个预测
+这比1990年的1.53亿人多出了近一倍
+世界人口流动在越来越频繁
+欧洲目前是移民的最大目的地
+欧洲北美等地仍然是移民聚集的地区
+传统的移民大国如美国加拿大等
+热度还是不减的
+下降了2.4%
+
+Feel like this is the BEST way to learn phrases that you can really use:
+  - context and meaning is completely clearn, this provides the context and motivation
+
+
+	Start scraping stuff with first 100 hanzi (by #rank) not reviewed in last month.
+		- 1-3 sites is enough for use, don't need everything on commoncrawl
+	
+
+	https://baijiahao.baidu.com/s?id=1731952110611160888
