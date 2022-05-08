@@ -1,4 +1,10 @@
 
+HeatMap of Hanzi (and words) - quickly shows us what we have/have-not recently reviewed.
+One click 'add' card (just like ANKI plugin on phone).
+
+
+
+
 A) For each priority-review, fetch something from youtube library or zhihu.
 
 Rotating, novelty news feed (Word report so static)
@@ -38,18 +44,11 @@ Hanzi progress:
 Export option:
 	Hanzi phone/desktop wallpaper
 
-Break out these reports in to their own files (can import them in to views.py)
-
-Try this on your laptop: https://mdbg.loqu8.com/download.php
-
-
-
 Explore by radical?
 	 - How to learn writing by focusing on the hanzi with known radicals?
 	 - Rank most used component radicals, challenge to draw all the hanzi with these standard rads
 	 - Draw a network graph
 	 - Give me some phrases to write that cover the major hanzi
-
 
 
 query_string vs POST body best practise:
@@ -60,13 +59,47 @@ NB - POST body is more for data than query params
 Words -> Reports (Hanzi, Words, Phrases)
 word_list.html -> tabular_report.html OR phrase_table.html** OR phrase_report.html
 
+BUGS:
+Fix the 1-second imprecision.
+Export As Episode should be disabled for incompatible deck types
+FIX multiple downloads of same file - inefficient
+Pop-up to include: per hanzi, the top word in user's vocab
+No sound on ipad - not useful for kids without this.
 
+##################################################################################################
+#### Big stuff:
+How to drive new words?:
+	- Pre-load database from yt transcripts? Try this (good option, lets us optimize, script it)
+	- For words with low representation - pro-actively search.
+'Show me new' button - will scrape some news sites, pull out bits with 1 or 2 novels words/hanzi
+Content library difficulty rating
+Live-updating flashcards?
+##################################################################################################
+#### Small stuff:
+Small thumbnails - https://stackoverflow.com/questions/2612436/create-thumbnail-images-for-jpegs-with-python
+Use Content_id instead of name -> solves: name clashes, title editing etc.
+	- Creating a new note with same name, deletes the old one, tho phrases are retained.
+RegistrationUser -> User
+Some way to use AI to reduce large transcripts to "top 20" phrases that describe the key ideas?
+	- Automatic Text Summarization with Machine Learning
+	- https://huggingface.co/tasks/summarization
+Fix anki deck export for 3 card types
+Be able to edit / create our own translations (could create some interesting card options)
+	- 我们才能够试验出来这种药到底是有效还是没有效
+Be able to annotate / reduce movie transcript - mixed type deck
+Deal with big yt imports, slow rendering
+Delete buttons for phrase and deck
+
+# ipad mp4 no audio - https://discussions.apple.com/thread/8343552
+	- issue is encoding h.264 (newer) vs mpeg-4 (older) ?
+
+一席  https://youtu.be/SMMOKGCivUE
 ##################################################################################
 ##################################################################################
+
+Report features: Series_level_stats, include_known_words, sort_by_occurences, sort_by_video_time
 
 NOTES ON VIDEO:
-
-	Try transcribing youtube videos for you site -> might be good study practise.
 
 	Preceed / splice 5 new words/phrases based on:
 		- High-use in the episode: 停电
@@ -83,16 +116,12 @@ NOTES ON VIDEO:
 		- Fix Paige -> Peppa!
 		- Create an interface that you could leave them alone with, and they would explore 50 episodes of Peppa pig.
 
-
 	How to make this PP comprehensible (automatically)?
 		1) Show the translation first? then video
 			- chinese, english, chinese, english, actual-video
 			- Show a background clip image instead of grey image
 		2) Trim long spoken lines down to key phrases!
 		- Start with word_report top words (and the phrases that use them)
-
-	Order drydrinker.com
-	Order protein spread.
 
 	Word report on common_lib sources would be helpful.
 		- key phrase report?
