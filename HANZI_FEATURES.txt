@@ -1,23 +1,9 @@
 
 HeatMap of Hanzi (and words) - quickly shows us what we have/have-not recently reviewed.
-One click 'add' card (just like ANKI plugin on phone).
+One click 'add' card (just like ANKI plugin on phone), instead of creating a Note first.
+Images for flashcard common words - like 筛选 (I think ppl will want this)
+Add alternative review types to /stats, add stats as a report link
 
-
-
-
-A) For each priority-review, fetch something from youtube library or zhihu.
-
-Rotating, novelty news feed (Word report so static)
-	- Make 'Speakize' promote mp3/mp4 exports, short videos, pictures (see 知乎 is example of this). 
-	- zhihu headlines are brilliant for grabbing your attention, very click-baity
-
-Media feed:
-	- Use user site browsing data to suggest stuff they haven't looked at for a while
-	- Consider a page view or an mp3/mp4 export a 'passive exposure'
-	-> Prompt user with hanzi they've not had 'passive exposure' to
-		- Create a 50 x 50 grid of hanzi, with heatmap of exposure!!!
-
-Limit 'related hanzi' to ones in your database (or highlight grey)
 
 HANZI FEATURES:
 Hanzi should still be presented:
@@ -30,53 +16,23 @@ Hanzi should still be presented:
 	- whole phrase spoken clearly and slowly (youglish is typically spoken too quickly to be clear)
 	- picture or short video to give a sense of the idea
 
-** We currently show hanzi where the whole character is part of the hanzi. 
-   We should also show hanzi that share a component, like 氛 is related to 汽, 拿 is related to 盒.
-	- this can help use learn new characters by building on a WEB of connections.
-
-
-Hanzi progress:
-	Recognise hanzi use in full sentence
-	Recognise hanzi in a word (same word used in that sentence)
-	Recognise hanzi on it's own
-	Write the hanzi when given a closure of a sentence
 	
-Export option:
-	Hanzi phone/desktop wallpaper
-
-Explore by radical?
-	 - How to learn writing by focusing on the hanzi with known radicals?
-	 - Rank most used component radicals, challenge to draw all the hanzi with these standard rads
-	 - Draw a network graph
-	 - Give me some phrases to write that cover the major hanzi
-
-
 query_string vs POST body best practise:
 https://stackoverflow.com/questions/25385559/rest-api-best-practices-args-in-query-string-vs-in-request-body
 NB - POST body is more for data than query params
 
 
-Words -> Reports (Hanzi, Words, Phrases)
-word_list.html -> tabular_report.html OR phrase_table.html** OR phrase_report.html
-
-BUGS:
-Fix the 1-second imprecision.
-Export As Episode should be disabled for incompatible deck types
-FIX multiple downloads of same file - inefficient
-Pop-up to include: per hanzi, the top word in user's vocab
-No sound on ipad - not useful for kids without this.
-
 ##################################################################################################
-#### Big stuff:
-How to drive new words?:
-	- Pre-load database from yt transcripts? Try this (good option, lets us optimize, script it)
-	- For words with low representation - pro-actively search.
-'Show me new' button - will scrape some news sites, pull out bits with 1 or 2 novels words/hanzi
-Content library difficulty rating
-Live-updating flashcards?
+IP insurance:
+https://www.gov.uk/guidance/intellectual-property-insurance
+##################################################################################################
+New Content type - image (like a 嚣张 image)
+##################################################################################################
+Use image overlay on movie page
+REDUCE MODAL CODE? https://getbootstrap.com/docs/5.0/components/modal/#varying-modal-content
+	- episode page might render much faster!
 ##################################################################################################
 #### Small stuff:
-Small thumbnails - https://stackoverflow.com/questions/2612436/create-thumbnail-images-for-jpegs-with-python
 Use Content_id instead of name -> solves: name clashes, title editing etc.
 	- Creating a new note with same name, deletes the old one, tho phrases are retained.
 RegistrationUser -> User
@@ -89,6 +45,11 @@ Be able to edit / create our own translations (could create some interesting car
 Be able to annotate / reduce movie transcript - mixed type deck
 Deal with big yt imports, slow rendering
 Delete buttons for phrase and deck
+Episode difficulty rating
+Fix the 1-second imprecision.
+Export As Episode should be disabled for incompatible deck types
+FIX multiple downloads of same file - inefficient
+Export flashcards with images / videos
 
 # ipad mp4 no audio - https://discussions.apple.com/thread/8343552
 	- issue is encoding h.264 (newer) vs mpeg-4 (older) ?
@@ -126,63 +87,7 @@ NOTES ON VIDEO:
 	Word report on common_lib sources would be helpful.
 		- key phrase report?
 
-	Try doing a peppa pig CI show: pre-cede every line with the translation
-		- now try it for adult-level content
-		- when you've got this working, make it part of a SRS-optim feed.
-
-	This stuff is mostly accessible (save a handful of words) but it just takes some time to deconstruct and parse the sentence. I think if it was just slowed-and-stepped, it would be ok.
-	-> TRY THIS.
-	
-	I should be able to link a bilibili video, and put a few notes with timestamps there.
-		- shouldn't need the whole video contents, just the 关键 notes from first 1-2 mins
-		- E.g. 东南亚的华人移民 from BV1Jb4y1s7kr 青田人占50%左右
-		- 德国也喜欢中国人勤劳善良的品格
-
-	Scrape these videos, make them Comprehensible. 
-
-	Log page requests and file exports as 'passive review'
-
-	Scraping / making-CI-of-video-material:
-		Youtube - he's here too: https://www.youtube.com/watch?v=ffsDnpy5RwY
-		Bilibili - page source HAS opengraph tags ( https://ogp.me/ ) 
-		https://www.bilibili.com/video/BV1JT4y1a7zw
-			- This video id is on the phone info page
-
-16 mins is too long to study from, but up to first 1:46 is nice.
-
-I think if we take each line (or maybe just the difficult ones) and:
-1) Give the Chinese
-2) Give the english + per word translation
-3) Give the Chinese again
-Then, this makes the content CI without it getting dull.
-
-弹幕敲个1
-词幕
-RUN谐音，就是指移民到中外
-
-我们今天就较为系统的探讨一下
-宏观的聊一聊世界移民的现状
-macro-talk: world-migration current-situation.
-
-联合国移民署
-但数据来源截止到2020年
-所以说才有参考价值
-
-世界移民趋势的一个预测
-这比1990年的1.53亿人多出了近一倍
-世界人口流动在越来越频繁
-欧洲目前是移民的最大目的地
-欧洲北美等地仍然是移民聚集的地区
-传统的移民大国如美国加拿大等
-热度还是不减的
-下降了2.4%
 
 Feel like this is the BEST way to learn phrases that you can really use:
   - context and meaning is completely clearn, this provides the context and motivation
 
-
-	Start scraping stuff with first 100 hanzi (by #rank) not reviewed in last month.
-		- 1-3 sites is enough for use, don't need everything on commoncrawl
-	
-
-	https://baijiahao.baidu.com/s?id=1731952110611160888

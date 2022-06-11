@@ -1,0 +1,15 @@
+
+How To:
+	1) Set up standalone admin scripts to work against django db	
+	2) Use python shell to access django DB
+
+
+
+1) Custom django-admin commands:
+	https://docs.djangoproject.com/en/4.0/howto/custom-management-commands/
+	Put your script in catalogue/management/commnads and run: 
+		python manage.py help
+		python manage.py peppa_recommender
+
+2) ?? 
+

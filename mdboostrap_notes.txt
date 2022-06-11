@@ -1,0 +1,11 @@
+ MDB has this useful and beautiful looking stuff:
+		https://mdbootstrap.com/docs/standard/extended/gallery/#section-gallery-with-modals-and-YouTube-videos
+			- The videos don't stop playing when you click away! That's not a solution!
+		https://mdbootstrap.com/docs/standard/extended/news-feed/
+		https://mdbootstrap.com/docs/standard/extended/gallery/
+		Dark Mode https://mdbootstrap.com/docs/standard/content-styles/theme/ 
+		https://mdbootstrap.com/articles/jquery/how-to-integrate-mdbootstrap-with-django/
+		The £289 package has some useful stuff, like the onboarding plugin
+		Seems like it will mess up the current site... well, the presentation is only prototype
+
+

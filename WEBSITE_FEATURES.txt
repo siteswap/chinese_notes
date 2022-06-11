@@ -1,12 +1,4 @@
 
-Peppa pig transcripts on wenku.baidu:
-This page is 99% accurate:
-https://wenku.baidu.com/view/6615aaed974bcf84b9d528ea81c758f5f71f291c.html
-https://wenku.baidu.com/view/2192c750d0f34693daef5ef7ba0d4a7303766c27.html
-https://wenku.baidu.com/view/942d62b62f3f5727a5e9856a561252d381eb2044.html
-https://wenku.baidu.com/view/11b06cf2773231126edb6f1aff00bed5b8f37329.html
-Where are 41-52 ?
-
 	Spend more time with LingQ - try to use it instead of Speakize.
 		- Lingq blog: https://www.lingq.com/blog/chinese-short-stories/
 		- include subtlex rank as a tag?
