@@ -1,0 +1,88 @@
+DONE:
+	create_content_lines inserts in to Phrase
+	Move all ContentLine methods in to Phrase (juggle word_array & phrase_segmented)
+	Remove redundant ContentLine.word_array from 2 decorator functions
+	Given content_id (Notes), get back Phrases with line numbers:
+		- Add Content ref to Phrase (use in delete Content)
+		- Add line_num to Phrase
+		- Add CardType == CONTENT (use in query_string for deck_info & exports)
+	Deco src_content_id in favor of Content id and line_num
+		- Remove src_content (and swap any refs to Phrase.content)
+	For gen_mp4 & gen_mp4_v2 & get_youtube_clip_link to work:
+		- Add video_time to Phrase
+		- Add video_duration to Phrase
+
+	1.0) Make Deck nullable in Phrase so we don't have empty deck for every Content
+
+
+TODO:
+
+1) DEPLOY
+
+1.1) Make database changes ( cloud_sql_proxy, makemigrations, show migrations ... )
+1.2) Push code ( gcloud app deploy ) 
+1.3) Run the migration ( cloud_sql_proxy )
+
+# Better if you can filter out the ones that already exist in Phrase
+from catalogue.models import Content
+
+Content.objects.all().count()
+all_errors = []
+
+for i, content in enumerate(Content.objects.all()):
+    print(i, content.title)
+    content.delete_content_lines()
+    try:
+    	content.create_content_lines()
+    except Exception:
+        print("Error", i, content.title)
+	all_errors.append(content)
+
+print(all_errors)
+
+Issues:
+	1) All the Meteor Garden notes seem to fail with unmatched length - investigate these
+	2) Existing phrases have lost there src_content_id. Impact is?
+
+There were ~1270 Content items in total.
+all_errors:
+
+
+
+
+
+< Print all_errors here >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>> Finish this change before doing any more <<<<	
+	
+2) Multiple translations:
+	- Translate should go in another table, 
+	- Translate should be on request, not on create since there can be so many target langs
+	- New table: phrase_translations:phrase_translation, translation_files_uuid
+	- Phrase level method to access this
+
+
