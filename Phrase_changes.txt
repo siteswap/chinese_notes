@@ -1,3 +1,15 @@
+
+
+Translations failing on these long docs:
+3 Meteor Garden S1 E11 txt
+12 Meteor Garden S1 E12 txt
+49 Meteor Garden S1 E13
+50 Meteor Garden S1 E14
+51 Meteor Garden S1 E15
+205 幸存者偏差
+
+
+
 DONE:
 	create_content_lines inserts in to Phrase
 	Move all ContentLine methods in to Phrase (juggle word_array & phrase_segmented)
@@ -122,9 +134,6 @@ BBC专访俄罗斯外长：“俄罗斯并非一点问题都没有”
 瑞典和芬兰放弃中立走向北约的前前后后
 香港主权移交25周年：“割让”三部曲
 全国首个水漂石挑战赛在贵州丹寨开打
-
-
-
 
 
 
