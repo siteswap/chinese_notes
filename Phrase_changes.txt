@@ -56,18 +56,6 @@ print(all_errors)
 
 
 
->>>> Finish this change before doing any more <<<<	
-	
-2) Multiple translations:
-	- Translate should go in another table, 
-	- Translate should be on request, not on create since there can be so many target langs
-	- New table: phrase_translations:phrase_translation, translation_files_uuid
-	- Phrase level method to access this
-
-
-
-
-
 
 There were ~1270 Content items in total.
 all_errors:
