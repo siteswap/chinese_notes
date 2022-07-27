@@ -1,7 +1,34 @@
 
+        Source picture in deck / anki would be awesome feature. Later, can grab still image from inside YT.
+        Add epoch + next 500 if epoch is small, makes feed more efficient and interesting.
+        Put some full YT videos in the feed? Or in exports or somewhere? Put Chinese subs on by default settings.
+
+
+        There are ~1300 Phrases with None Content (--> no content_lang):
+                - If they have deck_obj defined, try to match with that
+                - Otherwise, create a default ZH Content for them
+
+        Standardize content_lang to LOWER_CASE b/c that is how YT uses the codes
+        Create conditionally required fields with Django - requires javascript.
+'Production' card in mp3/mp4 should put English first with some verbal prompt
+
+        Exports - put a 'RECOMMENDED' item in there each day, flag that it is **recommended**
+                        - automatically create Deck from recently added (but not reviewed) content!
+                        - Any Notes we add, automatically PUSH a review in 1-2 days
+
+        Multi-way translation:
+                Use single language definition, then translate
+                common_lib should translate to multiple outgoing languages
+
+        Move ecdict / cedict somewhere outside of git - files too big!
+                - Insert the data in to database will make start-up faster, and reduce memory-footprint
+                - Lots of dictionary loading at startup making it SLOW
+
 ########################################################
 ##### What works well, What it doesn't do well yet #####
 ########################################################
+
+Vision: Multilingual Life
 
 	Chinese:
 		HANZI reading is great, Congratulations! SOLVED 
@@ -35,13 +62,13 @@
 		Focus on 'sentence building components like conjunctions' e.g. 通过，因为，所以，到底，当，在X里，唯一 etc.
 			- our APP should put EXTRA weight on these things s.t. we feature their use more often
 
-
 ########################################
 ##### Small items that need fixing #####
 ########################################
 
 
 SITE:
+	Key on User not on UserRegistration?
 	Bugs / Issues:
 		- Lots of blank lines in youtube loading
 		- SRS ordering is screwed up
@@ -53,7 +80,6 @@ SITE:
 		- Currently Feed has missing translations
 	FIXME - so little video or sound in Feed now (quota min 1/3 ?)
 		- Add sound_file for feed phrases where it makes sense
-	FIXME - hanzi_only card should present as a single word, not separate hanzi
 	Add TARGET_FREQ_RANK to settings page. Put all 'goal' type options there.
 	Fix 'spanning new line' noise, EN/ES don't need to go through group_lines function
 	What happens to Content.lang if Content is deleted? Phrases deleted too?
@@ -67,6 +93,8 @@ SITE:
 	Episode word report for EN, hide <hanzi_report> links for non-ZH
 	En bugs re: "doll's", "out."  ??
 	EN->ZH dictionary
+
+	As we identify top hanzi, top words, we should identify the top (say, 100) spoken sentence patterns and really drill these in. But we need to find a way to identify them. Contact the guy for some help! Maybe he can give you his grammar notes.
 
 
 ################################
