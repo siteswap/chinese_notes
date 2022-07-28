@@ -1,4 +1,24 @@
 
+We should LIMIT content searches by:
+	1) Source content == user's study language
+	2) Source content has translation available in user's native language
+
+When user adds new content:
+	1) It should translate to their preferred language ONLY (not multiple langs)
+		- if they want an additional translation, they can re-save
+	2) common_lib should have option to translate to multiple popular languages
+		- we can add more translations as demand grows
+
+        Multi-way translation:
+                Use single language definition, then translate
+                common_lib should translate to multiple outgoing languages
+
+########################################################
+########################################################
+
+	These annotated PP vids are less useful than just the regular YT with subtitles.
+		- Maybe YT vid + the excerts on their own
+
         Source picture in deck / anki would be awesome feature. Later, can grab still image from inside YT.
         Add epoch + next 500 if epoch is small, makes feed more efficient and interesting.
         Put some full YT videos in the feed? Or in exports or somewhere? Put Chinese subs on by default settings.

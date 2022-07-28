@@ -1,0 +1,25 @@
+
+from catalogue.models import Content, Phrase
+for phrase in Phrase.objects.filter(content=None):
+    deck_name = phrase.deck.deck_name
+    if Content.objects.filter(title=deck_name).exists():
+            print(deck_name)
+            phrase.content = Content.objects.get(title=deck_name)
+            phrase.save(update_fields=["content"])
+
+
+deck_names = set()
+for phrase in Phrase.objects.filter(content=None):
+    deck_name = phrase.deck.deck_name
+    print(deck_name)
+    deck_names.add(deck_name)
+
+
+from collections import Counter
+deck_counter = Counter()
+for phrase in Phrase.objects.filter(content=None):
+    deck_name = phrase.deck.deck_name
+    deck_counter.update([deck_name])
+
+deck_counter.most_common(5)
+
